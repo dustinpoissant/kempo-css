@@ -833,6 +833,8 @@ input[type="radio"] {
 }
 select option {
   padding: var(--spacer_h) var(--spacer);
+  background-color: var(--input_bg);
+  color: var(--input_tc);
 }
 select[multiple] {
   padding: 0.1px;
