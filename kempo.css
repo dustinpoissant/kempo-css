@@ -109,6 +109,7 @@ html {
   font-size: var(--fs_base);
   font-weight: var(--fw_base);
   color: var(--tc);
+  scrollbar-gutter: stable;
 }
 ::selection {
   background: var(--c_highlight);
@@ -120,6 +121,9 @@ body {
   overflow-y: scroll;
   font-family: var(--ff_body);
   position: relative;
+}
+body.no-scroll {
+ overflow: hidden !important; 
 }
 main, .container {
   max-width: var(--container_width);

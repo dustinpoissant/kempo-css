@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" theme="auto">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kempo CSS</title>
+  <link rel="stylesheet" href="./kempo.css" />
+  <link rel="stylesheet" href="./kempo-hljs.css" />
+  <script src="CssVar.js"></script>
+  <script src="CssVarColor.js"></script>
+  <script src="CssVarLightDarkColor.js"></script>
+	<style>
+		html {
+			scrollbar-gutter: none !important;
+		}
+		body {
+			overflow: hidden;
+			height: 100vh;
+		}
+		#container {
+			display: grid;
+			grid-template-columns: 24rem 1fr;
+			grid-template-rows: auto 1fr;
+			height: 100vh;
+		}
+		#vars {
+			padding: var(--spacer, 1rem);
+			grid-row: 1 / -1;
+			overflow-y: auto;
+		}
+		#actions {
+			
+		}
+		#docs {
+			grid-row: 2;
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+  <div id="container">
+		<div id="vars" class="br">
+			<h5>Colors</h5>
+			<label for="c_bg">Background Color</label>
+			<input type="color" />
+			<label for="c_bg__inv">Inverted Background Color</label>
+			<css-var-light-dark-color class="b ml mb ph" id="c_bg__inv" value="light-dark(rgb(51, 51, 51), rgb(249, 249, 249))"></css-var-light-dark-color>
+			<label for="c_bg__alt">Alternative Background Color</label>
+			<css-var-light-dark-color class="b ml mb ph" id="c_bg__alt" value="light-dark(rgb(238, 238, 238), rgb(34, 34, 34))"></css-var-light-dark-color>
+			<label for="c_overscroll">Overscroll Color</label>
+			<css-var-light-dark-color class="b ml mb ph" id="c_overscroll" value="light-dark(rgb(255, 255, 255), rgb(0, 0, 0))"></css-var-light-dark-color>
+			<label for="c_border">Border Color</label>
+			<css-var-light-dark-color class="b ml mb ph" id="c_border" value="light-dark(rgb(204, 204, 204), rgb(119, 119, 119))"></css-var-light-dark-color>
+			<label for="c_border__inv">Inverted Border Color</label>
+			<css-var-light-dark-color class="b ml mb ph" id="c_border__inv" value="light-dark(var(--d_c_bg_border), rgb(204, 204, 204))"></css-var-light-dark-color>
+			<label for="c_primary">Primary Color</label>
+			<css-var-color id="c_primary" value="rgb(51, 102, 255)"></css-var-color>
+			<label for="c_primary__hover">Primary Hover Color</label>
+			<css-var-color id="c_primary__hover" value="rgb(17, 68, 221)"></css-var-color>
+			<label for="c_secondary">Secondary Color</label>
+			<css-var-color id="c_secondary" value="rgb(153, 51, 255)"></css-var-color>
+			<label for="c_secondary__hover">Secondary Hover Color</label>
+			<css-var-color id="c_secondary__hover" value="rgb(119, 17, 221)"></css-var-color>
+			<label for="c_success">Success Color</label>
+			<css-var-color id="c_success" value="rgb(0, 136, 0)"></css-var-color>
+			<label for="c_success__hover">Success Hover Color</label>
+			<css-var-color id="c_success__hover" value="rgb(0, 102, 0)"></css-var-color>
+			<label for="c_warning">Warning Color</label>
+			<css-var-color id="c_warning" value="rgb(255, 102, 0)"></css-var-color>
+			<label for="c_warning__hover">Warning Hover Color</label>
+			<css-var-color id="c_warning__hover" value="rgb(221, 68, 0)"></css-var-color>
+			<label for="c_danger">Danger Color</label>
+			<css-var-color id="c_danger" value="rgb(255, 0, 51)"></css-var-color>
+			<label for="c_danger__hover">Danger Hover Color</label>
+			<css-var-color id="c_danger__hover" value="rgb(221, 0, 17)"></css-var-color>
+			<label for="c_input_accent">Input Accent Color</label>
+			<css-var-color id="c_input_accent" value="rgb(51, 102, 255)"></css-var-color>
+			<label for="c_input_border">Input Border Color</label>
+			<css-var-color id="c_input_border" value="var(--c_border)"></css-var-color>
+			<label for="c_highlight">Highlight Color</label>
+			<css-var-light-dark-color class="b ml mb ph" id="c_highlight" value="light-dark(rgba(41, 100, 210, 0.25), rgba(0, 89, 255, 0.25))"></css-var-light-dark-color>
+			<label for="c_overlay">Overlay Color</label>
+			<css-var-color id="c_overlay" value="rgba(0, 0, 0, 0.5)"></css-var-color>
+
+			<h5>Fonts</h5>
+			<label for="ff_body">Body Font Family</label>
+			<css-var id="ff_body" value="&quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif"></css-var>
+			<label for="ff_heading">Heading Font Family</label>
+			<css-var id="ff_heading" value="&quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif"></css-var>
+			<label for="ff_mono">Monospace Font Family</label>
+			<css-var id="ff_mono" value="Consolas, monaco, monospace"></css-var>
+
+			<h5>Font Sizes</h5>
+			<label for="fs_base">Base Font Size</label>
+			<css-var id="fs_base" value="16px"></css-var>
+			<label for="fs_small">Small Font Size</label>
+			<css-var id="fs_small" value="calc(0.6 * var(--fs_base))"></css-var>
+			<label for="fs_large">Large Font Size</label>
+			<css-var id="fs_large" value="calc(1.5 * var(--fs_base))"></css-var>
+			<label for="fs_h6">H6 Font Size</label>
+			<css-var id="fs_h6" value="var(--fs_base)"></css-var>
+			<label for="fs_h5">H5 Font Size</label>
+			<css-var id="fs_h5" value="calc(1.25 * var(--fs_base))"></css-var>
+			<label for="fs_h4">H4 Font Size</label>
+			<css-var id="fs_h4" value="calc(1.5 * var(--fs_base))"></css-var>
+			<label for="fs_h3">H3 Font Size</label>
+			<css-var id="fs_h3" value="calc(1.75 * var(--fs_base))"></css-var>
+			<label for="fs_h2">H2 Font Size</label>
+			<css-var id="fs_h2" value="calc(2 * var(--fs_base))"></css-var>
+			<label for="fs_h1">H1 Font Size</label>
+			<css-var id="fs_h1" value="calc(2.5 * var(--fs_base))"></css-var>
+
+			<h5>Font Weights</h5>
+			<label for="fw_base">Base Font Weight</label>
+			<css-var id="fw_base" value="400"></css-var>
+			<label for="fw_bold">Bold Font Weight</label>
+			<css-var id="fw_bold" value="700"></css-var>
+
+			<h5>Spacing</h5>
+			<label for="spacer">Spacer</label>
+			<css-var id="spacer" value="1rem"></css-var>
+			<label for="spacer_h">Half Spacer</label>
+			<css-var id="spacer_h" value="calc(0.5 * var(--spacer))"></css-var>
+			<label for="spacer_q">Quarter Spacer</label>
+			<css-var id="spacer_q" value="calc(0.25 * var(--spacer))"></css-var>
+
+			<h5>Other</h5>
+			<label for="line_height">Line Height</label>
+			<css-var id="line_height" value="1.35em"></css-var>
+			<label for="container_width">Container Width</label>
+			<css-var id="container_width" value="90rem"></css-var>
+			<label for="animation_ms">Animation Duration</label>
+			<css-var id="animation_ms" value="256ms"></css-var>
+			<label for="radius">Border Radius</label>
+			<css-var id="radius" value="0.25rem"></css-var>
+			<label for="link_decoration">Link Decoration</label>
+			<css-var id="link_decoration" value="underline"></css-var>
+			<label for="input_padding">Input Padding</label>
+			<css-var id="input_padding" value="var(--spacer_h) var(--spacer)"></css-var>
+			<label for="input_border_width">Input Border Width</label>
+			<css-var id="input_border_width" value="1px"></css-var>
+			<label for="btn_padding">Button Padding</label>
+			<css-var id="btn_padding" value="var(--spacer_h) var(--spacer)"></css-var>
+
+			<h5>Text Colors</h5>
+			<label for="tc">Text Color</label>
+			<css-var id="tc" value="light-dark(rgba(0, 0, 0, 0.93), rgba(255, 255, 255, 0.93))"></css-var>
+			<label for="tc_dark">Dark Text Color</label>
+			<css-var id="tc_dark" value="light-dark(rgba(0, 0, 0, 0.93), rgba(0, 0, 0, 0.93))"></css-var>
+			<label for="tc_light">Light Text Color</label>
+			<css-var id="tc_light" value="light-dark(rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.93))"></css-var>
+			<label for="tc_inv">Inverted Text Color</label>
+			<css-var id="tc_inv" value="light-dark(rgba(255, 255, 255, 0.93), rgba(0, 0, 0, 0.93))"></css-var>
+			<label for="tc_muted">Muted Text Color</label>
+			<css-var id="tc_muted" value="light-dark(rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.5))"></css-var>
+			<label for="tc_on_primary">Text on Primary</label>
+			<css-var id="tc_on_primary" value="light-dark(rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.93))"></css-var>
+			<label for="tc_on_secondary">Text on Secondary</label>
+			<css-var id="tc_on_secondary" value="light-dark(rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.93))"></css-var>
+			<label for="tc_on_success">Text on Success</label>
+			<css-var id="tc_on_success" value="light-dark(rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.93))"></css-var>
+			<label for="tc_on_warning">Text on Warning</label>
+			<css-var id="tc_on_warning" value="light-dark(rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.93))"></css-var>
+			<label for="tc_on_danger">Text on Danger</label>
+			<css-var id="tc_on_danger" value="light-dark(rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.93))"></css-var>
+			<label for="tc_primary">Primary Text Color</label>
+			<css-var-light-dark-color class="b ml mb ph" id="tc_primary" value="light-dark(#36f, rgb(138, 180, 248))"></css-var-light-dark-color>
+			<label for="tc_secondary">Secondary Text Color</label>
+			<css-var-light-dark-color class="b ml mb ph" id="tc_secondary" value="light-dark(#93f, rgb(187, 102, 255))"></css-var-light-dark-color>
+			<label for="tc_success">Success Text Color</label>
+			<css-var-light-dark-color class="b ml mb ph" id="tc_success" value="light-dark(#080, rgb(102, 187, 102))"></css-var-light-dark-color>
+			<label for="tc_warning">Warning Text Color</label>
+			<css-var-light-dark-color class="b ml mb ph" id="tc_warning" value="light-dark(#f60, rgb(255, 153, 51))"></css-var-light-dark-color>
+			<label for="tc_danger">Danger Text Color</label>
+			<css-var-light-dark-color class="b ml mb ph" id="tc_danger" value="light-dark(#f03, rgb(255, 85, 119))"></css-var-light-dark-color>
+
+			<h5>Buttons</h5>
+			<label for="btn_box_shadow">Button Box Shadow</label>
+			<css-var id="btn_box_shadow" value="0 0 0 transparent"></css-var>
+			<label for="btn_box_shadow__hover">Button Hover Box Shadow</label>
+			<css-var id="btn_box_shadow__hover" value="0 0 0 transparent"></css-var>
+			<label for="btn_border">Button Border</label>
+			<css-var id="btn_border" value="transparent"></css-var>
+			<label for="btn_bg">Button Background</label>
+			<css-var-light-dark-color id="btn_bg" value="light-dark(rgb(221, 221, 221), rgb(170, 170, 170))"></css-var-light-dark-color>
+			<label for="btn_bg__hover">Button Hover Background</label>
+			<css-var-light-dark-color id="btn_bg__hover" value="light-dark(rgb(204, 204, 204), rgb(187, 187, 187))"></css-var-light-dark-color>
+			<label for="btn_tc">Button Text Color</label>
+			<css-var id="btn_tc" value="light-dark(rgba(0, 0, 0, 0.93), rgba(0, 0, 0, 0.93))"></css-var>
+			<label for="btn_transparent__hover">Transparent Button Hover</label>
+			<css-var id="btn_transparent__hover" value="light-dark(rgba(0, 0, 0, 0.05), rgba(255, 255, 255, 0.05))"></css-var>
+
+			<h5>Links</h5>
+			<label for="tc_link">Link Text Color</label>
+			<css-var id="tc_link" value="var(--tc_primary)"></css-var>
+			<label for="tc_link__hover">Link Hover Text Color</label>
+			<css-var id="tc_link__hover" value="var(--tc_secondary)"></css-var>
+			<label for="tc_link__inv">Inverted Link Text Color</label>
+			<css-var id="tc_link__inv" value="var(--tc_primary__inv)"></css-var>
+			<label for="tc_link__inv__hover">Inverted Link Hover Text Color</label>
+			<css-var id="tc_link__inv__hover" value="var(--tc_secondary__inv)"></css-var>
+
+			<h5>Focus</h5>
+			<label for="focus_shadow">Focus Shadow</label>
+			<css-var id="focus_shadow" value="0 0 2px 2px var(--c_primary)"></css-var>
+			<label for="focus_shadow_on_primary">Focus Shadow on Primary</label>
+			<css-var id="focus_shadow_on_primary" value="0 0 2px 2px var(--tc_on_primary)"></css-var>
+
+			<h5>Inputs</h5>
+			<label for="input_bg">Input Background</label>
+			<css-var id="input_bg" value="light-dark(white, var(--c_bg__alt))"></css-var>
+			<label for="input_tc">Input Text Color</label>
+			<css-var id="input_tc" value="light-dark(rgba(0, 0, 0, 0.93), var(--tc))"></css-var>
+
+			<h5>Shadows</h5>
+			<label for="drop_shadow">Drop Shadow</label>
+			<css-var id="drop_shadow" value="light-dark(0 0.25rem 0.5rem rgba(0, 0, 0, 0.333), 0 0.25rem 0.5rem rgba(0, 0, 0, 0.25))"></css-var>
+
+			<h5>Misc</h5>
+			<label for="date_picker_icon_filter">Date Picker Icon Filter</label>
+			<css-var id="date_picker_icon_filter" value="light-dark(invert(0), invert(1))"></css-var>
+		</div>
+		<div id="actions" class="d-f bb ph">
+			<div class="flex"></div>
+			<button id="save-theme" class="primary">Save Theme</button>
+		</div>
+		<iframe id="docs" src="index.html"></iframe>
+	</div>
+	<script>
+		const iframe = document.getElementById('docs');
+		let iframeDoc;
+		const defaults = {};
+
+		document.querySelectorAll('#vars css-var, #vars css-var-color, #vars css-var-light-dark-color').forEach(cssVar => {
+			defaults[cssVar.id] = cssVar.value;
+		});
+
+		iframe.addEventListener('load', () => {
+			iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+		});
+
+		function updateTheme() {
+			const cssVars = document.querySelectorAll('#vars css-var, #vars css-var-color, #vars css-var-light-dark-color');
+			const changedVars = {};
+			cssVars.forEach(cssVar => {
+				if (cssVar.value !== defaults[cssVar.id]) {
+					const varName = '--' + cssVar.id;
+					changedVars[varName] = cssVar.value;
+				}
+			});
+			if (!iframeDoc) return;
+			const css = `:root {\n${Object.entries(changedVars).map(([k, v]) => `  ${k}: ${v};`).join('\n')}\n}`;
+			let style = iframeDoc.getElementById('dynamic-theme');
+			if (!style) {
+				style = iframeDoc.createElement('style');
+				style.id = 'dynamic-theme';
+				iframeDoc.head.appendChild(style);
+			}
+			style.textContent = css;
+		}
+
+		document.querySelectorAll('#vars css-var, #vars css-var-color').forEach(cssVar => {
+			cssVar.addEventListener('input', updateTheme);
+		});
+
+		document.getElementById('save-theme').addEventListener('click', () => {
+			const cssVars = document.querySelectorAll('#vars css-var, #vars css-var-color');
+			const changedVars = {};
+			cssVars.forEach(cssVar => {
+				if (cssVar.value !== defaults[cssVar.id]) {
+					const varName = '--' + cssVar.id;
+					changedVars[varName] = cssVar.value;
+				}
+			});
+			const css = `:root {\n${Object.entries(changedVars).map(([k, v]) => `  ${k}: ${v};`).join('\n')}\n}`;
+			const blob = new Blob([css], { type: 'text/css' });
+			const url = URL.createObjectURL(blob);
+			const a = document.createElement('a');
+			a.href = url;
+			a.download = 'theme.css';
+			a.click();
+			URL.revokeObjectURL(url);
+		});
+	</script>
+</body>
+</html>

@@ -10,6 +10,7 @@
     main {
       position: relative;
     }
+
     #theme-sticky {
       display: block;
       position: sticky;
@@ -17,7 +18,7 @@
       container-type: scroll-state;
       float: right;
 
-      > theme-btn button {
+      >theme-btn button {
         opacity: 1;
         will-change: opacity box-shadow;
         transition: opacity var(--animation_ms, 256ms),
@@ -47,22 +48,27 @@
     <div class="mb">
       <div class="card p mb">
         <h2 class="mt0">How to use Kempo CSS</h2>
-        
+
         <div class="mb">
           <h4>NPM</h4>
           <pre><code class="d-block mb-sm">npm install kempo-css</code></pre>
-          <p>Then include it in your build system, or import it directly from <code>node_modules/kempocss/dist/kempo.css</code>.</p>
+          <p>Then include it in your build system, or import it directly from
+            <code>node_modules/kempo-css/dist/kempo.css</code>.
+          </p>
         </div>
         <hr />
         <h4>Direct Download</h4>
-        <a href="./kempo.css" download="kempo.css" class="btn primary mb">
+        <a href="./kempo.min.css" download="kempo.min.css" class="btn primary mb">
           Download kempo.css
         </a><br />
-        <a href="./kempo-hljs.css" download="kempo-hljs.css" class="btn secondary mb">
+        <a href="./kempo-hljs.min.css" download="kempo-hljs.min.css" class="btn secondary mb">
           Download kempo-hljs.css
         </a><br />
         <a href="https://github.com/dustinpoissant/kempo-css" target="_blank" class="btn">
-          <svg height="1.15em" viewBox="0 0 173.18974 46.836636"xmlns="http://www.w3.org/2000/svg"><path fill="#0f0e0f" d="M 19.681725,2.6489257e-8 C 9.9664034,2.6489257e-8 3.7329102e-7,4.133725 3.7329102e-7,24.004338 3.7329102e-7,43.87543 11.41032,46.836632 21.025631,46.836632 c 7.961227,0 12.790338,-3.402023 12.790338,-3.402023 0.199066,-0.109629 0.221166,-0.388163 0.221166,-0.515586 V 20.726985 c 0,-0.375534 -0.304869,-0.680404 -0.680402,-0.680404 H 18.803398 c -0.375535,0 -0.680406,0.30487 -0.680406,0.680404 v 7.115371 c 0,0.375533 0.304871,0.681108 0.680406,0.681108 h 5.677081 v 8.84033 c 0,0 -1.274214,0.43388 -4.798754,0.43388 -4.157802,0 -9.9665886,-1.518345 -9.9665886,-14.291314 0,-12.775371 6.0485566,-14.456837 11.7267656,-14.456837 4.915121,0 7.032378,0.86574 8.379683,1.282626 0.423618,0.129343 0.815642,-0.292192 0.815642,-0.667726 l 1.623532,-6.874482 c 0,-0.175983 -0.05988,-0.388016 -0.259906,-0.531787 C 31.453659,1.867714 28.115616,2.6489257e-8 19.681725,2.6489257e-8 Z M 77.169581,1.696786 c -0.372654,0 -0.676181,0.305506 -0.676181,0.683926 v 42.880284 c 0,0.377938 0.303527,0.685335 0.676181,0.685335 h 8.194438 c 0.375052,0 0.676181,-0.307397 0.676181,-0.685335 V 26.919652 h 12.772731 c 0,0 -0.0219,18.339901 -0.0219,18.341344 0,0.377938 0.30347,0.685335 0.679,0.685335 h 8.213449 c 0.37505,0 0.67522,-0.307397 0.67618,-0.685335 V 2.380712 c 0,-0.37842 -0.29994,-0.683926 -0.67547,-0.683926 h -8.194439 c -0.37457,0 -0.6783,0.305506 -0.6783,0.683926 l 0.002,15.836664 H 86.0402 V 2.380712 c 0,-0.37842 -0.30112,-0.683926 -0.676172,-0.683926 z m 67.904519,0 c -0.37361,0 -0.67759,0.305506 -0.67759,0.683926 v 42.880284 c 0,0.378418 0.30372,0.686039 0.67829,0.686039 h 5.70174 c 0.25676,0 0.45141,-0.132379 0.59518,-0.36415 0.14185,-0.230323 0.34584,-1.977117 0.34584,-1.977117 0,0 3.36047,3.184376 9.72147,3.184376 7.46837,0 11.75072,-3.788626 11.75072,-17.005889 0,-13.217261 -6.84012,-14.944248 -11.46193,-14.944248 -4.61845,0 -7.75986,2.060935 -7.75986,2.060935 V 2.380712 c 0,-0.37842 -0.30305,-0.683926 -0.67618,-0.683926 z M 43.536035,2.673019 c -2.915798,0 -5.28335,2.384348 -5.28335,5.334766 0,2.947533 2.367552,5.338289 5.28335,5.338289 2.918684,0 5.284054,-2.390756 5.284054,-5.338289 0,-2.950418 -2.36537,-5.334766 -5.284054,-5.334766 z m 13.20309,4.480387 c -0.325527,0 -0.500089,0.143395 -0.500089,0.45642 v 8.391657 c 0,0 -4.198103,1.013046 -4.481798,1.095268 -0.282732,0.08174 -0.490933,0.342537 -0.490933,0.653639 v 5.273489 c 0,0.378899 0.303016,0.68463 0.677588,0.68463 h 4.295143 v 12.6868 c 0,9.422492 6.609133,10.348349 11.068901,10.348349 2.038269,0 4.476588,-0.654384 4.87905,-0.802963 0.243303,-0.08943 0.38528,-0.341783 0.38528,-0.6149 l 0.0064,-5.801048 c 0,-0.378418 -0.319329,-0.684631 -0.678995,-0.684631 -0.358225,0 -1.275308,0.145097 -2.218711,0.145097 -3.019179,0 -4.04228,-1.403214 -4.04228,-3.220299 V 23.708509 h 6.146885 c 0.374574,0 0.678996,-0.305731 0.678996,-0.68463 v -6.605418 c 0,-0.37842 -0.304422,-0.683224 -0.678996,-0.683224 h -6.146883 c 0,0 -0.0091,-8.119262 -0.0091,-8.121185 0,-0.307256 -0.158356,-0.460646 -0.514178,-0.460646 z m -17.351023,8.585353 c -0.375053,0 -0.71069,0.386095 -0.71069,0.762109 v 28.358647 c 0,0.83281 0.519552,1.08118 1.191764,1.08118 h 7.359781 c 0.807326,0 1.005111,-0.396869 1.005111,-1.094563 V 36.215698 16.421982 c 0,-0.375534 -0.302536,-0.683223 -0.677588,-0.683223 z m 73.668948,0.0648 c -0.37217,0 -0.67759,0.306915 -0.67759,0.685333 V 36.21288 c 0,8.527652 4.75283,10.613889 11.29077,10.613889 5.36423,0 9.68837,-2.963916 9.68837,-2.963916 0,0 0.20559,1.562375 0.29936,1.747499 0.0928,0.184642 0.33545,0.371195 0.59799,0.371195 l 5.25024,-0.02325 c 0.37217,0 0.67759,-0.307655 0.67759,-0.684632 l -0.003,-28.784778 c 0,-0.378418 -0.30373,-0.685334 -0.67831,-0.685334 h -8.13167 c -0.37314,0 -0.67618,0.306916 -0.67618,0.685334 v 21.025629 c 0,0 -2.06665,1.511541 -4.99879,1.511541 -2.93215,0 -3.70982,-1.330382 -3.70982,-4.201462 v -18.33571 c 0,-0.378418 -0.30306,-0.685334 -0.67619,-0.685334 z m 46.02028,6.852646 c 2.5018,0.0892 4.66211,1.530523 4.66211,7.64293 0,7.36595 -1.27349,8.820115 -5.21925,8.700868 -2.8206,-0.08607 -4.73324,-1.36574 -4.73324,-1.36574 V 24.055057 c 0,0 1.88715,-1.156867 4.20286,-1.363627 0.36604,-0.03276 0.73012,-0.04795 1.08752,-0.03522 z" /></svg>
+          <svg height="1.15em" viewBox="0 0 173.18974 46.836636" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#0f0e0f"
+              d="M 19.681725,2.6489257e-8 C 9.9664034,2.6489257e-8 3.7329102e-7,4.133725 3.7329102e-7,24.004338 3.7329102e-7,43.87543 11.41032,46.836632 21.025631,46.836632 c 7.961227,0 12.790338,-3.402023 12.790338,-3.402023 0.199066,-0.109629 0.221166,-0.388163 0.221166,-0.515586 V 20.726985 c 0,-0.375534 -0.304869,-0.680404 -0.680402,-0.680404 H 18.803398 c -0.375535,0 -0.680406,0.30487 -0.680406,0.680404 v 7.115371 c 0,0.375533 0.304871,0.681108 0.680406,0.681108 h 5.677081 v 8.84033 c 0,0 -1.274214,0.43388 -4.798754,0.43388 -4.157802,0 -9.9665886,-1.518345 -9.9665886,-14.291314 0,-12.775371 6.0485566,-14.456837 11.7267656,-14.456837 4.915121,0 7.032378,0.86574 8.379683,1.282626 0.423618,0.129343 0.815642,-0.292192 0.815642,-0.667726 l 1.623532,-6.874482 c 0,-0.175983 -0.05988,-0.388016 -0.259906,-0.531787 C 31.453659,1.867714 28.115616,2.6489257e-8 19.681725,2.6489257e-8 Z M 77.169581,1.696786 c -0.372654,0 -0.676181,0.305506 -0.676181,0.683926 v 42.880284 c 0,0.377938 0.303527,0.685335 0.676181,0.685335 h 8.194438 c 0.375052,0 0.676181,-0.307397 0.676181,-0.685335 V 26.919652 h 12.772731 c 0,0 -0.0219,18.339901 -0.0219,18.341344 0,0.377938 0.30347,0.685335 0.679,0.685335 h 8.213449 c 0.37505,0 0.67522,-0.307397 0.67618,-0.685335 V 2.380712 c 0,-0.37842 -0.29994,-0.683926 -0.67547,-0.683926 h -8.194439 c -0.37457,0 -0.6783,0.305506 -0.6783,0.683926 l 0.002,15.836664 H 86.0402 V 2.380712 c 0,-0.37842 -0.30112,-0.683926 -0.676172,-0.683926 z m 67.904519,0 c -0.37361,0 -0.67759,0.305506 -0.67759,0.683926 v 42.880284 c 0,0.378418 0.30372,0.686039 0.67829,0.686039 h 5.70174 c 0.25676,0 0.45141,-0.132379 0.59518,-0.36415 0.14185,-0.230323 0.34584,-1.977117 0.34584,-1.977117 0,0 3.36047,3.184376 9.72147,3.184376 7.46837,0 11.75072,-3.788626 11.75072,-17.005889 0,-13.217261 -6.84012,-14.944248 -11.46193,-14.944248 -4.61845,0 -7.75986,2.060935 -7.75986,2.060935 V 2.380712 c 0,-0.37842 -0.30305,-0.683926 -0.67618,-0.683926 z M 43.536035,2.673019 c -2.915798,0 -5.28335,2.384348 -5.28335,5.334766 0,2.947533 2.367552,5.338289 5.28335,5.338289 2.918684,0 5.284054,-2.390756 5.284054,-5.338289 0,-2.950418 -2.36537,-5.334766 -5.284054,-5.334766 z m 13.20309,4.480387 c -0.325527,0 -0.500089,0.143395 -0.500089,0.45642 v 8.391657 c 0,0 -4.198103,1.013046 -4.481798,1.095268 -0.282732,0.08174 -0.490933,0.342537 -0.490933,0.653639 v 5.273489 c 0,0.378899 0.303016,0.68463 0.677588,0.68463 h 4.295143 v 12.6868 c 0,9.422492 6.609133,10.348349 11.068901,10.348349 2.038269,0 4.476588,-0.654384 4.87905,-0.802963 0.243303,-0.08943 0.38528,-0.341783 0.38528,-0.6149 l 0.0064,-5.801048 c 0,-0.378418 -0.319329,-0.684631 -0.678995,-0.684631 -0.358225,0 -1.275308,0.145097 -2.218711,0.145097 -3.019179,0 -4.04228,-1.403214 -4.04228,-3.220299 V 23.708509 h 6.146885 c 0.374574,0 0.678996,-0.305731 0.678996,-0.68463 v -6.605418 c 0,-0.37842 -0.304422,-0.683224 -0.678996,-0.683224 h -6.146883 c 0,0 -0.0091,-8.119262 -0.0091,-8.121185 0,-0.307256 -0.158356,-0.460646 -0.514178,-0.460646 z m -17.351023,8.585353 c -0.375053,0 -0.71069,0.386095 -0.71069,0.762109 v 28.358647 c 0,0.83281 0.519552,1.08118 1.191764,1.08118 h 7.359781 c 0.807326,0 1.005111,-0.396869 1.005111,-1.094563 V 36.215698 16.421982 c 0,-0.375534 -0.302536,-0.683223 -0.677588,-0.683223 z m 73.668948,0.0648 c -0.37217,0 -0.67759,0.306915 -0.67759,0.685333 V 36.21288 c 0,8.527652 4.75283,10.613889 11.29077,10.613889 5.36423,0 9.68837,-2.963916 9.68837,-2.963916 0,0 0.20559,1.562375 0.29936,1.747499 0.0928,0.184642 0.33545,0.371195 0.59799,0.371195 l 5.25024,-0.02325 c 0.37217,0 0.67759,-0.307655 0.67759,-0.684632 l -0.003,-28.784778 c 0,-0.378418 -0.30373,-0.685334 -0.67831,-0.685334 h -8.13167 c -0.37314,0 -0.67618,0.306916 -0.67618,0.685334 v 21.025629 c 0,0 -2.06665,1.511541 -4.99879,1.511541 -2.93215,0 -3.70982,-1.330382 -3.70982,-4.201462 v -18.33571 c 0,-0.378418 -0.30306,-0.685334 -0.67619,-0.685334 z m 46.02028,6.852646 c 2.5018,0.0892 4.66211,1.530523 4.66211,7.64293 0,7.36595 -1.27349,8.820115 -5.21925,8.700868 -2.8206,-0.08607 -4.73324,-1.36574 -4.73324,-1.36574 V 24.055057 c 0,0 1.88715,-1.156867 4.20286,-1.363627 0.36604,-0.03276 0.73012,-0.04795 1.08752,-0.03522 z" />
+          </svg>
         </a>
       </div>
     </div>
@@ -101,9 +107,7 @@
         </details>
         <details>
           <summary class="ml pl">
-            <a href="#borders-spacing" class="d-ib pyh pxq"
-              >Borders & Spacing</a
-            >
+            <a href="#borders-spacing" class="d-ib pyh pxq">Borders & Spacing</a>
           </summary>
           <div class="pl">
             <ul class="ml">
@@ -164,6 +168,9 @@
             </ul>
           </div>
         </details>
+        <div class="ml pl pt">
+          <a href="#noScroll">Disable Body Scrolling</a>
+        </div>
       </div>
     </details>
 
@@ -322,26 +329,11 @@
       <div class="col m-span-12 px">
         <div class="d-ib b r -mb ml pq bg-default">HTML</div>
         <div class="card">
-          <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-f"</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: 100px"</span>&gt;</span>100px<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"flex"</span>&gt;</span>flex<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-f"</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"flex"</span>&gt;</span>flex<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"flex"</span>&gt;</span>flex<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-f"</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"flex"</span>&gt;</span>flex<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"flex-2"</span>&gt;</span>flex-2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-f"</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"flex"</span>&gt;</span>flex<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"flex-3"</span>&gt;</span>flex-3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+          <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-f"</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: 100px"</span>&gt;</span>100px<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"flex"</span>&gt;</span>flex<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-f"</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"flex"</span>&gt;</span>flex<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"flex"</span>&gt;</span>flex<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-f"</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"flex"</span>&gt;</span>flex<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"flex-2"</span>&gt;</span>flex-2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-f"</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"flex b"</span>&gt;</span>flex<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"flex-3"</span>&gt;</span>flex-3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
         </div>
       </div>
       <div class="col m-span-12 px">
-        <div class="d-ib b r -mb ml pq bg-default">Output</div>
+        <div class="d-ib b r -mb ml pq bg-default">Output*</div>
         <div class="card pb">
           <div class="d-f mb">
             <div style="width: 100px" class="b pq mr">100px</div>
@@ -360,27 +352,21 @@
             <div class="flex-3 b pq">flex-3</div>
           </div>
         </div>
+        <p>*<small>Additional styles applied for demonstration purposes.</small></p>
       </div>
     </div>
+
 
     <h2 id="grid">Grid System</h2>
     <div class="row -mx">
       <div class="col m-span-12 px">
         <div class="d-ib b r -mb ml pq bg-default">HTML</div>
         <div class="card">
-          <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"row"</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col"</span>&gt;</span>col<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col"</span>&gt;</span>col<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col"</span>&gt;</span>col<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"row"</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col span-4"</span>&gt;</span>col span-4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col span-8"</span>&gt;</span>col span-8<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+          <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"row"</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col"</span>&gt;</span>col<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col"</span>&gt;</span>col<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col"</span>&gt;</span>col<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"row"</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col span-4"</span>&gt;</span>col span-4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col span-8"</span>&gt;</span>col span-8<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
         </div>
       </div>
       <div class="col m-span-12 px">
-        <div class="d-ib b r -mb ml pq bg-default">Output</div>
+        <div class="d-ib b r -mb ml pq bg-default">Output*</div>
         <div class="card pb">
           <div class="row mb">
             <div class="col b pq">col</div>
@@ -392,72 +378,35 @@
             <div class="col span-8 b pq">col span-8</div>
           </div>
         </div>
+        <p>*<small>Additional styles applied for demonstration purposes.</small></p>
       </div>
     </div>
 
+
     <h3 id="responsive-grid">Responsive Grid</h3>
-    <div class="row -mx">
-      <div class="col m-span-12 px">
-        <div class="d-ib b r -mb ml pq bg-default">HTML</div>
-        <div class="card">
-          <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"row"</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col d-span-3 t-span-6 m-span-12"</span>&gt;</span>
-  col d-span-3 t-span-6 m-span-12
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col d-span-3 t-span-6 m-span-12"</span>&gt;</span>
-  col d-span-3 t-span-6 m-span-12
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col d-span-3 t-span-6 m-span-12"</span>&gt;</span>
-  col d-span-3 t-span-6 m-span-12
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col d-span-3 t-span-6 m-span-12"</span>&gt;</span>
-  col d-span-3 t-span-6 m-span-12
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
-        </div>
-      </div>
-      <div class="col m-span-12 px">
-        <div class="d-ib b r -mb ml pq bg-default">Output</div>
-        <div class="card pb">
-          <div class="row">
-            <div class="col d-span-3 t-span-6 m-span-12 b pq">
-              col d-span-3 t-span-6 m-span-12
-            </div>
-            <div class="col d-span-3 t-span-6 m-span-12 b pq">
-              col d-span-3 t-span-6 m-span-12
-            </div>
-            <div class="col d-span-3 t-span-6 m-span-12 b pq">
-              col d-span-3 t-span-6 m-span-12
-            </div>
-            <div class="col d-span-3 t-span-6 m-span-12 b pq">
-              col d-span-3 t-span-6 m-span-12
-            </div>
-          </div>
-        </div>
-      </div>
+
+    <div class="d-ib b r -mb ml pq bg-default">HTML</div>
+    <div class="card">
+      <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"row"</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col d-span-3 t-span-6 m-span-12"</span>&gt;</span><br />    col d-span-3 t-span-6 m-span-12<br />  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col d-span-3 t-span-6 m-span-12"</span>&gt;</span><br />    col d-span-3 t-span-6 m-span-12<br />  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col d-span-3 t-span-6 m-span-12"</span>&gt;</span><br />    col d-span-3 t-span-6 m-span-12<br />  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col d-span-3 t-span-6 m-span-12"</span>&gt;</span><br />    col d-span-3 t-span-6 m-span-12<br />  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
     </div>
+
+    <div class="d-ib b r -mb ml pq bg-default">Output*</div>
+    <div class="card pb" style="resize:horizontal;overflow:hidden;max-width:100%;min-width:340px">
+      <iframe src="./examples/responsive-grid.html" height="160"></iframe>
+    </div>
+    <p>*<small>Additional styles applied for demonstration purposes.</small></p>
 
     <h3 id="min-width-grid">Alternative Responsive Grid</h3>
     <div class="row -mx">
       <div class="col m-span-12 px">
         <div class="d-ib b r -mb ml pq bg-default">HTML</div>
         <div class="card">
-          <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"row"</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"min-width: 150px"</span>&gt;</span>
-  col, min-width: 150px
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"min-width: 200px"</span>&gt;</span>
-  col, min-width: 200px
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"min-width: 300px"</span>&gt;</span>
-  col, min-width: 300px
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+          <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"row"</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"min-width: 150px"</span>&gt;</span><br />    col, min-width: 150px<br />  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"min-width: 200px"</span>&gt;</span><br />    col, min-width: 200px<br />  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"min-width: 300px"</span>&gt;</span><br />    col, min-width: 300px<br />  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
         </div>
       </div>
       <div class="col m-span-12 px">
-        <div class="d-ib b r -mb ml pq bg-default">Output</div>
-        <div class="card pb">
+        <div class="d-ib b r -mb ml pq bg-default">Output*</div>
+        <div class="card pb" style="resize:horizontal;overflow:hidden;max-width:688px;min-width:320px">
           <div class="row">
             <div class="col b pq" style="min-width: 150px">
               col, min-width: 150px
@@ -470,6 +419,7 @@
             </div>
           </div>
         </div>
+        <p>*<small>Additional styles applied for demonstration purposes.</small></p>
       </div>
     </div>
 
@@ -480,17 +430,11 @@
       <div class="col m-span-12 px">
         <div class="d-ib b r -mb ml pq bg-default">HTML</div>
         <div class="card">
-          <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b"</span>&gt;</span>b<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"bt"</span>&gt;</span>bt<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"br"</span>&gt;</span>br<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"bb"</span>&gt;</span>bb<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"bl"</span>&gt;</span>bl<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"bx"</span>&gt;</span>bx<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"by"</span>&gt;</span>by<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+          <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b"</span>&gt;</span>b<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"bt"</span>&gt;</span>bt<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"br"</span>&gt;</span>br<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"bb"</span>&gt;</span>bb<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"bl"</span>&gt;</span>bl<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"bx"</span>&gt;</span>bx<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"by"</span>&gt;</span>by<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
         </div>
       </div>
       <div class="col m-span-12 px">
-        <div class="d-ib b r -mb ml pq bg-default">Output</div>
+        <div class="d-ib b r -mb ml pq bg-default">Output*</div>
         <div class="card">
           <div class="d-ib bg-alt p mr mb b">b</div>
           <div class="d-ib bg-alt p mr mb bt">bt</div>
@@ -500,6 +444,7 @@
           <div class="d-ib bg-alt p mr mb bx">bx</div>
           <div class="d-ib bg-alt p mr mb by">by</div>
         </div>
+        <p>*<small>Additional styles applied for demonstration purposes.</small></p>
       </div>
     </div>
 
@@ -508,25 +453,11 @@
       <div class="col m-span-12 px">
         <div class="d-ib b r -mb ml pq bg-default">HTML</div>
         <div class="card">
-          <pre><code class="hljs xml"><span class="hljs-comment">&lt;!-- All corners --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"r"</span>&gt;</span>r<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"round"</span>&gt;</span>round<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-
-<span class="hljs-comment">&lt;!-- Individual corners --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"rtl"</span>&gt;</span>rtl<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"rtr"</span>&gt;</span>rtr<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"rbr"</span>&gt;</span>rbr<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"rbl"</span>&gt;</span>rbl<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-
-<span class="hljs-comment">&lt;!-- Side combinations --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"rt"</span>&gt;</span>rt<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"rb"</span>&gt;</span>rb<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"rl"</span>&gt;</span>rl<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"rr"</span>&gt;</span>rr<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+          <pre><code class="hljs xml"><span class="hljs-comment">&lt;!-- All corners --&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"r"</span>&gt;</span>r<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"round"</span>&gt;</span>round<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><br /><span class="hljs-comment">&lt;!-- Individual corners --&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"rtl"</span>&gt;</span>rtl<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"rtr"</span>&gt;</span>rtr<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"rbr"</span>&gt;</span>rbr<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"rbl"</span>&gt;</span>rbl<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><br /><span class="hljs-comment">&lt;!-- Side combinations --&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"rt"</span>&gt;</span>rt<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"rb"</span>&gt;</span>rb<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"rl"</span>&gt;</span>rl<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"rr"</span>&gt;</span>rr<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
         </div>
       </div>
       <div class="col m-span-12 px">
-        <div class="d-ib b r -mb ml pq bg-default">Output</div>
+        <div class="d-ib b r -mb ml pq bg-default">Output*</div>
         <div class="card">
           <div class="mb">
             <div class="d-ib bg-alt p mr mb b r">r</div>
@@ -545,6 +476,7 @@
             <div class="d-ib bg-alt p mr mb b rr">rr</div>
           </div>
         </div>
+        <p>*<small>Additional styles applied for demonstration purposes.</small></p>
       </div>
     </div>
     <h3>Border Radius Classes</h3>
@@ -599,10 +531,8 @@
       </tbody>
     </table>
     <p class="mt">
-      <small
-        ><strong>Note:</strong> Add <code>0</code> suffix (e.g.,
-        <code>r0</code>, <code>rt0</code>) to cancel border radius.</small
-      >
+      <small><strong>Note:</strong> Add <code>0</code> suffix (e.g.,
+        <code>r0</code>, <code>rt0</code>) to cancel border radius.</small>
     </p>
 
     <h2 id="padding">Padding</h2>
@@ -620,29 +550,18 @@
           Margins
         </li>
       </ul>
-      <p>
-        <small
-          >Additional styles may be added to the example output (borders,
-          spacing, colors) for demonstration.</small
-        >
-      </p>
+      <p>*<small>Additional styles applied for demonstration purposes.</small></p>
     </div>
 
     <div class="row -mx">
       <div class="col m-span-12 px">
         <div class="d-ib b r -mb ml pq bg-default">HTML</div>
         <div class="card">
-          <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p"</span>&gt;</span>p<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"pt"</span>&gt;</span>pt<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"pr"</span>&gt;</span>pr<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"pb"</span>&gt;</span>pb<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"pl"</span>&gt;</span>pl<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"px"</span>&gt;</span>px<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"py"</span>&gt;</span>py<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+          <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p"</span>&gt;</span>p<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"pt"</span>&gt;</span>pt<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"pr"</span>&gt;</span>pr<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"pb"</span>&gt;</span>pb<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"pl"</span>&gt;</span>pl<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"px"</span>&gt;</span>px<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"py"</span>&gt;</span>py<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
         </div>
       </div>
       <div class="col m-span-12 px">
-        <div class="d-ib b r -mb ml pq bg-default">Output</div>
+        <div class="d-ib b r -mb ml pq bg-default">Output*</div>
         <div class="card">
           <div class="d-ib bg-success mx mb p">
             <div class="d-ib bg-alt pq">p</div>
@@ -674,17 +593,11 @@
       <div class="col m-span-12 px">
         <div class="d-ib b r -mb ml pq bg-default">HTML</div>
         <div class="card">
-          <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"m"</span>&gt;</span>m<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mt"</span>&gt;</span>mt<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mr"</span>&gt;</span>mr<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mb"</span>&gt;</span>mb<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"ml"</span>&gt;</span>ml<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mx"</span>&gt;</span>mx<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"my"</span>&gt;</span>my<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+          <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"m"</span>&gt;</span>m<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mt"</span>&gt;</span>mt<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mr"</span>&gt;</span>mr<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mb"</span>&gt;</span>mb<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"ml"</span>&gt;</span>ml<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mx"</span>&gt;</span>mx<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"my"</span>&gt;</span>my<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
         </div>
       </div>
       <div class="col m-span-12 px">
-        <div class="d-ib b r -mb ml pq bg-default">Output</div>
+        <div class="d-ib b r -mb ml pq bg-default">Output*</div>
         <div class="card">
           <div class="d-ib bg-warning mx mb p">
             <div class="d-ib bg-alt pq">m</div>
@@ -716,17 +629,11 @@
       <div class="col m-span-12 px">
         <div class="d-ib b r -mb ml pq bg-default">HTML</div>
         <div class="card">
-          <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"-m"</span>&gt;</span>-m<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"-mt"</span>&gt;</span>-mt<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"-mr"</span>&gt;</span>-mr<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"-mb"</span>&gt;</span>-mb<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"-ml"</span>&gt;</span>-ml<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"-mx"</span>&gt;</span>-mx<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"-my"</span>&gt;</span>-my<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+          <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"-m"</span>&gt;</span>-m<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"-mt"</span>&gt;</span>-mt<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"-mr"</span>&gt;</span>-mr<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"-mb"</span>&gt;</span>-mb<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"-ml"</span>&gt;</span>-ml<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"-mx"</span>&gt;</span>-mx<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"-my"</span>&gt;</span>-my<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
         </div>
       </div>
       <div class="col m-span-12 px">
-        <div class="d-ib b r -mb ml pq bg-default">Output</div>
+        <div class="d-ib b r -mb ml pq bg-default">Output*</div>
         <div class="card">
           <div class="d-ib bg-danger mx mb p">
             <div class="d-ib bg-alt pq">-m</div>
@@ -758,71 +665,44 @@
       <div class="col m-span-12 px">
         <div class="d-ib b r -mb ml pq bg-default">HTML</div>
         <div class="card">
-          <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"m m0"</span>&gt;</span>m m0<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"m mt0"</span>&gt;</span>m mt0<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"m mr0"</span>&gt;</span>m mr0<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"m mb0"</span>&gt;</span>m mb0<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"m ml0"</span>&gt;</span>m ml0<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"m mx0"</span>&gt;</span>m mx0<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"m my0"</span>&gt;</span>m my0<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+          <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"m m0"</span>&gt;</span>m m0<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"m mt0"</span>&gt;</span>m mt0<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"m mr0"</span>&gt;</span>m mr0<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"m mb0"</span>&gt;</span>m mb0<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"m ml0"</span>&gt;</span>m ml0<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"m mx0"</span>&gt;</span>m mx0<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"m my0"</span>&gt;</span>m my0<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
         </div>
       </div>
       <div class="col m-span-12 px">
-        <div class="d-ib b r -mb ml pq bg-default">Output</div>
+        <div class="d-ib b r -mb ml pq bg-default">Output*</div>
         <div class="card">
           <div class="d-ib bg-warning mx mb">
-            <div
-              class="d-ib bg-alt pq b"
-              style="border-color: var(--c_danger) !important"
-            >
+            <div class="d-ib bg-alt pq b" style="border-color: var(--c_danger) !important">
               m m0
             </div>
           </div>
           <div class="d-ib bg-warning mx mb px pb">
-            <div
-              class="d-ib bg-alt pq bt"
-              style="border-color: var(--c_danger) !important"
-            >
+            <div class="d-ib bg-alt pq bt" style="border-color: var(--c_danger) !important">
               m mt0
             </div>
           </div>
           <div class="d-ib bg-warning mx mb py pl">
-            <div
-              class="d-ib bg-alt pq br"
-              style="border-color: var(--c_danger) !important"
-            >
+            <div class="d-ib bg-alt pq br" style="border-color: var(--c_danger) !important">
               m mr0
             </div>
           </div>
           <div class="d-ib bg-warning mx mb px pt">
-            <div
-              class="d-ib bg-alt pq bb"
-              style="border-color: var(--c_danger) !important"
-            >
+            <div class="d-ib bg-alt pq bb" style="border-color: var(--c_danger) !important">
               m mb0
             </div>
           </div>
           <div class="d-ib bg-warning mx mb py pr">
-            <div
-              class="d-ib bg-alt pq bl"
-              style="border-color: var(--c_danger) !important"
-            >
+            <div class="d-ib bg-alt pq bl" style="border-color: var(--c_danger) !important">
               m ml0
             </div>
           </div>
           <div class="d-ib bg-warning mx mb py">
-            <div
-              class="d-ib bg-alt pq bx"
-              style="border-color: var(--c_danger) !important"
-            >
+            <div class="d-ib bg-alt pq bx" style="border-color: var(--c_danger) !important">
               m mx0
             </div>
           </div>
           <div class="d-ib bg-warning mx mb px">
-            <div
-              class="d-ib bg-alt pq by"
-              style="border-color: var(--c_danger) !important"
-            >
+            <div class="d-ib bg-alt pq by" style="border-color: var(--c_danger) !important">
               m my0
             </div>
           </div>
@@ -837,21 +717,7 @@
       <div class="col m-span-12 px">
         <div class="d-ib b r -mb ml pq bg-default">HTML</div>
         <div class="card">
-          <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Input"</span> /&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Textarea"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">select</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Option 1<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Option 2<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Option 3<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">multiple</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Option 1<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Option 2<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Option 3<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Option 4<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Option 5<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Option 6<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span></code></pre>
+          <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Input"</span> /&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Textarea"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">select</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Option 1<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Option 2<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Option 3<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">multiple</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Option 1<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Option 2<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Option 3<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Option 4<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Option 5<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Option 6<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span></code></pre>
         </div>
       </div>
       <div class="col m-span-12 px">
@@ -881,8 +747,7 @@
       <div class="col m-span-12 px">
         <div class="d-ib b r -mb ml pq bg-default">HTML</div>
         <div class="card">
-          <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"input"</span>&gt;</span>Input:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"input"</span> /&gt;</span></code></pre>
+          <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"input"</span>&gt;</span>Input:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"input"</span> /&gt;</span></code></pre>
         </div>
       </div>
       <div class="col m-span-12 px">
@@ -899,15 +764,7 @@
       <div class="col m-span-12 px">
         <div class="d-ib b r -mb ml pq bg-default">HTML</div>
         <div class="card">
-          <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"check1"</span> /&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"check1"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"checkbox"</span>&gt;</span>Check 1<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"check2"</span> /&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"check2"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"checkbox"</span>&gt;</span>Check 2<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-
-<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"radios"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"rad1"</span> /&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"rad1"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"checkbox"</span>&gt;</span>Radio 1<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"radios"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"rad2"</span> /&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"rad2"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"checkbox"</span>&gt;</span>Radio 2<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span></code></pre>
+          <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"check1"</span> /&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"check1"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"checkbox"</span>&gt;</span>Check 1<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"check2"</span> /&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"check2"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"checkbox"</span>&gt;</span>Check 2<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"radios"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"rad1"</span> /&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"rad1"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"checkbox"</span>&gt;</span>Radio 1<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"radios"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"rad2"</span> /&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"rad2"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"checkbox"</span>&gt;</span>Radio 2<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span></code></pre>
         </div>
       </div>
       <div class="col m-span-12 px">
@@ -933,10 +790,7 @@
       <div class="col m-span-12 px">
         <div class="d-ib b r -mb ml pq bg-default">HTML</div>
         <div class="card">
-          <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>button<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"input"</span> /&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"submit input"</span> /&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn"</span>&gt;</span>a.btn<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></code></pre>
+          <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>button<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"input"</span> /&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"submit input"</span> /&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn"</span>&gt;</span>a.btn<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></code></pre>
         </div>
       </div>
       <div class="col m-span-12 px">
@@ -955,12 +809,7 @@
       <div class="col m-span-12 px">
         <div class="d-ib b r -mb ml pq bg-default">HTML</div>
         <div class="card">
-          <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>Default<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"primary"</span>&gt;</span>Primary<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"secondary"</span>&gt;</span>Secondary<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"success"</span>&gt;</span>Success<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"warning"</span>&gt;</span>Warning<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"danger"</span>&gt;</span>Danger<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
+          <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>Default<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"primary"</span>&gt;</span>Primary<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"secondary"</span>&gt;</span>Secondary<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"success"</span>&gt;</span>Success<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"warning"</span>&gt;</span>Warning<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"danger"</span>&gt;</span>Danger<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
         </div>
       </div>
       <div class="col m-span-12 px">
@@ -981,9 +830,7 @@
       <div class="col m-span-12 px">
         <div class="d-ib b r -mb ml pq bg-default">HTML</div>
         <div class="card">
-          <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"small"</span>&gt;</span>Small<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>Normal<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"large"</span>&gt;</span>Large<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
+          <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"small"</span>&gt;</span>Small<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>Normal<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"large"</span>&gt;</span>Large<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
         </div>
       </div>
       <div class="col m-span-12 px">
@@ -1001,11 +848,7 @@
       <div class="col m-span-12 px">
         <div class="d-ib b r -mb ml pq bg-default">HTML</div>
         <div class="card">
-          <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn-grp"</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>Default<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>Default<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>Default<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+          <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn-grp"</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>Default<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>Default<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>Default<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
         </div>
       </div>
       <div class="col m-span-12 px">
@@ -1045,36 +888,7 @@
       <div class="col m-span-12 px">
         <div class="d-ib b r -mb ml pq bg-default">HTML</div>
         <div class="card">
-          <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">thead</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Field 1<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Field 2<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Field 3<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Field 4<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">thead</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">tbody</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 1 - Data 1<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 1 - Data 2<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 1 - Data 3<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 1 - Data 4<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 2 - Data 1<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 2 - Data 2<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 2 - Data 3<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 2 - Data 4<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 3 - Data 1<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 3 - Data 2<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 3 - Data 3<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 3 - Data 4<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">tbody</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span></code></pre>
+          <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">thead</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br />      <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Field 1<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br />      <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Field 2<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br />      <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Field 3<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br />      <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Field 4<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br />    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br />  <span class="hljs-tag">&lt;/<span class="hljs-name">thead</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">tbody</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br />      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 1 - Data 1<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br />      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 1 - Data 2<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br />      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 1 - Data 3<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br />      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 1 - Data 4<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br />    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br />      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 2 - Data 1<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br />      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 2 - Data 2<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br />      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 2 - Data 3<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br />      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 2 - Data 4<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br />    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br />      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 3 - Data 1<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br />      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 3 - Data 2<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br />      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 3 - Data 3<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br />      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 3 - Data 4<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br />    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br />  <span class="hljs-tag">&lt;/<span class="hljs-name">tbody</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span></code></pre>
         </div>
       </div>
       <div class="col m-span-12 px">
@@ -1119,55 +933,12 @@
       <div class="col m-span-12 px">
         <div class="d-ib b r -mb ml pq bg-default">HTML</div>
         <div class="card">
-          <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"table-wrapper"</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">thead</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Field 1<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Field 2<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Field 3<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Field 4<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Field 5<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Field 6<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">thead</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">tbody</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 1 - Data 1<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 1 - Data 2<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 1 - Data 3<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 1 - Data 4<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 1 - Data 5<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 1 - Data 6<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 2 - Data 1<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 2 - Data 2<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 2 - Data 3<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 2 - Data 4<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 2 - Data 5<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 2 - Data 6<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 3 - Data 1<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 3 - Data 2<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 3 - Data 3<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 3 - Data 4<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 3 - Data 5<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 3 - Data 6<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">tbody</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+          <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"table-wrapper"</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">thead</span>&gt;</span><br />      <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br />        <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Field 1<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br />        <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Field 2<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br />        <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Field 3<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br />        <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Field 4<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br />        <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Field 5<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br />        <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Field 6<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br />      <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br />    <span class="hljs-tag">&lt;/<span class="hljs-name">thead</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">tbody</span>&gt;</span><br />      <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br />        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 1 - Data 1<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br />        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 1 - Data 2<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br />        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 1 - Data 3<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br />        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 1 - Data 4<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br />        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 1 - Data 5<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br />        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 1 - Data 6<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br />      <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br />      <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br />        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 2 - Data 1<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br />        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 2 - Data 2<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br />        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 2 - Data 3<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br />        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 2 - Data 4<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br />        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 2 - Data 5<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br />        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 2 - Data 6<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br />      <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br />      <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br />        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 3 - Data 1<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br />        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 3 - Data 2<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br />        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 3 - Data 3<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br />        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 3 - Data 4<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br />        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 3 - Data 5<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br />        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 3 - Data 6<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br />      <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br />    <span class="hljs-tag">&lt;/<span class="hljs-name">tbody</span>&gt;</span><br />  <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
         </div>
       </div>
       <div class="col m-span-12 px">
         <div class="d-ib b r -mb ml pq bg-default">Output</div>
-        <div
-          class="card pb"
-          id="resizable-table-card"
-          style="resize: horizontal; overflow: auto; min-width: 200px"
-        >
+        <div class="card pb" id="resizable-table-card" style="resize: horizontal; overflow: auto; min-width: 200px">
           <div class="table-wrapper">
             <table>
               <thead>
@@ -1219,13 +990,7 @@
       <div class="col m-span-12 px">
         <div class="d-ib b r -mb ml pq bg-default">HTML</div>
         <div class="card">
-          <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"bg-alt"</span>&gt;</span>Alternate<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"bg-inv"</span>&gt;</span>Inverse<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"bg-primary"</span>&gt;</span>Primary<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"bg-secondary"</span>&gt;</span>Secondary<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"bg-success"</span>&gt;</span>Success<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"bg-warning"</span>&gt;</span>Warning<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"bg-danger"</span>&gt;</span>Danger<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+          <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"bg-alt"</span>&gt;</span>Alternate<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"bg-inv"</span>&gt;</span>Inverse<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"bg-primary"</span>&gt;</span>Primary<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"bg-secondary"</span>&gt;</span>Secondary<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"bg-success"</span>&gt;</span>Success<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"bg-warning"</span>&gt;</span>Warning<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"bg-danger"</span>&gt;</span>Danger<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
         </div>
       </div>
       <div class="col m-span-12 px">
@@ -1247,14 +1012,7 @@
       <div class="col m-span-12 px">
         <div class="d-ib b r -mb ml pq bg-default">HTML</div>
         <div class="card">
-          <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Normal<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-muted"</span>&gt;</span>Muted<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-inv"</span>&gt;</span>Inverse<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-primary"</span>&gt;</span>Primary<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-secondary"</span>&gt;</span>Secondary<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-success"</span>&gt;</span>Success<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-warning"</span>&gt;</span>Warning<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-danger"</span>&gt;</span>Danger<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+          <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Normal<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-muted"</span>&gt;</span>Muted<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-inv"</span>&gt;</span>Inverse<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-primary"</span>&gt;</span>Primary<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-secondary"</span>&gt;</span>Secondary<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-success"</span>&gt;</span>Success<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-warning"</span>&gt;</span>Warning<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-danger"</span>&gt;</span>Danger<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
         </div>
       </div>
       <div class="col m-span-12 px">
@@ -1271,7 +1029,27 @@
         </div>
       </div>
     </div>
+
+    <h2 id="noScroll">Disable Body Scrolling</h2>
+    <p>Add the <code>no-scroll</code> class to the body to temparily disable body scrolling, this is used for things
+      like dialogs and side menus that temporarily take over the page.</p>
+    <div class="row -mx">
+      <div class="col m-span-12 px">
+        <div class="d-ib b r -mb ml pq bg-default">HTML</div>
+        <div class="card">
+          <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"document.body.classList.toggle('no-scroll')"</span>&gt;</span>Toggle Body Scrolling<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
+        </div>
+      </div>
+      <div class="col m-span-12 px">
+        <div class="d-ib b r -mb ml pq bg-default">Output</div>
+        <div class="card">
+          <button class="mb" onclick="document.body.classList.toggle('no-scroll')">Toggle Body Scrolling</button>
+        </div>
+      </div>
+    </div>
+
   </main>
+  <div style="height:33vh"></div>
   <script>
     // Initialize theme from localStorage on page load
     function initializeTheme() {
@@ -1314,14 +1092,10 @@
         }
         set theme(v) {
           document.documentElement.setAttribute("theme", v);
-          // Save theme to localStorage
           localStorage.setItem("kempo-css-theme", v);
         }
       }
-    ); // Set max-width for resizable table card based on initial size    const resizableCard = document.getElementById('resizable-table-card');
-    if (resizableCard) {
-      resizableCard.style.maxWidth = resizableCard.offsetWidth + "px";
-    }
+    );
   </script>
 </body>
 </html>
