@@ -95,3 +95,16 @@ ISC License - feel free to use in personal and commercial projects.
 ---
 
 **[View Documentation](https://dustinpoissant.github.io/kempo-css/)** | **[Report Issues](https://github.com/dustinpoissant/kempo-css/issues)**
+
+## Contributing
+
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details on:
+
+- Setting up your development environment
+- Code style and conventions
+- Testing guidelines
+- Pull request process
+
+## License
+
+This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic License](https://creativecommons.org/licenses/by-nc-sa/2.0/) - see the [LICENSE.md](LICENSE.md) file for details.
