@@ -1,0 +1,17 @@
+{
+  "customRoutes": {
+    "/kempo.min.css": "../src/kempo.css",
+    "/kempo-hljs.min.css": "../src/kempo-hljs.css",
+    "/kempo-ui/**": "../node_modules/kempo-ui/dist/**",
+    "/icons/**": "../node_modules/kempo-ui/icons/**"
+  },
+  "middleware": {
+    "logging": {
+      "enabled": true,
+      "includeResponseTime": true
+    },
+    "security": {
+      "enabled": false
+    }
+  }
+}

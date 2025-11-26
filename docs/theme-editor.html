@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kempo CSS</title>
+  <link rel="icon" type="image/png" sizes="48x48" href="./media/icon48.png">
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="stylesheet" href="./kempo.min.css" />
+  <link rel="stylesheet" href="./kempo-hljs.min.css" />
+  <script src="./init.js" type="module"></script>
+  <style>
+    html {
+      scrollbar-gutter: unset;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100vh;
+    }
+
+    #grid-container {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      height: 100vh;
+    }
+
+    k-split {
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="grid-container">
+    <nav class="d-f bg-primary">
+      <button id="toggleNavSideMenu" class="link">
+        <k-icon name="menu"></k-icon>
+      </button>
+      <a href="./" class="d-if ph" style="align-items: center">
+        <img src="./media/icon32.png" alt="Kempo CSS Icon" class="pr" />
+        Kempo CSS
+      </a>
+      <a href="./theme-editor.html">Theme Editor</a>
+      <div class="flex"></div>
+      <a href="https://github.com/dustinpoissant/kempo-css?tab=License-1-ov-file#creative-commons-attribution-noncommercial-sharealike-20"
+        target="_blank"><k-icon name="license"></k-icon></a>
+      <a href="https://github.com/dustinpoissant/kempo-css" target="_blank"><k-icon name="github-mark"></k-icon></a>
+      <k-theme-switcher></k-theme-switcher>
+    </nav>
+    <k-side-menu id="navSideMenu">
+      <menu>
+        <div class="ta-center bb mb r0">
+          <h1 class="tc-primary">Kempo CSS</h1>
+          <h3 class="tc-primary">Theme Builder</h3>
+          <img src="./media/icon128.png" alt="Kempo UI Icon" />
+        </div>
+        <h5><a href="#editColors">Colors</a></h5>
+        <hr />
+        <a href="https://github.com/dustinpoissant/kempo-css?tab=License-1-ov-file#creative-commons-attribution-noncommercial-sharealike-20"
+          target="_blank"><k-icon name="license"></k-icon> Read the Lisence</a><br />
+        <a href="https://github.com/dustinpoissant/kempo-css" target="_blank"><k-icon name="github-mark"></k-icon> View
+          on
+          GitHub</a>
+        <div style="height:33vh"></div>
+      </menu>
+    </k-side-menu>
+    <k-split style="--left_width: 24rem;">
+      <aside class="d-b p" style="overflow-y: auto; height: 100%;">
+        <div class="mb">
+          <div class="d-f full btn-grp mb">
+            <button id="downloadTheme" class="primary flex">Download Theme</button>
+            <button id="uploadThemeBtn" class="secondary flex">Upload Theme</button>
+          </div>
+          <label class="d-b mb-q">
+            <strong>Editing Theme</strong>
+            <select id="editingThemeSelect" class="w-100">
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+            </select>
+          </label>
+        </div>
+        <hr class="mb">
+        <div id="themeInputs"></div>
+      </aside>
+      <div slot="right" style="overflow-y: auto; height: 100%;">
+        <main style="padding: var(--spacer);">
+          <k-import src="./demo.inc.html"></k-import>
+        </main>
+      </div>
+    </k-split>
+  </div>
+  <script src="./nav.js" type="module"></script>
+  <script src="./kempo-ui/components/SideMenu.js" type="module"></script>
+  <script src="./kempo-ui/components/Split.js" type="module"></script>
+  <script src="./kempo-ui/components/Icon.js" type="module"></script>
+  <script src="./kempo-ui/components/ThemeSwitcher.js" type="module"></script>
+  <script src="./kempo-ui/components/Import.js" type="module"></script>
+  <script src="./kempo-ui/components/Resize.js" type="module"></script>
+  <script src="./kempo-ui/components/Card.js" type="module"></script>
+  <script src="./kempo-ui/components/ColorPicker.js" type="module"></script>
+  <script src="./kempo-ui/components/Dialog.js" type="module"></script>
+  <script src="./components/ThemePropertyInput.js" type="module"></script>
+  <script type="module">
+    import theme from '/kempo-ui/utils/theme.js';
+
+    /*
+      Simple Context for storing theme CSS
+    */
+    const themeContext = {};
+    const setContext = (key, value) => { themeContext[key] = value; };
+    const getContext = key => themeContext[key];
+
+    const defaultTheme = {
+      "--ff_body": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "--ff_heading": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "--ff_mono": "Consolas, monaco, monospace",
+      "--fs_base": "16px",
+      "--fs_small": "calc(0.6 * var(--fs_base))",
+      "--fs_large": "calc(1.5 * var(--fs_base))",
+      "--fs_h6": "var(--fs_base)",
+      "--fs_h5": "calc(1.25 * var(--fs_base))",
+      "--fs_h4": "calc(1.5 * var(--fs_base))",
+      "--fs_h3": "calc(1.75 * var(--fs_base))",
+      "--fs_h2": "calc(2 * var(--fs_base))",
+      "--fs_h1": "calc(2.5 * var(--fs_base))",
+      "--fw_base": "400",
+      "--fw_bold": "700",
+      "--spacer": "1rem",
+      "--spacer_h": "calc(0.5 * var(--spacer))",
+      "--spacer_q": "calc(0.25 * var(--spacer))",
+      "--line-height": "1.35em",
+      "--container_width": "90rem",
+      "--animation_ms": "256ms",
+      "--radius": "0.25rem",
+      "--link_decoration": "underline",
+      "--input_padding": "var(--spacer_h) var(--spacer)",
+      "--input_border_width": "1px",
+      "--btn_padding": "var(--spacer_h) var(--spacer)",
+      "--c_bg": { light: "rgb(249, 249, 249)", dark: "rgb(51, 51, 51)" },
+      "--c_bg__inv": { light: "rgb(51, 51, 51)", dark: "rgb(249, 249, 249)" },
+      "--c_bg__alt": { light: "rgb(238, 238, 238)", dark: "rgb(34, 34, 34)" },
+      "--c_overscroll": { light: "rgb(255, 255, 255)", dark: "rgb(0, 0, 0)" },
+      "--c_border": { light: "rgb(204, 204, 204)", dark: "rgb(119, 119, 119)" },
+      "--c_border__inv": { light: "var(--d_c_bg_border)", dark: "rgb(204, 204, 204)" },
+      "--c_primary": "rgb(51, 102, 255)",
+      "--c_primary__hover": "rgb(17, 68, 221)",
+      "--c_secondary": "rgb(153, 51, 255)",
+      "--c_secondary__hover": "rgb(119, 17, 221)",
+      "--c_success": "rgb(0, 136, 0)",
+      "--c_success__hover": "rgb(0, 102, 0)",
+      "--c_warning": "rgb(255, 102, 0)",
+      "--c_warning__hover": "rgb(221, 68, 0)",
+      "--c_danger": "rgb(255, 0, 51)",
+      "--c_danger__hover": "rgb(221, 0, 17)",
+      "--c_input_accent": "rgb(51, 102, 255)",
+      "--c_input_border": "var(--c_border)",
+      "--c_highlight": { light: "rgba(41, 100, 210, 0.25)", dark: "rgba(0, 89, 255, 0.25)" },
+      "--tc": { light: "rgba(0, 0, 0, 0.93)", dark: "rgba(255, 255, 255, 0.93)" },
+      "--tc_dark": { light: "rgba(0, 0, 0, 0.93)", dark: "rgba(0, 0, 0, 0.93)" },
+      "--tc_light": { light: "rgba(255, 255, 255, 0.93)", dark: "rgba(255, 255, 255, 0.93)" },
+      "--tc_inv": { light: "rgba(255, 255, 255, 0.93)", dark: "rgba(0, 0, 0, 0.93)" },
+      "--tc_muted": { light: "rgba(0, 0, 0, 0.5)", dark: "rgba(255, 255, 255, 0.5)" },
+      "--tc_on_primary": { light: "rgba(255, 255, 255, 0.93)", dark: "rgba(255, 255, 255, 0.93)" },
+      "--tc_on_secondary": { light: "rgba(255, 255, 255, 0.93)", dark: "rgba(255, 255, 255, 0.93)" },
+      "--tc_on_success": { light: "rgba(255, 255, 255, 0.93)", dark: "rgba(255, 255, 255, 0.93)" },
+      "--tc_on_warning": { light: "rgba(255, 255, 255, 0.93)", dark: "rgba(255, 255, 255, 0.93)" },
+      "--tc_on_danger": { light: "rgba(255, 255, 255, 0.93)", dark: "rgba(255, 255, 255, 0.93)" },
+      "--c_overlay": "rgba(0, 0, 0, 0.5)",
+      "--tc_primary": { light: "#36f", dark: "rgb(138, 180, 248)" },
+      "--tc_secondary": { light: "#93f", dark: "rgb(187, 102, 255)" },
+      "--tc_success": { light: "#080", dark: "rgb(102, 187, 102)" },
+      "--tc_warning": { light: "#f60", dark: "rgb(255, 153, 51)" },
+      "--tc_danger": { light: "#f03", dark: "rgb(255, 85, 119)" },
+      "--btn_box_shadow": "0 0 0 transparent",
+      "--btn_box_shadow__hover": "0 0 0 transparent",
+      "--btn_border": "transparent",
+      "--btn_bg": { light: "rgb(221, 221, 221)", dark: "rgb(170, 170, 170)" },
+      "--btn_bg__hover": { light: "rgb(204, 204, 204)", dark: "rgb(187, 187, 187)" },
+      "--btn_tc": { light: "rgba(0, 0, 0, 0.93)", dark: "rgba(0, 0, 0, 0.93)" },
+      "--btn_transparent__hover": { light: "rgba(0, 0, 0, 0.05)", dark: "rgba(255, 255, 255, 0.05)" },
+      "--tc_link": "var(--tc_primary)",
+      "--tc_link__hover": "var(--tc_secondary)",
+      "--tc_link__inv": "var(--tc_primary__inv)",
+      "--tc_link__inv__hover": "var(--tc_secondary__inv)",
+      "--focus_shadow": "0 0 2px 2px var(--c_primary)",
+      "--focus_shadow_on_primary": "0 0 2px 2px var(--tc_on_primary)",
+      "--input_bg": { light: "white", dark: "var(--c_bg__alt)" },
+      "--input_tc": { light: "rgba(0, 0, 0, 0.93)", dark: "var(--tc)" },
+      "--drop_shadow": { light: "0 0.25rem 0.5rem rgba(0, 0, 0, 0.333)", dark: "0 0.25rem 0.5rem rgba(0, 0, 0, 0.25)" },
+      "--date_picker_icon_filter": { light: "invert(0)", dark: "invert(1)" }
+    };
+
+    /*
+      Current Theme State
+    */
+    const currentTheme = { light: {}, dark: {} };
+    const editingTheme = { value: theme.getCalculated() };
+    const availableProperties = Object.keys(defaultTheme);
+
+    /*
+      Initialize Theme State
+    */
+    Object.entries(defaultTheme).forEach(([prop, value]) => {
+      if(typeof value === 'object' && value.light){
+        currentTheme.light[prop] = value.light;
+        currentTheme.dark[prop] = value.dark;
+      }else{
+        currentTheme.light[prop] = value;
+        currentTheme.dark[prop] = value;
+      }
+    });
+
+    /*
+      Render Theme Inputs
+    */
+    const themeInputsContainer = document.getElementById('themeInputs');
+    
+    const propertyCategories = [
+      {
+        title: 'Theme Colors',
+        props: [
+          '--c_primary', '--c_primary__hover',
+          '--c_secondary', '--c_secondary__hover',
+          '--c_success', '--c_success__hover',
+          '--c_warning', '--c_warning__hover',
+          '--c_danger', '--c_danger__hover'
+        ]
+      },
+      {
+        title: 'Background Colors',
+        props: [
+          '--c_bg', '--c_bg__inv', '--c_bg__alt', '--c_overscroll'
+        ]
+      },
+      {
+        title: 'Text Colors',
+        props: [
+          '--tc', '--tc_dark', '--tc_light', '--tc_inv', '--tc_muted',
+          '--tc_on_primary', '--tc_on_secondary', '--tc_on_success', '--tc_on_warning', '--tc_on_danger',
+          '--tc_primary', '--tc_secondary', '--tc_success', '--tc_warning', '--tc_danger'
+        ]
+      },
+      {
+        title: 'Border Colors',
+        props: [
+          '--c_border', '--c_border__inv'
+        ]
+      },
+      {
+        title: 'Link Colors',
+        props: [
+          '--tc_link', '--tc_link__hover', '--tc_link__inv', '--tc_link__inv__hover'
+        ]
+      },
+      {
+        title: 'Button Styles',
+        props: [
+          '--btn_bg', '--btn_bg__hover', '--btn_tc', '--btn_transparent__hover',
+          '--btn_border', '--btn_box_shadow', '--btn_box_shadow__hover'
+        ]
+      },
+      {
+        title: 'Input Styles',
+        props: [
+          '--input_bg', '--input_tc', '--c_input_accent', '--c_input_border'
+        ]
+      },
+      {
+        title: 'Focus & Effects',
+        props: [
+          '--focus_shadow', '--focus_shadow_on_primary',
+          '--drop_shadow', '--date_picker_icon_filter',
+          '--c_highlight', '--c_overlay'
+        ]
+      },
+      {
+        title: 'Typography',
+        props: [
+          '--ff_body', '--ff_heading', '--ff_mono',
+          '--fs_base', '--fs_small', '--fs_large',
+          '--fs_h1', '--fs_h2', '--fs_h3', '--fs_h4', '--fs_h5', '--fs_h6',
+          '--fw_base', '--fw_bold'
+        ]
+      },
+      {
+        title: 'Spacing & Layout',
+        props: [
+          '--spacer', '--line-height', '--container_width'
+        ]
+      },
+      {
+        title: 'Effects & Animation',
+        props: [
+          '--animation_ms', '--radius', '--link_decoration',
+          '--input_padding', '--input_border_width', '--btn_padding'
+        ]
+      }
+    ];
+
+    const isColorValue = (value) => {
+      if(!value || typeof value !== 'string') return false;
+      if(value.startsWith('var(')) return false;
+      if(value.startsWith('calc(')) return false;
+      if(value.includes('px') || value.includes('rem') || value.includes('em')) return false;
+      if(value.includes('ms') || value.includes('s')) return false;
+      if(/^[\d.]+$/.test(value)) return false;
+      if(value.startsWith('"') || value.startsWith("'")) return false;
+      return value.startsWith('#') || 
+             value.startsWith('rgb') || 
+             value.startsWith('hsl') ||
+             value.startsWith('hwb') ||
+             value.startsWith('lab') ||
+             value.startsWith('lch') ||
+             value.startsWith('oklab') ||
+             value.startsWith('oklch') ||
+             value === 'transparent' ||
+             value.includes('light-dark');
+    };
+
+    const normalizeColor = (color) => {
+      if(!color || typeof color !== 'string') return color;
+      if(color.startsWith('var(')) return color;
+      if(!isColorValue(color)) return color;
+      const testEl = document.createElement('div');
+      testEl.style.color = color;
+      document.body.appendChild(testEl);
+      const computed = window.getComputedStyle(testEl).color;
+      document.body.removeChild(testEl);
+      return computed || color;
+    };
+
+    const colorsEqual = (color1, color2) => {
+      if(color1 === color2) return true;
+      if(!isColorValue(color1) || !isColorValue(color2)) return color1 === color2;
+      return normalizeColor(color1) === normalizeColor(color2);
+    };
+
+    const getComputedValue = (varName) => {
+      const testEl = document.createElement('div');
+      testEl.style.color = varName;
+      document.body.appendChild(testEl);
+      const computed = window.getComputedStyle(testEl).color;
+      document.body.removeChild(testEl);
+      return computed;
+    };
+
+    const isColorProperty = (prop) => {
+      return prop.startsWith('--c_') || prop.startsWith('--tc_') || prop === '--tc' || (prop.startsWith('--btn_') && !prop.includes('shadow'));
+    };
+
+    const isFontWeightProperty = (prop) => {
+      return prop.startsWith('--fw_');
+    };
+
+    const propToLabel = (prop) => {
+      const withoutPrefix = prop.replace(/^--/, '');
+      const words = withoutPrefix.split('_').filter(word => {
+        return word !== 'c' && word !== 'tc';
+      }).map(word => {
+        const abbrevMap = {
+          'bg': 'Background', 'inv': 'Inverse',
+          'ff': 'Font Family', 'fs': 'Font Size', 'fw': 'Font Weight',
+          'btn': 'Button', 'h1': 'H1', 'h2': 'H2', 'h3': 'H3', 'h4': 'H4', 'h5': 'H5', 'h6': 'H6',
+          'ms': 'Duration', 'h': 'Half', 'q': 'Quarter'
+        };
+        if(abbrevMap[word]) return abbrevMap[word];
+        return word.charAt(0).toUpperCase() + word.slice(1);
+      });
+      return words.join(' ');
+    };
+
+    propertyCategories.forEach(({ title, props }) => {
+      const section = document.createElement('div');
+      section.className = 'mb';
+      
+      const heading = document.createElement('h4');
+      heading.className = 'mb-h';
+      heading.textContent = title;
+      section.appendChild(heading);
+      
+      props.forEach(prop => {
+        if(defaultTheme[prop] === undefined) return;
+        
+        const value = currentTheme[editingTheme.value][prop];
+        
+        if(isColorProperty(prop)){
+          const input = document.createElement('k-theme-property-input');
+          input.setAttribute('prop-name', prop);
+          input.setAttribute('label', propToLabel(prop));
+          input.setAttribute('available-properties', JSON.stringify(availableProperties));
+          input.setAttribute('value', value);
+          
+          if(isColorValue(value)){
+            input.setAttribute('mode', 'color');
+          }else{
+            input.setAttribute('mode', 'var');
+            if(value.startsWith('var(')){
+              const computedColor = getComputedValue(value);
+              if(computedColor && computedColor !== 'rgba(0, 0, 0, 0)' && !computedColor.includes('NaN')){
+                input.setAttribute('initial-color', computedColor);
+              }
+            }
+          }
+          
+          input.className = 'mb';
+          section.appendChild(input);
+        }else if(isFontWeightProperty(prop)){
+          const wrapper = document.createElement('div');
+          wrapper.className = 'mb';
+          
+          const label = document.createElement('label');
+          label.innerHTML = `${propToLabel(prop)} <small class="tc-muted"><code>${prop}</code></small>`;
+          
+          const input = document.createElement('input');
+          input.setAttribute('type', 'number');
+          input.setAttribute('data-prop-name', prop);
+          input.setAttribute('min', '100');
+          input.setAttribute('max', '900');
+          input.setAttribute('step', '100');
+          input.value = value;
+          input.style.fontFamily = 'var(--ff_mono)';
+          input.style.fontSize = '0.875rem';
+          
+          wrapper.appendChild(label);
+          wrapper.appendChild(input);
+          section.appendChild(wrapper);
+        }else{
+          const wrapper = document.createElement('div');
+          wrapper.className = 'mb';
+          
+          const label = document.createElement('label');
+          label.innerHTML = `${propToLabel(prop)} <small class="tc-muted"><code>${prop}</code></small>`;
+          
+          const input = document.createElement('input');
+          input.setAttribute('type', 'text');
+          input.setAttribute('data-prop-name', prop);
+          input.value = value;
+          input.style.fontFamily = 'var(--ff_mono)';
+          input.style.fontSize = '0.875rem';
+          
+          wrapper.appendChild(label);
+          wrapper.appendChild(input);
+          section.appendChild(wrapper);
+        }
+      });
+      
+      themeInputsContainer.appendChild(section);
+    });
+
+    /*
+      Handle Theme Switch
+    */
+    const editingThemeSelect = document.getElementById('editingThemeSelect');
+    editingThemeSelect.value = editingTheme.value;
+    
+    const updateInputValues = () => {
+      document.querySelectorAll('k-theme-property-input').forEach(input => {
+        const prop = input.getAttribute('prop-name');
+        const value = currentTheme[editingTheme.value][prop];
+        input.setAttribute('value', value);
+      });
+      
+      document.querySelectorAll('input[data-prop-name]').forEach(input => {
+        const prop = input.getAttribute('data-prop-name');
+        const value = currentTheme[editingTheme.value][prop];
+        input.value = value;
+      });
+    };
+
+    editingThemeSelect.addEventListener('change', () => {
+      editingTheme.value = editingThemeSelect.value;
+      theme.set(editingTheme.value);
+      updateInputValues();
+    });
+
+    theme.subscribe(() => {
+      editingTheme.value = theme.getCalculated();
+      editingThemeSelect.value = editingTheme.value;
+      updateInputValues();
+    });
+
+    /*
+      Change Tracking
+    */
+    const getThemeDiff = () => {
+      const diff = {};
+      
+      ['light', 'dark'].forEach(themeMode => {
+        Object.entries(currentTheme[themeMode]).forEach(([prop, value]) => {
+          const defaultValue = typeof defaultTheme[prop] === 'object' 
+            ? defaultTheme[prop][themeMode] 
+            : defaultTheme[prop];
+          
+          const isEqual = isColorProperty(prop) 
+            ? colorsEqual(value, defaultValue) 
+            : value === defaultValue;
+          
+          if(!isEqual){
+            if(!diff[prop]) diff[prop] = {};
+            diff[prop][themeMode] = value;
+          }
+        });
+      });
+      
+      return diff;
+    };
+
+    const handlePropertyChange = (prop, value) => {
+      currentTheme[editingTheme.value][prop] = value;
+      
+      const diff = getThemeDiff();
+      const css = generateThemeCSS(diff);
+      applyThemeCSS(css);
+      console.log('Theme CSS:', css);
+    };
+
+    /*
+      CSS Generation
+    */
+    const generateThemeCSS = (diff) => {
+      if(Object.keys(diff).length === 0) return '';
+      
+      const cssLines = [];
+      
+      Object.entries(diff).forEach(([prop, value]) => {
+        if(typeof value === 'object'){
+          // Property has light/dark variants
+          const hasLight = value.light !== undefined;
+          const hasDark = value.dark !== undefined;
+          
+          if(hasLight && hasDark){
+            // Both themes changed - use light-dark()
+            cssLines.push(`  ${prop}: light-dark(${value.light}, ${value.dark});`);
+          } else if(hasLight){
+            // Only light changed - need to get dark from current or default
+            const darkValue = currentTheme.dark[prop] !== undefined 
+              ? currentTheme.dark[prop]
+              : (typeof defaultTheme[prop] === 'object' ? defaultTheme[prop].dark : defaultTheme[prop]);
+            cssLines.push(`  ${prop}: light-dark(${value.light}, ${darkValue});`);
+          } else if(hasDark){
+            // Only dark changed - need to get light from current or default
+            const lightValue = currentTheme.light[prop] !== undefined
+              ? currentTheme.light[prop]
+              : (typeof defaultTheme[prop] === 'object' ? defaultTheme[prop].light : defaultTheme[prop]);
+            cssLines.push(`  ${prop}: light-dark(${lightValue}, ${value.dark});`);
+          }
+        } else {
+          // Single value (non-themed property)
+          cssLines.push(`  ${prop}: ${value};`);
+        }
+      });
+      
+      if(cssLines.length === 0) return '';
+      
+      return `:root {\n${cssLines.join('\n')}\n}`;
+    };
+
+    const applyThemeCSS = (css) => {
+      let styleEl = document.getElementById('custom-theme');
+      if(!styleEl){
+        styleEl = document.createElement('style');
+        styleEl.id = 'custom-theme';
+        document.head.appendChild(styleEl);
+      }
+      styleEl.textContent = css;
+      
+      // Save to context for download
+      setContext('customThemeCSS', css);
+    };
+
+    /*
+      Event Listeners for Changes
+    */
+    document.addEventListener('value-change', (e) => {
+      const component = e.target;
+      if(component.tagName === 'K-THEME-PROPERTY-INPUT'){
+        const { propName, value } = e.detail;
+        handlePropertyChange(propName, value);
+      }
+    });
+
+    document.querySelectorAll('input[data-prop-name]').forEach(input => {
+      input.addEventListener('input', (e) => {
+        const prop = e.target.getAttribute('data-prop-name');
+        const value = e.target.value;
+        handlePropertyChange(prop, value);
+      });
+    });
+
+    /*
+      Setup color picker change listeners after components render
+      Listen directly to native color inputs since k-color-picker doesn't always re-dispatch events
+    */
+    const attachColorPickerListeners = () => {
+      document.querySelectorAll('k-theme-property-input').forEach(input => {
+        const colorPicker = input.shadowRoot?.querySelector('k-color-picker');
+        if(!colorPicker) return;
+        
+        // Get the native color input inside k-color-picker
+        const nativeColorInput = colorPicker.shadowRoot?.querySelector('input[type="color"]');
+        
+        if(nativeColorInput && !nativeColorInput._hasPageListener) {
+          nativeColorInput._hasPageListener = true;
+          
+          const handleNativeChange = () => {
+            const propName = input.getAttribute('prop-name');
+            const newValue = nativeColorInput.value;
+            colorPicker.value = newValue;
+            input.value = newValue;
+            handlePropertyChange(propName, newValue);
+          };
+          
+          // Listen to both input (while dragging) and change (on close)
+          nativeColorInput.addEventListener('input', handleNativeChange);
+          nativeColorInput.addEventListener('change', handleNativeChange);
+        }
+        
+        // Also listen to k-color-picker events for text input changes
+        if(colorPicker && !colorPicker._hasPageListener) {
+          colorPicker._hasPageListener = true;
+          const handleChange = () => {
+            const propName = input.getAttribute('prop-name');
+            const newValue = colorPicker.value;
+            input.value = newValue;
+            handlePropertyChange(propName, newValue);
+          };
+          colorPicker.addEventListener('change', handleChange);
+          colorPicker.addEventListener('input', handleChange);
+        }
+      });
+    };
+
+    // Run after initial render and periodically to catch dynamically added components
+    setTimeout(attachColorPickerListeners, 100);
+    setTimeout(attachColorPickerListeners, 500);
+    setTimeout(attachColorPickerListeners, 1000);
+
+    /*
+      Download Theme Button
+    */
+    const downloadThemeBtn = document.getElementById('downloadTheme');
+    downloadThemeBtn.addEventListener('click', () => {
+      const css = getContext('customThemeCSS');
+      
+      if(!css || css.trim() === ''){
+        alert('No theme changes to download. Make some changes first!');
+        return;
+      }
+      
+      // Create blob and download link
+      const blob = new Blob([css], { type: 'text/css' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'kempo-theme.css';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    });
+
+    /*
+      Upload Theme Button
+    */
+    const uploadThemeBtn = document.getElementById('uploadThemeBtn');
+    uploadThemeBtn.addEventListener('click', () => {
+      const dialogContent = document.createElement('div');
+      dialogContent.className = 'p';
+      dialogContent.innerHTML = `
+        <p class="mb">Upload a previously downloaded theme CSS file to restore your theme settings.</p>
+        <input type="file" id="themeFileInput" accept=".css" class="mb" />
+        <div id="uploadPreview" class="mb" style="display: none;">
+          <label><strong>Preview:</strong></label>
+          <pre style="max-height: 200px; overflow: auto; background: var(--c_bg__alt); padding: var(--spacer_h); border-radius: var(--radius); font-size: 0.8rem;"><code id="uploadPreviewCode"></code></pre>
+        </div>
+        <p id="uploadError" class="tc-danger mb" style="display: none;"></p>
+      `;
+      
+      let parsedTheme = null;
+      
+      const dialog = window.KDialog.create(dialogContent, {
+        title: 'Upload Theme',
+        confirmText: 'Apply Theme',
+        confirmClasses: 'primary ml',
+        cancelText: 'Cancel',
+        width: '32rem',
+        confirmAction: (e) => {
+          if(!parsedTheme){
+            e.preventDefault();
+            const errorEl = dialogContent.querySelector('#uploadError');
+            errorEl.textContent = 'Please select a valid theme file first.';
+            errorEl.style.display = 'block';
+            return;
+          }
+          applyUploadedTheme(parsedTheme);
+        }
+      });
+      
+      // Handle file selection
+      const fileInput = dialogContent.querySelector('#themeFileInput');
+      fileInput.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if(!file) return;
+        
+        const reader = new FileReader();
+        reader.onload = (evt) => {
+          const css = evt.target.result;
+          const previewEl = dialogContent.querySelector('#uploadPreview');
+          const previewCode = dialogContent.querySelector('#uploadPreviewCode');
+          const errorEl = dialogContent.querySelector('#uploadError');
+          
+          try {
+            parsedTheme = parseThemeCSS(css);
+            if(Object.keys(parsedTheme).length === 0){
+              throw new Error('No valid CSS custom properties found in file.');
+            }
+            previewCode.textContent = css;
+            previewEl.style.display = 'block';
+            errorEl.style.display = 'none';
+          } catch(err) {
+            parsedTheme = null;
+            previewEl.style.display = 'none';
+            errorEl.textContent = err.message;
+            errorEl.style.display = 'block';
+          }
+        };
+        reader.readAsText(file);
+      });
+    });
+
+    /*
+      Parse uploaded CSS
+    */
+    const parseThemeCSS = (css) => {
+      const result = {};
+      
+      // Remove comments
+      css = css.replace(/\/\*[\s\S]*?\*\//g, '');
+      
+      // Match :root block
+      const rootMatch = css.match(/:root\s*\{([^}]+)\}/);
+      if(!rootMatch) throw new Error('No :root block found in CSS file.');
+      
+      const declarations = rootMatch[1];
+      
+      // Match CSS custom properties
+      const propRegex = /(--[\w-]+)\s*:\s*([^;]+);/g;
+      let match;
+      
+      while((match = propRegex.exec(declarations)) !== null){
+        const [, propName, value] = match;
+        const trimmedValue = value.trim();
+        
+        // Check if it's a light-dark() value - need to handle nested parentheses
+        if(trimmedValue.startsWith('light-dark(')){
+          // Find the comma that separates light and dark values
+          // by tracking parenthesis depth
+          const inner = trimmedValue.slice(11, -1); // Remove "light-dark(" and ")"
+          let depth = 0;
+          let splitIndex = -1;
+          
+          for(let i = 0; i < inner.length; i++){
+            if(inner[i] === '(') depth++;
+            else if(inner[i] === ')') depth--;
+            else if(inner[i] === ',' && depth === 0){
+              splitIndex = i;
+              break;
+            }
+          }
+          
+          if(splitIndex !== -1){
+            result[propName] = {
+              light: inner.slice(0, splitIndex).trim(),
+              dark: inner.slice(splitIndex + 1).trim()
+            };
+          } else {
+            // Fallback if no comma found at depth 0
+            result[propName] = {
+              light: trimmedValue,
+              dark: trimmedValue
+            };
+          }
+        } else {
+          // Single value - apply to both themes
+          result[propName] = {
+            light: trimmedValue,
+            dark: trimmedValue
+          };
+        }
+      }
+      
+      return result;
+    };
+
+    /*
+      Apply uploaded theme
+    */
+    const applyUploadedTheme = (parsedTheme) => {
+      // Reset currentTheme to defaults first
+      Object.keys(defaultTheme).forEach(prop => {
+        const defaultValue = defaultTheme[prop];
+        if(typeof defaultValue === 'object'){
+          currentTheme.light[prop] = defaultValue.light;
+          currentTheme.dark[prop] = defaultValue.dark;
+        } else {
+          currentTheme.light[prop] = defaultValue;
+          currentTheme.dark[prop] = defaultValue;
+        }
+      });
+      
+      // Only apply values that differ from defaults
+      Object.entries(parsedTheme).forEach(([prop, value]) => {
+        if(currentTheme.light[prop] !== undefined){
+          const defaultValue = defaultTheme[prop];
+          const defaultLight = typeof defaultValue === 'object' ? defaultValue.light : defaultValue;
+          const defaultDark = typeof defaultValue === 'object' ? defaultValue.dark : defaultValue;
+          
+          // Only set if different from default
+          if(value.light !== defaultLight){
+            currentTheme.light[prop] = value.light;
+          }
+          if(value.dark !== defaultDark){
+            currentTheme.dark[prop] = value.dark;
+          }
+        }
+      });
+      
+      // Update all input values
+      updateInputValues();
+      
+      // Regenerate and apply CSS
+      const diff = getThemeDiff();
+      const css = generateThemeCSS(diff);
+      applyThemeCSS(css);
+      
+      console.log('Uploaded theme applied, diff:', diff);
+    };
+
+    // Make Dialog available after component loads
+    customElements.whenDefined('k-dialog').then(() => {
+      window.KDialog = customElements.get('k-dialog');
+    });
+  </script>
+</body>
+</html>

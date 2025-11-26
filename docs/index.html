@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kempo CSS</title>
+  <link rel="icon" type="image/png" sizes="48x48" href="./media/icon48.png">
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="stylesheet" href="./kempo.min.css" />
+  <link rel="stylesheet" href="./kempo-hljs.min.css" />
+  <script src="./init.js" type="module"></script>
+</head>
+<body>
+  <nav class="d-f bg-primary fixed">
+    <button id="toggleNavSideMenu" class="link">
+      <k-icon name="menu"></k-icon>
+    </button>
+    <a href="./" class="d-if ph" style="align-items: center">
+      <img src="./media/icon32.png" alt="Kempo CSS Icon" class="pr" />
+      Kempo CSS
+    </a>
+    <a href="./theme-editor.html">Theme Editor</a>
+    <div class="flex"></div>
+    <a href="https://github.com/dustinpoissant/kempo-css?tab=License-1-ov-file#creative-commons-attribution-noncommercial-sharealike-20"
+      target="_blank"><k-icon name="license"></k-icont></a>
+    <a href="https://github.com/dustinpoissant/kempo-css" target="_blank"><k-icon name="github-mark"></k-icon></a>
+    <k-theme-switcher></k-theme-switcher>
+  </nav>
+  <div style="width: 100%; height: 4rem;"></div>
+  <k-side-menu id="navSideMenu">
+    <menu>
+      <div class="ta-center bb mb r0">
+        <h1 class="tc-primary">Kempo CSS</h1>
+        <img src="./media/icon128.png" alt="Kempo UI Icon" />
+      </div>
+      <h5><a href="#typography">Typography</a></h5>
+      <ul class="pl">
+        <li><a href="#paragraphs">Paragraphs</a></li>
+        <li><a href="#headings">Headings</a></li>
+        <li><a href="#textmarkup">Text Markup</a></li>
+        <li><a href="#lists">Lists</a></li>
+      </ul>
+      <h5><a href="#layout">Layout</a></h5>
+      <ul class="pl">
+        <li><a href="#display">Display</a></li>
+        <li><a href="#flexbox">Flexbox</a></li>
+        <li><a href="#grid">Grid System</a></li>
+        <li><a href="#responsive-grid">Responsive Grid</a></li>
+        <li><a href="#min-width-grid">Alternative Responsive Grid</a></li>
+      </ul>
+      <h5><a href="#borders-spacing">Borders & Spacing</a></h5>
+      <ul class="pl">
+        <li><a href="#borders">Borders</a></li>
+        <li><a href="#border-radius">Border Radius</a></li>
+        <li><a href="#padding">Padding</a></li>
+        <li><a href="#margins">Margins</a></li>
+        <li><a href="#negative-margins">Negative Margins</a></li>
+        <li><a href="#cancelled-margins">Cancelled Margins</a></li>
+      </ul>
+      <h5><a href="#inputs">Inputs</a></h5>
+      <ul class="pl">
+        <li><a href="#basic-inputs">Basic Inputs</a></li>
+        <li><a href="#labels">Labels</a></li>
+        <li><a href="#checkbox-radio">Checkbox / Radio</a></li>
+      </ul>
+      <h5><a href="#buttons">Buttons</a></h5>
+      <ul class="pl">
+        <li><a href="#button-types">Button Types</a></li>
+        <li><a href="#button-colors">Button Colors</a></li>
+        <li><a href="#button-sizes">Button Sizes</a></li>
+        <li><a href="#button-groups">Button Groups</a></li>
+        <li><a href="#no-styles">No Styles</a></li>
+      </ul>
+      <h5><a href="#tables">Tables</a></h5>
+      <ul class="pl">
+        <li><a href="#basic-table">Basic Table</a></li>
+        <li><a href="#responsive-table">Responsive Table</a></li>
+      </ul>
+      <h5><a href="#colors">Colors</a></h5>
+      <ul class="pl">
+        <li><a href="#background">Background</a></li>
+        <li><a href="#text-colors">Text Colors</a></li>
+      </ul>
+      <h5><a href="#noScroll">Disable Body Scrolling</a></h5>
+      <hr />
+      <a href="https://github.com/dustinpoissant/kempo-css?tab=License-1-ov-file#creative-commons-attribution-noncommercial-sharealike-20"
+        target="_blank"><k-icon name="license"></k-icon> Read the Lisence</a><br />
+      <a href="https://github.com/dustinpoissant/kempo-css" target="_blank"><k-icon name="github-mark"></k-icon> View on
+        GitHub</a>
+      <div style="height:33vh"></div>
+    </menu>
+  </k-side-menu>
+  <main>
+    <k-import src="./docs.inc.html"></k-import>
+  </main>
+  <div style="height:33vh"></div>
+  <script src="./nav.js" type="module"></script>
+  <script src="./kempo-ui/components/SideMenu.js" type="module"></script>
+  <script src="./kempo-ui/components/Icon.js" type="module"></script>
+  <script src="./kempo-ui/components/ThemeSwitcher.js" type="module"></script>
+  <script src="./kempo-ui/components/Import.js" type="module"></script>
+  <script src="./kempo-ui/components/Resize.js" type="module"></script>
+  <script src="./kempo-ui/components/Card.js" type="module"></script>
+</body>
+</html>

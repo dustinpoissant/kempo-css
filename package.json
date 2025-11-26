@@ -2,11 +2,12 @@
   "name": "kempo-css",
   "version": "1.0.7",
   "description": "",
-  "main": "build.js",
+  "main": "scripts/build.js",
   "scripts": {
-    "build": "node build.js",
-    "build:watch": "node build.js --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node scripts/build.js",
+    "build:watch": "node scripts/build.js --watch",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs": "npx kempo-server --root docs --port 4048"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +20,8 @@
     "url": "https://github.com/dustinpoissant/kempo-css"
   },
   "dependencies": {
-    "@dustinpoissant/device-frame": "^1.0.1"
+    "kempo-server": "^1.9.1",
+    "kempo-ui": "^0.0.36",
+    "terser": "^5.44.1"
   }
 }

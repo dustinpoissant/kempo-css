@@ -3,6 +3,7 @@
 const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
+const { minify } = require('terser');
 
 // Check for watch flag
 const isWatchMode = process.argv.includes('--watch');
@@ -62,8 +63,80 @@ inputFiles.forEach((inputFile, index) => {
   }
 });
 
-console.log('Build complete!');
-console.log(`Minified files are in the ${outputDir}/ directory`);
+// Process and minify components
+async function processComponents(){
+  const componentsDir = 'src/components';
+  const docsComponentsDir = 'docs/components';
+
+  if(!fs.existsSync(componentsDir)){
+    return;
+  }
+
+  if(!fs.existsSync(docsComponentsDir)){
+    fs.mkdirSync(docsComponentsDir, { recursive: true });
+    console.log(`Created ${docsComponentsDir}/ directory`);
+  }
+
+  const componentFiles = fs.readdirSync(componentsDir).filter(file => file.endsWith('.js'));
+  
+  console.log('\nProcessing JavaScript files...');
+  for(const file of componentFiles){
+    const srcPath = path.join(componentsDir, file);
+    const destPath = path.join(docsComponentsDir, file);
+    
+    try{
+      const code = fs.readFileSync(srcPath, 'utf-8');
+      
+      if(file.endsWith('.min.js')){
+        fs.writeFileSync(destPath, code);
+        console.log(`Copied ${srcPath} → ${destPath} (already minified)`);
+      }else{
+        console.log(`Minifying ${srcPath}...`);
+        const result = await minify(code);
+        fs.writeFileSync(destPath, result.code);
+        const originalSize = Buffer.byteLength(code, 'utf-8');
+        const minifiedSize = Buffer.byteLength(result.code, 'utf-8');
+        const savings = ((originalSize - minifiedSize) / originalSize * 100).toFixed(1);
+        console.log(`   Original: ${(originalSize / 1024).toFixed(1)}KB`);
+        console.log(`   Minified: ${(minifiedSize / 1024).toFixed(1)}KB`);
+        console.log(`   Savings: ${savings}%`);
+      }
+    }catch(error){
+      console.error(`Error processing ${srcPath}:`, error.message);
+    }
+  }
+}
+
+processComponents().then(() => {
+
+// Copy CSS to docs
+const cssFiles = ['src/kempo.css', 'src/kempo-hljs.css'];
+const docsDir = 'docs';
+
+cssFiles.forEach(file => {
+  if(fs.existsSync(file)){
+    const fileName = path.basename(file);
+    const destPath = path.join(docsDir, fileName);
+    fs.copyFileSync(file, destPath);
+    console.log(`Copied ${file} → ${destPath}`);
+  }
+});
+
+// Copy minified CSS to docs
+const minifiedFiles = fs.readdirSync(outputDir).filter(file => file.endsWith('.css'));
+minifiedFiles.forEach(file => {
+  const srcPath = path.join(outputDir, file);
+  const destPath = path.join(docsDir, file);
+  fs.copyFileSync(srcPath, destPath);
+  console.log(`Copied ${srcPath} → ${destPath}`);
+});
+
+  console.log('\nBuild complete!');
+  console.log(`Minified files are in the ${outputDir}/ directory`);
+}).catch(error => {
+  console.error('Build error:', error);
+  process.exit(1);
+});
 
 // Watch mode functionality
 if (isWatchMode) {
