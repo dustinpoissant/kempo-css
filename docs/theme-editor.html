@@ -52,11 +52,22 @@
     <k-side-menu id="navSideMenu">
       <menu>
         <div class="ta-center bb mb r0">
-          <h1 class="tc-primary">Kempo CSS</h1>
-          <h3 class="tc-primary">Theme Builder</h3>
-          <img src="./media/icon128.png" alt="Kempo UI Icon" />
+          <a href="./"><h1 class="tc-primary">Kempo CSS</h1></a>
+          <h3 class="tc-primary">Theme Editor</h3>
+          <a href="./"><img src="./media/icon128.png" alt="Kempo UI Icon" /></a>
         </div>
-        <h5><a href="#editColors">Colors</a></h5>
+        <h5>Sections</h5>
+        <a href="#theme-colors">Theme Colors</a><br />
+        <a href="#background-colors">Background Colors</a><br />
+        <a href="#text-colors">Text Colors</a><br />
+        <a href="#border-colors">Border Colors</a><br />
+        <a href="#link-colors">Link Colors</a><br />
+        <a href="#button-styles">Button Styles</a><br />
+        <a href="#input-styles">Input Styles</a><br />
+        <a href="#focus-effects">Focus & Effects</a><br />
+        <a href="#typography">Typography</a><br />
+        <a href="#spacing-layout">Spacing & Layout</a><br />
+        <a href="#effects-animation">Effects & Animation</a><br />
         <hr />
         <a href="https://github.com/dustinpoissant/kempo-css?tab=License-1-ov-file#creative-commons-attribution-noncommercial-sharealike-20"
           target="_blank"><k-icon name="license"></k-icon> Read the Lisence</a><br />
@@ -371,9 +382,12 @@
       return words.join(' ');
     };
 
+    const titleToId = title => title.toLowerCase().replace(/\s*&\s*/g, '-').replace(/\s+/g, '-');
+
     propertyCategories.forEach(({ title, props }) => {
       const section = document.createElement('div');
       section.className = 'mb';
+      section.id = titleToId(title);
       
       const heading = document.createElement('h4');
       heading.className = 'mb-h';
