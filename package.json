@@ -21,7 +21,6 @@
   },
   "dependencies": {
     "kempo-server": "^1.9.1",
-    "kempo-ui": "^0.0.36",
     "terser": "^5.44.1"
   }
 }

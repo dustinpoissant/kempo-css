@@ -1,4 +1,4 @@
-import ShadowComponent from"/kempo-ui/components/ShadowComponent.js";import{html,css}from"/kempo-ui/lit-all.min.js";export default class ThemePropertyInput extends ShadowComponent{static properties={propName:{type:String,attribute:"prop-name"},value:{type:String},availableProperties:{type:Array,attribute:"available-properties"},mode:{type:String},initialColor:{type:String,attribute:"initial-color"}};static styles=css`
+import ShadowComponent from"https://cdn.jsdelivr.net/npm/kempo-ui@0.0.36/dist/components/ShadowComponent.js";import{html,css}from"https://cdn.jsdelivr.net/npm/kempo-ui@0.0.36/dist/lit-all.min.js";export default class ThemePropertyInput extends ShadowComponent{static properties={propName:{type:String,attribute:"prop-name"},value:{type:String},availableProperties:{type:Array,attribute:"available-properties"},mode:{type:String},initialColor:{type:String,attribute:"initial-color"}};static styles=css`
     :host {
       display: block;
     }
