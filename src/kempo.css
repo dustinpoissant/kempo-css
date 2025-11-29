@@ -1,3 +1,6 @@
+/*
+  CSS Variables
+*/
 :root {
   color-scheme: light;
   --ff_body: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -32,7 +35,7 @@
   --c_bg__alt: light-dark(rgb(238, 238, 238), rgb(34, 34, 34));
   --c_overscroll: light-dark(rgb(255, 255, 255), rgb(0, 0, 0));
   --c_border: light-dark(rgb(204, 204, 204), rgb(119, 119, 119));
-  --c_border__inv: light-dark(var(--d_c_bg_border), rgb(204, 204, 204));
+  --c_border__inv: light-dark(rgb(119, 119, 119), rgb(204, 204, 204));
   --c_primary: rgb(51, 102, 255);
   --c_primary__hover: rgb(17, 68, 221);
   --c_secondary: rgb(153, 51, 255);
@@ -77,7 +80,9 @@
   --focus_shadow_on_primary: 0 0 2px 2px var(--tc_on_primary);
   --input_bg: light-dark(white, var(--c_bg__alt));
   --input_tc: light-dark(rgba(0, 0, 0, 0.93), var(--tc));
-  --drop_shadow: light-dark(0 0.25rem 0.5rem rgba(0, 0, 0, 0.333), 0 0.25rem 0.5rem rgba(0, 0, 0, 0.25));
+  --drop_shadow__light: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.333);
+  --drop_shadow__dark: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
+  --drop_shadow: var(--drop_shadow__light);
   --date_picker_icon_filter: light-dark(invert(0), invert(1));
 }
 [theme="light"] {
@@ -86,12 +91,21 @@
 
 [theme="dark"] {
   color-scheme: dark;
+  --drop_shadow: var(--drop_shadow__dark);
 }
 
 [theme="auto"] {
   color-scheme: light dark;
 }
+@media (prefers-color-scheme: dark) {
+  [theme="auto"] {
+    --drop_shadow: var(--drop_shadow__dark);
+  }
+}
 
+/*
+  Base / Reset
+*/
 :root {
   interpolate-size: allow-keywords;
 }
@@ -600,6 +614,10 @@ li ul {
   .m-cols-9 { grid-template-columns: repeat(9, 1fr); }
   .m-cols-10 { grid-template-columns: repeat(10, 1fr); }
 }
+
+/*
+  Buttons
+*/
 button:not(.no-btn):not(.no-style),
 .btn,
 input[type="button"],
@@ -772,6 +790,10 @@ input[type="reset"].link {
   display: block;
   width: 100%;
 }
+
+/*
+  Forms
+*/
 input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]),
 select,
 textarea {
@@ -864,6 +886,10 @@ input[type="week"]::-webkit-calendar-picker-indicator,
 input[type="search"]::-webkit-search-cancel-button {
   filter: var(--date_picker_icon_filter);
 }
+
+/*
+  Tables
+*/
 .table-wrapper {
   overflow-x: auto;
 }
@@ -898,6 +924,10 @@ tr:last-child td:first-child {
 tr:last-child td:last-child {
   border-bottom-right-radius: var(--radius);
 }
+
+/*
+  Colors
+*/
 .bg-default {
   background-color: var(--c_bg);
   color: var(--tc);
@@ -1003,6 +1033,10 @@ tr:last-child td:last-child {
 .tc-muted {
   color: var(--tc_muted);
 }
+
+/*
+  Components
+*/
 .card {
   border: 1px solid var(--c_border);
   border-radius: var(--radius);

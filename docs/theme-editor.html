@@ -199,7 +199,9 @@
       "--focus_shadow_on_primary": "0 0 2px 2px var(--tc_on_primary)",
       "--input_bg": { light: "white", dark: "var(--c_bg__alt)" },
       "--input_tc": { light: "rgba(0, 0, 0, 0.93)", dark: "var(--tc)" },
-      "--drop_shadow": { light: "0 0.25rem 0.5rem rgba(0, 0, 0, 0.333)", dark: "0 0.25rem 0.5rem rgba(0, 0, 0, 0.25)" },
+      "--drop_shadow__light": "0 0.25rem 0.5rem rgba(0, 0, 0, 0.333)",
+      "--drop_shadow__dark": "0 0.25rem 0.5rem rgba(0, 0, 0, 0.5)",
+      "--drop_shadow": { light: "var(--drop_shadow__light)", dark: "var(--drop_shadow__dark)" },
       "--date_picker_icon_filter": { light: "invert(0)", dark: "invert(1)" }
     };
 
@@ -282,7 +284,8 @@
         title: 'Focus & Effects',
         props: [
           '--focus_shadow', '--focus_shadow_on_primary',
-          '--drop_shadow', '--date_picker_icon_filter',
+          '--drop_shadow', '--drop_shadow__light', '--drop_shadow__dark',
+          '--date_picker_icon_filter',
           '--c_highlight', '--c_overlay'
         ]
       },

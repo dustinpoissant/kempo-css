@@ -806,6 +806,45 @@
   </div>
 </div>
 
+<h2 id="drop-shadow">Drop Shadow</h2>
+<p>Add the <code>drop-shadow</code> class to add a box shadow effect to any element. The shadow automatically adjusts for light and dark themes.</p>
+<div class="row -mx">
+  <div class="col m-span-12 px">
+    <k-card label="HTML">
+      <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"drop-shadow"</span>&gt;</span>Drop Shadow<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"card drop-shadow"</span>&gt;</span>Card with Drop Shadow<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+    </k-card>
+  </div>
+  <div class="col m-span-12 px">
+    <k-card label="Output">
+      <div class="d-ib p bg-default r drop-shadow mb">Drop Shadow</div>
+      <div class="card drop-shadow">Card with Drop Shadow</div>
+    </k-card>
+  </div>
+</div>
+<h3>Drop Shadow CSS Variables</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Variable</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>--drop_shadow</code></td>
+      <td>The active drop shadow (automatically set based on theme)</td>
+    </tr>
+    <tr>
+      <td><code>--drop_shadow__light</code></td>
+      <td>Drop shadow for light theme</td>
+    </tr>
+    <tr>
+      <td><code>--drop_shadow__dark</code></td>
+      <td>Drop shadow for dark theme (stronger for better visibility)</td>
+    </tr>
+  </tbody>
+</table>
+
 <h2 id="noScroll">Disable Body Scrolling</h2>
 <p>Add the <code>no-scroll</code> class to the body to temparily disable body scrolling, this is used for things
   like dialogs and side menus that temporarily take over the page.</p>

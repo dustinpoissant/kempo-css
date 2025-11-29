@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-const { execSync } = require('child_process');
-const fs = require('fs');
-const path = require('path');
-const { minify } = require('terser');
+import { execSync } from 'child_process';
+import fs from 'fs';
+import path from 'path';
+import { minify } from 'terser';
 
 // Check for watch flag
 const isWatchMode = process.argv.includes('--watch');
