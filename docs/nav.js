@@ -15,3 +15,19 @@ document.addEventListener('click', function(e) {
 		}
 	}
 });
+
+/*
+  Fixed Nav Shadow on Scroll
+*/
+const fixedNav = document.querySelector('nav.fixed');
+if(fixedNav){
+	const updateNavShadow = () => {
+		if(window.scrollY > 0){
+			fixedNav.classList.add('scrolled');
+		} else {
+			fixedNav.classList.remove('scrolled');
+		}
+	};
+	window.addEventListener('scroll', updateNavShadow, { passive: true });
+	updateNavShadow();
+}

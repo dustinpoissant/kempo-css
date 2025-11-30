@@ -84,6 +84,30 @@
   --drop_shadow__dark: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
   --drop_shadow: var(--drop_shadow__light);
   --date_picker_icon_filter: light-dark(invert(0), invert(1));
+  
+  /* Elevation System - Level 0 = body bg, positive = lighter + drop shadow, negative = darker + inset shadow */
+  --elevation_-2_bg: light-dark(rgb(215, 215, 215), rgb(25, 25, 25));
+  --elevation_-1_bg: light-dark(rgb(232, 232, 232), rgb(38, 38, 38));
+  --elevation_0_bg: var(--c_bg);
+  --elevation_1_bg: light-dark(rgb(255, 255, 255), rgb(64, 64, 64));
+  --elevation_2_bg: light-dark(rgb(255, 255, 255), rgb(77, 77, 77));
+  --elevation_3_bg: light-dark(rgb(255, 255, 255), rgb(90, 90, 90));
+  --elevation_-2_shadow__light: inset 0 2px 6px rgba(0, 0, 0, 0.18), inset 0 1px 3px rgba(0, 0, 0, 0.12);
+  --elevation_-1_shadow__light: inset 0 1px 3px rgba(0, 0, 0, 0.1), inset 0 1px 2px rgba(0, 0, 0, 0.06);
+  --elevation_0_shadow: none;
+  --elevation_1_shadow__light: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.16);
+  --elevation_2_shadow__light: 0 3px 6px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.1);
+  --elevation_3_shadow__light: 0 8px 16px rgba(0, 0, 0, 0.14), 0 3px 6px rgba(0, 0, 0, 0.1);
+  --elevation_-2_shadow__dark: inset 0 2px 8px rgba(0, 0, 0, 0.5), inset 0 1px 4px rgba(0, 0, 0, 0.4);
+  --elevation_-1_shadow__dark: inset 0 1px 4px rgba(0, 0, 0, 0.35), inset 0 1px 2px rgba(0, 0, 0, 0.25);
+  --elevation_1_shadow__dark: 0 2px 6px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.4);
+  --elevation_2_shadow__dark: 0 4px 12px rgba(0, 0, 0, 0.55), 0 2px 4px rgba(0, 0, 0, 0.45);
+  --elevation_3_shadow__dark: 0 8px 20px rgba(0, 0, 0, 0.6), 0 4px 8px rgba(0, 0, 0, 0.5);
+  --elevation_-2_shadow: var(--elevation_-2_shadow__light);
+  --elevation_-1_shadow: var(--elevation_-1_shadow__light);
+  --elevation_1_shadow: var(--elevation_1_shadow__light);
+  --elevation_2_shadow: var(--elevation_2_shadow__light);
+  --elevation_3_shadow: var(--elevation_3_shadow__light);
 }
 [theme="light"] {
   color-scheme: light;
@@ -92,6 +116,11 @@
 [theme="dark"] {
   color-scheme: dark;
   --drop_shadow: var(--drop_shadow__dark);
+  --elevation_-2_shadow: var(--elevation_-2_shadow__dark);
+  --elevation_-1_shadow: var(--elevation_-1_shadow__dark);
+  --elevation_1_shadow: var(--elevation_1_shadow__dark);
+  --elevation_2_shadow: var(--elevation_2_shadow__dark);
+  --elevation_3_shadow: var(--elevation_3_shadow__dark);
 }
 
 [theme="auto"] {
@@ -100,6 +129,11 @@
 @media (prefers-color-scheme: dark) {
   [theme="auto"] {
     --drop_shadow: var(--drop_shadow__dark);
+    --elevation_-2_shadow: var(--elevation_-2_shadow__dark);
+    --elevation_-1_shadow: var(--elevation_-1_shadow__dark);
+    --elevation_1_shadow: var(--elevation_1_shadow__dark);
+    --elevation_2_shadow: var(--elevation_2_shadow__dark);
+    --elevation_3_shadow: var(--elevation_3_shadow__dark);
   }
 }
 
@@ -331,8 +365,12 @@ summary:focus {
   top: 0;
   width: 100%;
   z-index: 99;
+  box-shadow: none;
+  transition: box-shadow var(--animation_ms);
 }
-
+.fixed.scrolled {
+  box-shadow: var(--elevation_2_shadow);
+}
 
 /*
   Typography
@@ -1047,6 +1085,30 @@ tr:last-child td:last-child {
 }
 .drop-shadow {
   box-shadow: var(--drop_shadow);
+}
+.elevation--2 {
+  background-color: var(--elevation_-2_bg);
+  box-shadow: var(--elevation_-2_shadow);
+}
+.elevation--1 {
+  background-color: var(--elevation_-1_bg);
+  box-shadow: var(--elevation_-1_shadow);
+}
+.elevation-0 {
+  background-color: var(--elevation_0_bg);
+  box-shadow: var(--elevation_0_shadow);
+}
+.elevation-1 {
+  background-color: var(--elevation_1_bg);
+  box-shadow: var(--elevation_1_shadow);
+}
+.elevation-2 {
+  background-color: var(--elevation_2_bg);
+  box-shadow: var(--elevation_2_shadow);
+}
+.elevation-3 {
+  background-color: var(--elevation_3_bg);
+  box-shadow: var(--elevation_3_shadow);
 }
 .icon {
   display: inline-block;

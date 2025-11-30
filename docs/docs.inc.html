@@ -845,6 +845,99 @@
   </tbody>
 </table>
 
+<h2 id="elevation">Elevation</h2>
+<p>The elevation system creates visual depth using a combination of background colors and shadows. Positive levels rise above the page with drop shadows. Negative levels cut into the page with inset shadows. In dark mode, higher elevations have lighter backgrounds (simulating light from above).</p>
+<div class="row -mx">
+  <div class="col m-span-12 px">
+    <k-card label="HTML">
+      <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"elevation--2 p r"</span>&gt;</span>Level -2 - Deep inset<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"elevation--1 p r"</span>&gt;</span>Level -1 - Shallow inset<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"elevation-0 p r"</span>&gt;</span>Level 0 - Page level<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"elevation-1 p r"</span>&gt;</span>Level 1 - Small shadow<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"elevation-2 p r"</span>&gt;</span>Level 2 - Medium shadow<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"elevation-3 p r"</span>&gt;</span>Level 3 - Large shadow<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+    </k-card>
+  </div>
+  <div class="col m-span-12 px">
+    <k-card label="Output">
+      <div class="d-f" style="gap: var(--spacer); flex-wrap: wrap;">
+        <div class="elevation--2 p r" style="min-width: 140px; text-align: center;">
+          <strong>Level -2</strong><br><span class="tc-muted small">Deep inset</span>
+        </div>
+        <div class="elevation--1 p r" style="min-width: 140px; text-align: center;">
+          <strong>Level -1</strong><br><span class="tc-muted small">Shallow inset</span>
+        </div>
+        <div class="elevation-0 p r" style="min-width: 140px; text-align: center;">
+          <strong>Level 0</strong><br><span class="tc-muted small">Page level</span>
+        </div>
+        <div class="elevation-1 p r" style="min-width: 140px; text-align: center;">
+          <strong>Level 1</strong><br><span class="tc-muted small">Small shadow</span>
+        </div>
+        <div class="elevation-2 p r" style="min-width: 140px; text-align: center;">
+          <strong>Level 2</strong><br><span class="tc-muted small">Medium shadow</span>
+        </div>
+        <div class="elevation-3 p r" style="min-width: 140px; text-align: center;">
+          <strong>Level 3</strong><br><span class="tc-muted small">Large shadow</span>
+        </div>
+      </div>
+    </k-card>
+  </div>
+</div>
+<h3>Elevation CSS Variables</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Variable</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>--elevation_-2_bg</code></td>
+      <td>Background color for level -2 (deep inset)</td>
+    </tr>
+    <tr>
+      <td><code>--elevation_-1_bg</code></td>
+      <td>Background color for level -1 (shallow inset)</td>
+    </tr>
+    <tr>
+      <td><code>--elevation_0_bg</code></td>
+      <td>Background color for level 0 (page level)</td>
+    </tr>
+    <tr>
+      <td><code>--elevation_1_bg</code></td>
+      <td>Background color for level 1</td>
+    </tr>
+    <tr>
+      <td><code>--elevation_2_bg</code></td>
+      <td>Background color for level 2</td>
+    </tr>
+    <tr>
+      <td><code>--elevation_3_bg</code></td>
+      <td>Background color for level 3</td>
+    </tr>
+    <tr>
+      <td><code>--elevation_-2_shadow</code></td>
+      <td>Shadow for level -2 (deep inset)</td>
+    </tr>
+    <tr>
+      <td><code>--elevation_-1_shadow</code></td>
+      <td>Shadow for level -1 (shallow inset)</td>
+    </tr>
+    <tr>
+      <td><code>--elevation_0_shadow</code></td>
+      <td>Shadow for level 0 (none)</td>
+    </tr>
+    <tr>
+      <td><code>--elevation_1_shadow</code></td>
+      <td>Shadow for level 1 (small)</td>
+    </tr>
+    <tr>
+      <td><code>--elevation_2_shadow</code></td>
+      <td>Shadow for level 2 (medium)</td>
+    </tr>
+    <tr>
+      <td><code>--elevation_3_shadow</code></td>
+      <td>Shadow for level 3 (large)</td>
+    </tr>
+  </tbody>
+</table>
+
 <h2 id="noScroll">Disable Body Scrolling</h2>
 <p>Add the <code>no-scroll</code> class to the body to temparily disable body scrolling, this is used for things
   like dialogs and side menus that temporarily take over the page.</p>

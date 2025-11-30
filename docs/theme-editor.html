@@ -65,6 +65,7 @@
         <a href="#button-styles">Button Styles</a><br />
         <a href="#input-styles">Input Styles</a><br />
         <a href="#focus-effects">Focus & Effects</a><br />
+        <a href="#elevation-shadows">Elevation & Shadows</a><br />
         <a href="#typography">Typography</a><br />
         <a href="#spacing-layout">Spacing & Layout</a><br />
         <a href="#effects-animation">Effects & Animation</a><br />
@@ -202,6 +203,23 @@
       "--drop_shadow__light": "0 0.25rem 0.5rem rgba(0, 0, 0, 0.333)",
       "--drop_shadow__dark": "0 0.25rem 0.5rem rgba(0, 0, 0, 0.5)",
       "--drop_shadow": { light: "var(--drop_shadow__light)", dark: "var(--drop_shadow__dark)" },
+      "--elevation_-2_bg": { light: "rgb(215, 215, 215)", dark: "rgb(25, 25, 25)" },
+      "--elevation_-1_bg": { light: "rgb(232, 232, 232)", dark: "rgb(38, 38, 38)" },
+      "--elevation_0_bg": { light: "var(--c_bg)", dark: "var(--c_bg)" },
+      "--elevation_1_bg": { light: "rgb(255, 255, 255)", dark: "rgb(64, 64, 64)" },
+      "--elevation_2_bg": { light: "rgb(255, 255, 255)", dark: "rgb(77, 77, 77)" },
+      "--elevation_3_bg": { light: "rgb(255, 255, 255)", dark: "rgb(90, 90, 90)" },
+      "--elevation_-2_shadow__light": "inset 0 2px 6px rgba(0, 0, 0, 0.18), inset 0 1px 3px rgba(0, 0, 0, 0.12)",
+      "--elevation_-2_shadow__dark": "inset 0 2px 8px rgba(0, 0, 0, 0.5), inset 0 1px 4px rgba(0, 0, 0, 0.4)",
+      "--elevation_-1_shadow__light": "inset 0 1px 3px rgba(0, 0, 0, 0.1), inset 0 1px 2px rgba(0, 0, 0, 0.06)",
+      "--elevation_-1_shadow__dark": "inset 0 1px 4px rgba(0, 0, 0, 0.35), inset 0 1px 2px rgba(0, 0, 0, 0.25)",
+      "--elevation_0_shadow": "none",
+      "--elevation_1_shadow__light": "0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.16)",
+      "--elevation_2_shadow__light": "0 3px 6px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.1)",
+      "--elevation_3_shadow__light": "0 8px 16px rgba(0, 0, 0, 0.14), 0 3px 6px rgba(0, 0, 0, 0.1)",
+      "--elevation_1_shadow__dark": "0 2px 6px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.4)",
+      "--elevation_2_shadow__dark": "0 4px 12px rgba(0, 0, 0, 0.55), 0 2px 4px rgba(0, 0, 0, 0.45)",
+      "--elevation_3_shadow__dark": "0 8px 20px rgba(0, 0, 0, 0.6), 0 4px 8px rgba(0, 0, 0, 0.5)",
       "--date_picker_icon_filter": { light: "invert(0)", dark: "invert(1)" }
     };
 
@@ -284,9 +302,22 @@
         title: 'Focus & Effects',
         props: [
           '--focus_shadow', '--focus_shadow_on_primary',
-          '--drop_shadow', '--drop_shadow__light', '--drop_shadow__dark',
           '--date_picker_icon_filter',
           '--c_highlight', '--c_overlay'
+        ]
+      },
+      {
+        title: 'Elevation & Shadows',
+        props: [
+          '--elevation_-2_bg', '--elevation_-1_bg',
+          '--elevation_0_bg', '--elevation_1_bg', '--elevation_2_bg', '--elevation_3_bg',
+          '--elevation_-2_shadow__light', '--elevation_-2_shadow__dark',
+          '--elevation_-1_shadow__light', '--elevation_-1_shadow__dark',
+          '--elevation_0_shadow',
+          '--elevation_1_shadow__light', '--elevation_1_shadow__dark',
+          '--elevation_2_shadow__light', '--elevation_2_shadow__dark',
+          '--elevation_3_shadow__light', '--elevation_3_shadow__dark',
+          '--drop_shadow__light', '--drop_shadow__dark'
         ]
       },
       {
