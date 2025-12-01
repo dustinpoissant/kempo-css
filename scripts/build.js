@@ -16,8 +16,8 @@ if (isWatchMode) {
 
 // Define input and output files
 const inputFiles = [
-  'kempo.css',
-  'kempo-hljs.css'
+  'src/kempo.css',
+  'src/kempo-hljs.css'
 ];
 
 const outputDir = 'dist';
