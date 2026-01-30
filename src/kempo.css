@@ -880,9 +880,8 @@ label {
 label.checkbox,
 label.radio {
   display: inline-block;
-  vertical-align: top;
-  width: calc(100% - 1em - (2 * var(--spacer_h)) - 6px);
-  margin-top: 2px;
+  vertical-align: middle;
+  width: calc(100% - 2em - (2 * var(--spacer_h)) - 6px);
 }
 input[type="checkbox"],
 input[type="radio"] {
@@ -890,10 +889,66 @@ input[type="radio"] {
   width: 1em;
   height: 1em;
   cursor: pointer;
-  vertical-align: top;
-  outline: none;
+  vertical-align: middle;
   accent-color: var(--c_input_accent);
   margin: var(--spacer_q) var(--spacer_h);
+  transition: background-color var(--animation_ms), color var(--animation_ms), box-shadow var(--animation_ms);
+}
+input[type="checkbox"] {
+  width: 1.75em;
+  height: 1.75em;
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: 2px solid var(--c_border);
+  border-radius: var(--radius);
+  vertical-align: -0.5em;
+  position: relative;
+}
+input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: calc(var(--radius) - 2px);
+  background-color: transparent;
+  mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="200 -760 560 560"><path d="m424-312 282-282-56-56-226 226-114-114-56 56 170 170Z"/></svg>');
+  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="200 -760 560 560"><path d="m424-312 282-282-56-56-226 226-114-114-56 56 170 170Z"/></svg>');
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  mask-position: center;
+  -webkit-mask-position: center;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  transition: background-color var(--animation_ms);
+}
+input[type="checkbox"]:focus {
+  box-shadow: var(--focus_shadow);
+  outline: none;
+}
+input[type="checkbox"]:checked {
+  background-color: var(--c_primary);
+  border-color: var(--c_primary);
+}
+input[type="checkbox"]:checked::before {
+  background-color: var(--tc_on_primary);
+}
+input[type="radio"] {
+  width: 1.75em;
+  height: 1.75em;
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: 2px solid var(--c_border);
+  border-radius: 50%;
+  vertical-align: -0.5em;
+}
+input[type="radio"]:focus {
+  box-shadow: var(--focus_shadow);
+  outline: none;
+}
+input[type="radio"]:checked {
+  border-color: var(--c_primary);
+  background: radial-gradient(circle, var(--c_primary) 40%, transparent 45%);
 }
 select option {
   padding: var(--spacer_h) var(--spacer);

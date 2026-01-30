@@ -153,7 +153,7 @@ export default class MyComponent extends HybridComponent {
 ### Local Development Server
 - **DO NOT** start a development server - one is already running
 - Default port: **8083**
-- Base URL: `http://localhost:8083`
+- Base URL: `http://localhost:4048/`
 - Documentation URLs follow the directory/file structure in `docs/` (e.g., `docs/components/color-picker.html` → `http://localhost:8083/components/color-picker.html`)
 - Use this server for all testing and verification
 
