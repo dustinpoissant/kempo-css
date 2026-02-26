@@ -217,5 +217,61 @@ export default {
     } else {
       fail(`Expected light text, got ${color}`);
     }
+  },
+
+  'should prioritize .bg-primary over .elevation-3 background': ({pass, fail}) => {
+    const combined = document.createElement('div');
+    combined.className = 'elevation-3 bg-primary';
+    document.body.appendChild(combined);
+
+    const bgOnly = document.createElement('div');
+    bgOnly.className = 'bg-primary';
+    document.body.appendChild(bgOnly);
+
+    const elevationOnly = document.createElement('div');
+    elevationOnly.className = 'elevation-3';
+    document.body.appendChild(elevationOnly);
+
+    const combinedBg = getStyle(combined, 'backgroundColor');
+    const bgPrimaryOnly = getStyle(bgOnly, 'backgroundColor');
+    const elevationOnlyBg = getStyle(elevationOnly, 'backgroundColor');
+
+    combined.remove();
+    bgOnly.remove();
+    elevationOnly.remove();
+
+    if(combinedBg === bgPrimaryOnly && combinedBg !== elevationOnlyBg){
+      pass(`Combined classes use bg-primary color: ${combinedBg}`);
+    } else {
+      fail(`Expected bg-primary to win. combined=${combinedBg}, bg-primary=${bgPrimaryOnly}, elevation=${elevationOnlyBg}`);
+    }
+  },
+
+  'should prioritize .btn.primary over .bg-alt background': ({pass, fail}) => {
+    const combined = document.createElement('button');
+    combined.className = 'btn primary bg-alt';
+    document.body.appendChild(combined);
+
+    const primaryOnly = document.createElement('button');
+    primaryOnly.className = 'btn primary';
+    document.body.appendChild(primaryOnly);
+
+    const bgAltOnly = document.createElement('button');
+    bgAltOnly.className = 'btn bg-alt';
+    document.body.appendChild(bgAltOnly);
+
+    const combinedBg = getStyle(combined, 'backgroundColor');
+    const primaryOnlyBg = getStyle(primaryOnly, 'backgroundColor');
+    const bgAltOnlyBg = getStyle(bgAltOnly, 'backgroundColor');
+
+    combined.remove();
+    primaryOnly.remove();
+    bgAltOnly.remove();
+
+    if(combinedBg === primaryOnlyBg && combinedBg !== bgAltOnlyBg){
+      pass(`Combined button classes keep primary color: ${combinedBg}`);
+    } else {
+      fail(`Expected btn.primary to win. combined=${combinedBg}, primary=${primaryOnlyBg}, bg-alt=${bgAltOnlyBg}`);
+    }
   }
 };

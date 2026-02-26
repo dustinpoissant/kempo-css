@@ -7,7 +7,7 @@
   "scripts": {
     "build": "node scripts/build.js",
     "build:watch": "node scripts/build.js --watch",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npx kempo-test",
     "docs": "npx kempo-server --root docs --port 4048"
   },
   "keywords": [],
@@ -16,7 +16,7 @@
   "devDependencies": {
     "clean-css-cli": "^5.6.3",
     "kempo-server": "^1.9.1",
-    "kempo-testing-framework": "^1.4.0",
+    "npx kempo-test --gui": "^1.4.0",
     "terser": "^5.44.1"
   },
   "repository": {

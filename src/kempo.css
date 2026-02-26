@@ -704,7 +704,7 @@ button:not(.no-btn).primary,
 input[type="button"].primary,
 input[type="submit"].primary,
 input[type="reset"].primary {
-  background-color: var(--c_primary);
+  background-color: var(--c_primary) !important;
   --btn_tc: var(--tc_on_primary);
 }
 button:not(.no-btn).primary:hover,
@@ -712,14 +712,14 @@ button:not(.no-btn).primary:hover,
 input[type="button"].primary:hover,
 input[type="submit"].primary:hover,
 input[type="reset"].primary:hover {
-  background-color: var(--c_primary__hover);
+  background-color: var(--c_primary__hover) !important;
 }
 button:not(.no-btn).secondary,
 .btn.secondary,
 input[type="button"].secondary,
 input[type="submit"].secondary,
 input[type="reset"].secondary {
-  background-color: var(--c_secondary);
+  background-color: var(--c_secondary) !important;
   --btn_tc: var(--tc_on_secondary);
 }
 button:not(.no-btn).secondary:hover,
@@ -727,14 +727,14 @@ button:not(.no-btn).secondary:hover,
 input[type="button"].secondary:hover,
 input[type="submit"].secondary:hover,
 input[type="reset"].secondary:hover {
-  background-color: var(--c_secondary__hover);
+  background-color: var(--c_secondary__hover) !important;
 }
 button:not(.no-btn).success,
 .btn.success,
 input[type="button"].success,
 input[type="submit"].success,
 input[type="reset"].success {
-  background-color: var(--c_success);
+  background-color: var(--c_success) !important;
   --btn_tc: var(--tc_on_success);
 }
 button:not(.no-btn).success:hover,
@@ -742,14 +742,14 @@ button:not(.no-btn).success:hover,
 input[type="button"].success:hover,
 input[type="submit"].success:hover,
 input[type="reset"].success:hover {
-  background-color: var(--c_success__hover);
+  background-color: var(--c_success__hover) !important;
 }
 button:not(.no-btn).warning,
 .btn.warning,
 input[type="button"].warning,
 input[type="submit"].warning,
 input[type="reset"].warning {
-  background-color: var(--c_warning);
+  background-color: var(--c_warning) !important;
   --btn_tc: var(--tc_on_warning);
 }
 button:not(.no-btn).warning:hover,
@@ -757,14 +757,14 @@ button:not(.no-btn).warning:hover,
 input[type="button"].warning:hover,
 input[type="submit"].warning:hover,
 input[type="reset"].warning:hover {
-  background-color: var(--c_warning__hover);
+  background-color: var(--c_warning__hover) !important;
 }
 button:not(.no-btn).danger,
 .btn.danger,
 input[type="button"].danger,
 input[type="submit"].danger,
 input[type="reset"].danger {
-  background-color: var(--c_danger);
+  background-color: var(--c_danger) !important;
   --btn_tc: var(--tc_on_danger);
 }
 button:not(.no-btn).danger:hover,
@@ -772,7 +772,7 @@ button:not(.no-btn).danger:hover,
 input[type="button"].danger:hover,
 input[type="submit"].danger:hover,
 input[type="reset"].danger:hover {
-  background-color: var(--c_danger__hover);
+  background-color: var(--c_danger__hover) !important;
 }
 button:not(.no-btn):not(.no-style).link,
 .btn.link,
@@ -1022,12 +1022,12 @@ tr:last-child td:last-child {
   Colors
 */
 .bg-default {
-  background-color: var(--c_bg);
-  color: var(--tc);
+  background-color: var(--c_bg) !important;
+  color: var(--tc) !important;
 }
 .bg-alt {
-  background-color: var(--c_bg__alt);
-  color: var(--tc);
+  background-color: var(--c_bg__alt) !important;
+  color: var(--tc) !important;
 }
 .bg-inv {
   --c_primary: var(--c_primary__inv);
@@ -1042,89 +1042,89 @@ tr:last-child td:last-child {
   --c_danger__hover: var(--c_danger__inv__hover);
   --tc_link: var(--tc_link__inv);
   --tc_link__hover: var(--tc_link__inv__hover);
-  background-color: var(--c_bg__inv);
-  color: var(--tc_inv);
+  background-color: var(--c_bg__inv) !important;
+  color: var(--tc_inv) !important;
 }
 .bg-primary {
   --tc_link: var(--tc_on_primary);
   --tc_link__hover: var(--tc_on_primary);
   --c_border: var(--tc_on_primary);
 
-  background-color: var(--c_primary);
-  color: var(--tc_on_primary);
+  background-color: var(--c_primary) !important;
+  color: var(--tc_on_primary) !important;
   --focus_shadow: var(--focus_shadow_on_primary);
 }
 .bg-secondary {
   --tc_link: var(--tc_on_secondary);
   --tc_link__hover: var(--tc_on_secondary);
   
-  background-color: var(--c_secondary);
-  color: var(--tc_on_secondary);
+  background-color: var(--c_secondary) !important;
+  color: var(--tc_on_secondary) !important;
 }
 .bg-success {
   --tc_link: var(--tc_on_success);
   --tc_link__hover: var(--tc_on_success);
   
-  background-color: var(--c_success);
-  color: var(--tc_on_success);
+  background-color: var(--c_success) !important;
+  color: var(--tc_on_success) !important;
 }
 .bg-warning {
   --tc_link: var(--tc_on_warning);
   --tc_link__hover: var(--tc_on_warning);
   
-  background-color: var(--c_warning);
-  color: var(--tc_on_warning);
+  background-color: var(--c_warning) !important;
+  color: var(--tc_on_warning) !important;
 }
 .bg-danger {
   --tc_link: var(--tc_on_danger);
   --tc_link__hover: var(--tc_on_danger);
   
-  background-color: var(--c_danger);
-  color: var(--tc_on_danger);
+  background-color: var(--c_danger) !important;
+  color: var(--tc_on_danger) !important;
 }
 .tc-default {
-  color: var(--tc);
+  color: var(--tc) !important;
 }
 .tc-inv {
-  color: var(--tc__inv);
+  color: var(--tc__inv) !important;
 }
 .tc-primary {
-  color: var(--tc_primary);
+  color: var(--tc_primary) !important;
 }
 .is-inv .tc-primary,
 .bg-inv .tc-primary {
-  color: var(--tc_primary__inv);
+  color: var(--tc_primary__inv) !important;
 }
 .tc-secondary {
-  color: var(--tc_secondary);
+  color: var(--tc_secondary) !important;
 }
 .is-inv .tc-secondary,
 .bg-inv .tc-secondary {
-  color: var(--tc_secondary__inv);
+  color: var(--tc_secondary__inv) !important;
 }
 .tc-success {
-  color: var(--tc_success);
+  color: var(--tc_success) !important;
 }
 .is-inv .tc-success,
 .bg-inv .tc-success {
-  color: var(--tc_success__inv);
+  color: var(--tc_success__inv) !important;
 }
 .tc-warning {
-  color: var(--tc_warning);
+  color: var(--tc_warning) !important;
 }
 .is-inv .tc-warning,
 .bg-inv .tc-warning {
-  color: var(--tc_warning__inv);
+  color: var(--tc_warning__inv) !important;
 }
 .tc-danger {
-  color: var(--tc_danger);
+  color: var(--tc_danger) !important;
 }
 .is-inv .tc-danger,
 .bg-inv .tc-danger {
-  color: var(--tc_danger__inv);
+  color: var(--tc_danger__inv) !important;
 }
 .tc-muted {
-  color: var(--tc_muted);
+  color: var(--tc_muted) !important;
 }
 
 /*
