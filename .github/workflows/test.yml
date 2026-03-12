@@ -1,0 +1,26 @@
+name: Run Unit Tests
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+
+      - run: npm ci
+
+      - name: Install Xvfb
+        run: sudo apt-get install -y xvfb
+
+      - name: Run Unit Tests
+        run: xvfb-run npm test
