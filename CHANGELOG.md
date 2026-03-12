@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.13] - 2026-03-12
+
+### Changed
+- Reorganized files
+- Moved and updated .github/copilot-instructions.md -> AGENTS.md
+
+## [1.3.12] - 2026-03-12
+
+### Changed
+- Updated github workflows
+
 ## [1.3.10] - 2026-02-26
 
 ### Changed
