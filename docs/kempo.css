@@ -80,34 +80,50 @@
   --focus_shadow_on_primary: 0 0 2px 2px var(--tc_on_primary);
   --input_bg: light-dark(white, var(--c_bg__alt));
   --input_tc: light-dark(rgba(0, 0, 0, 0.93), var(--tc));
-  --drop_shadow__light: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.333);
-  --drop_shadow__dark: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
-  --drop_shadow: var(--drop_shadow__light);
   --date_picker_icon_filter: light-dark(invert(0), invert(1));
   
-  /* Elevation System - Level 0 = body bg, positive = lighter + drop shadow, negative = darker + inset shadow */
-  --elevation_-2_bg: light-dark(rgb(215, 215, 215), rgb(25, 25, 25));
-  --elevation_-1_bg: light-dark(rgb(232, 232, 232), rgb(38, 38, 38));
-  --elevation_0_bg: var(--c_bg);
-  --elevation_1_bg: light-dark(rgb(255, 255, 255), rgb(64, 64, 64));
-  --elevation_2_bg: light-dark(rgb(255, 255, 255), rgb(77, 77, 77));
-  --elevation_3_bg: light-dark(rgb(255, 255, 255), rgb(90, 90, 90));
-  --elevation_-2_shadow__light: inset 0 2px 6px rgba(0, 0, 0, 0.18), inset 0 1px 3px rgba(0, 0, 0, 0.12);
-  --elevation_-1_shadow__light: inset 0 1px 3px rgba(0, 0, 0, 0.1), inset 0 1px 2px rgba(0, 0, 0, 0.06);
-  --elevation_0_shadow: none;
-  --elevation_1_shadow__light: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.16);
-  --elevation_2_shadow__light: 0 3px 6px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.1);
-  --elevation_3_shadow__light: 0 8px 16px rgba(0, 0, 0, 0.14), 0 3px 6px rgba(0, 0, 0, 0.1);
-  --elevation_-2_shadow__dark: inset 0 2px 8px rgba(0, 0, 0, 0.5), inset 0 1px 4px rgba(0, 0, 0, 0.4);
-  --elevation_-1_shadow__dark: inset 0 1px 4px rgba(0, 0, 0, 0.35), inset 0 1px 2px rgba(0, 0, 0, 0.25);
-  --elevation_1_shadow__dark: 0 2px 6px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.4);
-  --elevation_2_shadow__dark: 0 4px 12px rgba(0, 0, 0, 0.55), 0 2px 4px rgba(0, 0, 0, 0.45);
-  --elevation_3_shadow__dark: 0 8px 20px rgba(0, 0, 0, 0.6), 0 4px 8px rgba(0, 0, 0, 0.5);
-  --elevation_-2_shadow: var(--elevation_-2_shadow__light);
-  --elevation_-1_shadow: var(--elevation_-1_shadow__light);
-  --elevation_1_shadow: var(--elevation_1_shadow__light);
-  --elevation_2_shadow: var(--elevation_2_shadow__light);
-  --elevation_3_shadow: var(--elevation_3_shadow__light);
+  /* Elevation System - Level 2 = page level (z-index 20); 0-1 = sunk; 3-10 = raised */
+  --c_bg_elevation_0: light-dark(rgb(205, 205, 205), rgb(10, 10, 10));
+  --c_bg_elevation_1: light-dark(rgb(225, 225, 225), rgb(30, 30, 30));
+  --c_bg_elevation_2: var(--c_bg);
+  --c_bg_elevation_3: light-dark(rgb(252, 252, 252), rgb(60, 60, 60));
+  --c_bg_elevation_4: light-dark(rgb(253, 253, 253), rgb(68, 68, 68));
+  --c_bg_elevation_5: light-dark(rgb(255, 255, 255), rgb(76, 76, 76));
+  --c_bg_elevation_6: light-dark(rgb(255, 255, 255), rgb(85, 85, 85));
+  --c_bg_elevation_7: light-dark(rgb(255, 255, 255), rgb(95, 95, 95));
+  --c_bg_elevation_8: light-dark(rgb(255, 255, 255), rgb(105, 105, 105));
+  --c_bg_elevation_9: light-dark(rgb(255, 255, 255), rgb(115, 115, 115));
+  --c_bg_elevation_10: light-dark(rgb(255, 255, 255), rgb(130, 130, 130));
+  --shadow_0__light: inset 0 2px 6px rgba(0, 0, 0, 0.18), inset 0 1px 3px rgba(0, 0, 0, 0.12);
+  --shadow_1__light: inset 0 1px 3px rgba(0, 0, 0, 0.1), inset 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow_3__light: 0 1px 2px rgba(0, 0, 0, 0.08), 0 1px 1px rgba(0, 0, 0, 0.1);
+  --shadow_4__light: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.16);
+  --shadow_5__light: 0 2px 5px rgba(0, 0, 0, 0.11), 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow_6__light: 0 3px 6px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow_7__light: 0 5px 10px rgba(0, 0, 0, 0.13), 0 2px 5px rgba(0, 0, 0, 0.1);
+  --shadow_8__light: 0 8px 16px rgba(0, 0, 0, 0.14), 0 3px 6px rgba(0, 0, 0, 0.1);
+  --shadow_9__light: 0 12px 24px rgba(0, 0, 0, 0.15), 0 5px 10px rgba(0, 0, 0, 0.1);
+  --shadow_10__light: 0 16px 32px rgba(0, 0, 0, 0.16), 0 8px 16px rgba(0, 0, 0, 0.1);
+  --shadow_0__dark: inset 0 2px 8px rgba(0, 0, 0, 0.5), inset 0 1px 4px rgba(0, 0, 0, 0.4);
+  --shadow_1__dark: inset 0 1px 4px rgba(0, 0, 0, 0.35), inset 0 1px 2px rgba(0, 0, 0, 0.25);
+  --shadow_3__dark: 0 1px 3px rgba(0, 0, 0, 0.35), 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow_4__dark: 0 2px 6px rgba(0, 0, 0, 0.4), 0 1px 3px rgba(0, 0, 0, 0.35);
+  --shadow_5__dark: 0 3px 8px rgba(0, 0, 0, 0.45), 0 1px 4px rgba(0, 0, 0, 0.35);
+  --shadow_6__dark: 0 4px 12px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.45);
+  --shadow_7__dark: 0 6px 14px rgba(0, 0, 0, 0.52), 0 3px 6px rgba(0, 0, 0, 0.45);
+  --shadow_8__dark: 0 8px 20px rgba(0, 0, 0, 0.55), 0 4px 8px rgba(0, 0, 0, 0.5);
+  --shadow_9__dark: 0 12px 28px rgba(0, 0, 0, 0.58), 0 6px 12px rgba(0, 0, 0, 0.5);
+  --shadow_10__dark: 0 16px 36px rgba(0, 0, 0, 0.6), 0 8px 16px rgba(0, 0, 0, 0.5);
+  --shadow_0: var(--shadow_0__light);
+  --shadow_1: var(--shadow_1__light);
+  --shadow_3: var(--shadow_3__light);
+  --shadow_4: var(--shadow_4__light);
+  --shadow_5: var(--shadow_5__light);
+  --shadow_6: var(--shadow_6__light);
+  --shadow_7: var(--shadow_7__light);
+  --shadow_8: var(--shadow_8__light);
+  --shadow_9: var(--shadow_9__light);
+  --shadow_10: var(--shadow_10__light);
 }
 [theme="light"] {
   color-scheme: light;
@@ -115,12 +131,16 @@
 
 [theme="dark"] {
   color-scheme: dark;
-  --drop_shadow: var(--drop_shadow__dark);
-  --elevation_-2_shadow: var(--elevation_-2_shadow__dark);
-  --elevation_-1_shadow: var(--elevation_-1_shadow__dark);
-  --elevation_1_shadow: var(--elevation_1_shadow__dark);
-  --elevation_2_shadow: var(--elevation_2_shadow__dark);
-  --elevation_3_shadow: var(--elevation_3_shadow__dark);
+  --shadow_0: var(--shadow_0__dark);
+  --shadow_1: var(--shadow_1__dark);
+  --shadow_3: var(--shadow_3__dark);
+  --shadow_4: var(--shadow_4__dark);
+  --shadow_5: var(--shadow_5__dark);
+  --shadow_6: var(--shadow_6__dark);
+  --shadow_7: var(--shadow_7__dark);
+  --shadow_8: var(--shadow_8__dark);
+  --shadow_9: var(--shadow_9__dark);
+  --shadow_10: var(--shadow_10__dark);
 }
 
 [theme="auto"] {
@@ -128,12 +148,16 @@
 }
 @media (prefers-color-scheme: dark) {
   [theme="auto"] {
-    --drop_shadow: var(--drop_shadow__dark);
-    --elevation_-2_shadow: var(--elevation_-2_shadow__dark);
-    --elevation_-1_shadow: var(--elevation_-1_shadow__dark);
-    --elevation_1_shadow: var(--elevation_1_shadow__dark);
-    --elevation_2_shadow: var(--elevation_2_shadow__dark);
-    --elevation_3_shadow: var(--elevation_3_shadow__dark);
+    --shadow_0: var(--shadow_0__dark);
+    --shadow_1: var(--shadow_1__dark);
+    --shadow_3: var(--shadow_3__dark);
+    --shadow_4: var(--shadow_4__dark);
+    --shadow_5: var(--shadow_5__dark);
+    --shadow_6: var(--shadow_6__dark);
+    --shadow_7: var(--shadow_7__dark);
+    --shadow_8: var(--shadow_8__dark);
+    --shadow_9: var(--shadow_9__dark);
+    --shadow_10: var(--shadow_10__dark);
   }
 }
 
@@ -1138,33 +1162,42 @@ tr:last-child td:last-child {
   padding-right: var(--spacer);
   margin-bottom: var(--spacer);
 }
-.drop-shadow {
-  box-shadow: var(--drop_shadow);
-}
-.elevation--2 {
-  background-color: var(--elevation_-2_bg);
-  box-shadow: var(--elevation_-2_shadow);
-}
-.elevation--1 {
-  background-color: var(--elevation_-1_bg);
-  box-shadow: var(--elevation_-1_shadow);
-}
-.elevation-0 {
-  background-color: var(--elevation_0_bg);
-  box-shadow: var(--elevation_0_shadow);
-}
-.elevation-1 {
-  background-color: var(--elevation_1_bg);
-  box-shadow: var(--elevation_1_shadow);
-}
-.elevation-2 {
-  background-color: var(--elevation_2_bg);
-  box-shadow: var(--elevation_2_shadow);
-}
-.elevation-3 {
-  background-color: var(--elevation_3_bg);
-  box-shadow: var(--elevation_3_shadow);
-}
+/* elevation - z-index only, increments of 10; level 2 = page default */
+.elevation-0 { z-index: 0; }
+.elevation-1 { z-index: 10; }
+.elevation-2 { z-index: 20; }
+.elevation-3 { z-index: 30; }
+.elevation-4 { z-index: 40; }
+.elevation-5 { z-index: 50; }
+.elevation-6 { z-index: 60; }
+.elevation-7 { z-index: 70; }
+.elevation-8 { z-index: 80; }
+.elevation-9 { z-index: 90; }
+.elevation-10 { z-index: 100; }
+/* shadow - box-shadow tied to elevation; use with elevation-* class */
+.shadow { box-shadow: none; }
+.shadow.elevation-0 { box-shadow: var(--shadow_0); }
+.shadow.elevation-1 { box-shadow: var(--shadow_1); }
+.shadow.elevation-3 { box-shadow: var(--shadow_3); }
+.shadow.elevation-4 { box-shadow: var(--shadow_4); }
+.shadow.elevation-5 { box-shadow: var(--shadow_5); }
+.shadow.elevation-6 { box-shadow: var(--shadow_6); }
+.shadow.elevation-7 { box-shadow: var(--shadow_7); }
+.shadow.elevation-8 { box-shadow: var(--shadow_8); }
+.shadow.elevation-9 { box-shadow: var(--shadow_9); }
+.shadow.elevation-10 { box-shadow: var(--shadow_10); }
+/* bg-elevation - background color tied to elevation; use with elevation-* class */
+.bg-elevation.elevation-0 { background-color: var(--c_bg_elevation_0); }
+.bg-elevation.elevation-1 { background-color: var(--c_bg_elevation_1); }
+.bg-elevation.elevation-2 { background-color: var(--c_bg_elevation_2); }
+.bg-elevation.elevation-3 { background-color: var(--c_bg_elevation_3); }
+.bg-elevation.elevation-4 { background-color: var(--c_bg_elevation_4); }
+.bg-elevation.elevation-5 { background-color: var(--c_bg_elevation_5); }
+.bg-elevation.elevation-6 { background-color: var(--c_bg_elevation_6); }
+.bg-elevation.elevation-7 { background-color: var(--c_bg_elevation_7); }
+.bg-elevation.elevation-8 { background-color: var(--c_bg_elevation_8); }
+.bg-elevation.elevation-9 { background-color: var(--c_bg_elevation_9); }
+.bg-elevation.elevation-10 { background-color: var(--c_bg_elevation_10); }
 .icon {
   display: inline-block;
   width: 1.35em;

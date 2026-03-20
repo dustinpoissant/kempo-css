@@ -63,19 +63,6 @@ export default {
     }
   },
 
-  'should have .drop-shadow class that sets box-shadow': ({pass, fail}) => {
-    const el = document.createElement('div');
-    el.className = 'drop-shadow';
-    document.body.appendChild(el);
-    const shadow = getStyle(el, 'boxShadow');
-    el.remove();
-    if(shadow && shadow !== 'none'){
-      pass(`.drop-shadow has box-shadow: ${shadow}`);
-    } else {
-      fail(`Expected box-shadow, got ${shadow}`);
-    }
-  },
-
   'should style .icon as inline-block': ({pass, fail}) => {
     const el = document.createElement('span');
     el.className = 'icon';

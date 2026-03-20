@@ -150,7 +150,7 @@ export default {
   },
 
   'should have focus and shadow variables': ({pass, fail}) => {
-    const vars = ['--focus_shadow', '--focus_shadow_on_primary', '--drop_shadow', '--drop_shadow__light', '--drop_shadow__dark', '--c_overlay'];
+    const vars = ['--focus_shadow', '--focus_shadow_on_primary', '--c_overlay'];
     const missing = vars.filter(v => !getVar(v));
     if(missing.length === 0){
       pass('All focus and shadow variables exist');

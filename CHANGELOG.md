@@ -2,7 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
-## [1.3.13] - 2026-03-12
+## [2.0.0] - 2026-03-20
+
+### Changed
+- **Breaking:** Redesigned elevation system from levels -2–3 to 0–10
+- `elevation-*` classes now only set `z-index` (in increments of 10); level 2 is the page default (z-index 20)
+- Added `shadow` class: combine with `elevation-*` to apply box-shadow — inset for levels 0–1, none for level 2, outset for levels 3–10
+- Added `bg-elevation` class: combine with `elevation-*` to apply elevation-appropriate background colors
+- Added 11 new CSS custom properties: `--c_bg_elevation_0` through `--c_bg_elevation_10` (`--c_bg_elevation_2` equals `var(--c_bg)`)
+- Replaced old `--elevation_*_shadow` variables with `--shadow_0` through `--shadow_10` (and `__light`/`__dark` variants)
+- Updated docs with separate sections for z-index, shadow, and bg-elevation utilities
+- Updated tests: revised colors test and added `tests/elevation.browser-test.js` with 15 new tests
 
 ### Changed
 - Reorganized files

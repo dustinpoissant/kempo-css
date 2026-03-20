@@ -219,9 +219,9 @@ export default {
     }
   },
 
-  'should prioritize .bg-primary over .elevation-3 background': ({pass, fail}) => {
+  'should prioritize .bg-primary over .bg-elevation background': ({pass, fail}) => {
     const combined = document.createElement('div');
-    combined.className = 'elevation-3 bg-primary';
+    combined.className = 'elevation-3 bg-elevation bg-primary';
     document.body.appendChild(combined);
 
     const bgOnly = document.createElement('div');
@@ -229,7 +229,7 @@ export default {
     document.body.appendChild(bgOnly);
 
     const elevationOnly = document.createElement('div');
-    elevationOnly.className = 'elevation-3';
+    elevationOnly.className = 'elevation-3 bg-elevation';
     document.body.appendChild(elevationOnly);
 
     const combinedBg = getStyle(combined, 'backgroundColor');
