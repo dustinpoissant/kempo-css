@@ -35,33 +35,9 @@ Or import in your CSS/SCSS files:
 @import 'kempo-css/kempo-hljs.css';
 ```
 
-### Download
+## Download
+[Download the Minified CSS](https://raw.githubusercontent.com/dustinpoissant/kempo-css/refs/heads/main/dist/kempo.min.css)
 
-1. Download the CSS files from the [documentation page](https://dustinpoissant.github.io/kempo-css/)
-2. Include them in your project:
-
-```html
-<link rel="stylesheet" href="path/to/kempo.css">
-<link rel="stylesheet" href="path/to/kempo-hljs.css">
-```
-
-### Build from Source
-
-1. Clone the repository:
-```bash
-git clone https://github.com/dustinpoissant/kempo-css.git
-cd kempo-css
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Build minified versions:
-```bash
-npm run build
-```
 
 ## Quick Start
 
@@ -82,28 +58,6 @@ npm run build
 </body>
 </html>
 ```
-
-## Development
-
-- `npm run build` - Build minified CSS files
-- `npm run build:watch` - Watch for changes and rebuild automatically
-
-## License
-
-ISC License - feel free to use in personal and commercial projects.
-
----
-
-**[View Documentation](https://dustinpoissant.github.io/kempo-css/)** | **[Report Issues](https://github.com/dustinpoissant/kempo-css/issues)**
-
-## Contributing
-
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details on:
-
-- Setting up your development environment
-- Code style and conventions
-- Testing guidelines
-- Pull request process
 
 ## License
 

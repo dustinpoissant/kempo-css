@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.1] - 2026-03-21
+
+### Changed
+- Non-neutral colors (hover states, text colors, bg variants, border variants) are now auto-calculated from their base color using `oklch` relative color syntax — theme consumers only need to define the base colors
+- Elevation system now tops out at level 5; levels 6–10 alias level 5 for both shadows and backgrounds
+- Docs updated to reflect the elevation cap
+
 ## [2.0.0] - 2026-03-20
 
 ### Changed

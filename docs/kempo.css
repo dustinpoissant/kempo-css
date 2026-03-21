@@ -29,48 +29,57 @@
   --input_border_width: 1px;
   --btn_padding: var(--spacer_h) var(--spacer);
   
-  /* Colors using light-dark() function */
+  /* Base colors — override these to theme the framework */
   --c_bg: light-dark(rgb(249, 249, 249), rgb(51, 51, 51));
-  --c_bg__inv: light-dark(rgb(51, 51, 51), rgb(249, 249, 249));
-  --c_bg__alt: light-dark(rgb(238, 238, 238), rgb(34, 34, 34));
   --c_overscroll: light-dark(rgb(255, 255, 255), rgb(0, 0, 0));
   --c_border: light-dark(rgb(204, 204, 204), rgb(119, 119, 119));
-  --c_border__inv: light-dark(rgb(119, 119, 119), rgb(204, 204, 204));
   --c_primary: rgb(51, 102, 255);
-  --c_primary__hover: rgb(17, 68, 221);
   --c_secondary: rgb(153, 51, 255);
-  --c_secondary__hover: rgb(119, 17, 221);
   --c_success: rgb(0, 136, 0);
-  --c_success__hover: rgb(0, 102, 0);
   --c_warning: rgb(255, 102, 0);
-  --c_warning__hover: rgb(221, 68, 0);
   --c_danger: rgb(255, 0, 51);
-  --c_danger__hover: rgb(221, 0, 17);
-  --c_input_accent: rgb(51, 102, 255);
-  --c_input_border: var(--c_border);
-  --c_highlight: light-dark(rgba(41, 100, 210, 0.25), rgba(0, 89, 255, 0.25));
+  --btn_bg: light-dark(rgb(221, 221, 221), rgb(170, 170, 170));
   --tc: light-dark(rgba(0, 0, 0, 0.93), rgba(255, 255, 255, 0.93));
-  --tc_dark: light-dark(rgba(0, 0, 0, 0.93), rgba(0, 0, 0, 0.93));
-  --tc_light: light-dark(rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.93));
-  --tc_inv: light-dark(rgba(255, 255, 255, 0.93), rgba(0, 0, 0, 0.93));
+  --tc_dark: rgba(0, 0, 0, 0.93);
+  --tc_light: rgba(255, 255, 255, 0.93);
   --tc_muted: light-dark(rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.5));
-  --tc_on_primary: light-dark(rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.93));
-  --tc_on_secondary: light-dark(rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.93));
-  --tc_on_success: light-dark(rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.93));
-  --tc_on_warning: light-dark(rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.93));
-  --tc_on_danger: light-dark(rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.93));
   --c_overlay: rgba(0, 0, 0, 0.5);
-  --tc_primary: light-dark(#36f, rgb(138, 180, 248));
-  --tc_secondary: light-dark(#93f, rgb(187, 102, 255));
-  --tc_success: light-dark(#080, rgb(102, 187, 102));
-  --tc_warning: light-dark(#f60, rgb(255, 153, 51));
-  --tc_danger: light-dark(#f03, rgb(255, 85, 119));
+  /* Derived colors — computed from base colors above via relative oklch syntax */
+  --c_bg__alt: oklch(from var(--c_bg) calc(l - 0.04) c h);
+  --c_bg__inv: light-dark(oklch(from var(--c_bg) calc(l - 0.73) c h), oklch(from var(--c_bg) calc(l + 0.73) c h));
+  --c_border__inv: light-dark(oklch(from var(--c_border) calc(l - 0.34) c h), oklch(from var(--c_border) calc(l + 0.34) c h));
+  --c_primary__hover: oklch(from var(--c_primary) calc(l - 0.12) c h);
+  --c_secondary__hover: oklch(from var(--c_secondary) calc(l - 0.12) c h);
+  --c_success__hover: oklch(from var(--c_success) calc(l - 0.12) c h);
+  --c_warning__hover: oklch(from var(--c_warning) calc(l - 0.12) c h);
+  --c_danger__hover: oklch(from var(--c_danger) calc(l - 0.12) c h);
+  --c_input_accent: var(--c_primary);
+  --c_input_border: var(--c_border);
+  --c_highlight: oklch(from var(--c_primary) l c h / 0.25);
+  --tc_inv: light-dark(rgba(255, 255, 255, 0.93), rgba(0, 0, 0, 0.93));
+  --tc_on_primary: rgba(255, 255, 255, 0.93);
+  --tc_on_secondary: rgba(255, 255, 255, 0.93);
+  --tc_on_success: rgba(255, 255, 255, 0.93);
+  --tc_on_warning: rgba(255, 255, 255, 0.93);
+  --tc_on_danger: rgba(255, 255, 255, 0.93);
+  /* Brand text colors: use base in light mode, lighter+desaturated in dark for readability */
+  --tc_primary: light-dark(var(--c_primary), oklch(from var(--c_primary) calc(l + 0.18) calc(c * 0.65) h));
+  --tc_secondary: light-dark(var(--c_secondary), oklch(from var(--c_secondary) calc(l + 0.18) calc(c * 0.65) h));
+  --tc_success: light-dark(var(--c_success), oklch(from var(--c_success) calc(l + 0.18) calc(c * 0.65) h));
+  --tc_warning: light-dark(var(--c_warning), oklch(from var(--c_warning) calc(l + 0.18) calc(c * 0.65) h));
+  --tc_danger: light-dark(var(--c_danger), oklch(from var(--c_danger) calc(l + 0.18) calc(c * 0.65) h));
+  /* Inverse brand text colors: always the light/readable shade (for use on dark/inverted backgrounds) */
+  --tc__inv: var(--tc_inv);
+  --tc_primary__inv: oklch(from var(--c_primary) calc(l + 0.18) calc(c * 0.65) h);
+  --tc_secondary__inv: oklch(from var(--c_secondary) calc(l + 0.18) calc(c * 0.65) h);
+  --tc_success__inv: oklch(from var(--c_success) calc(l + 0.18) calc(c * 0.65) h);
+  --tc_warning__inv: oklch(from var(--c_warning) calc(l + 0.18) calc(c * 0.65) h);
+  --tc_danger__inv: oklch(from var(--c_danger) calc(l + 0.18) calc(c * 0.65) h);
   --btn_box_shadow: 0 0 0 transparent;
   --btn_box_shadow__hover: 0 0 0 transparent;
   --btn_border: transparent;
-  --btn_bg: light-dark(rgb(221, 221, 221), rgb(170, 170, 170));
-  --btn_bg__hover: light-dark(rgb(204, 204, 204), rgb(187, 187, 187));
-  --btn_tc: light-dark(rgba(0, 0, 0, 0.93), rgba(0, 0, 0, 0.93));
+  --btn_bg__hover: oklch(from var(--btn_bg) calc(l - 0.08) c h);
+  --btn_tc: rgba(0, 0, 0, 0.93);
   --btn_transparent__hover: light-dark(rgba(0, 0, 0, 0.05), rgba(255, 255, 255, 0.05));
   --tc_link: var(--tc_primary);
   --tc_link__hover: var(--tc_secondary);
@@ -81,49 +90,34 @@
   --input_bg: light-dark(white, var(--c_bg__alt));
   --input_tc: light-dark(rgba(0, 0, 0, 0.93), var(--tc));
   --date_picker_icon_filter: light-dark(invert(0), invert(1));
-  
   /* Elevation System - Level 2 = page level (z-index 20); 0-1 = sunk; 3-10 = raised */
-  --c_bg_elevation_0: light-dark(rgb(205, 205, 205), rgb(10, 10, 10));
-  --c_bg_elevation_1: light-dark(rgb(225, 225, 225), rgb(30, 30, 30));
+  --c_bg_elevation_0: oklch(from var(--c_bg) calc(l - 0.13) c h);
+  --c_bg_elevation_1: light-dark(oklch(from var(--c_bg) calc(l - 0.065) c h), oklch(from var(--c_bg) calc(l - 0.10) c h));
   --c_bg_elevation_2: var(--c_bg);
-  --c_bg_elevation_3: light-dark(rgb(252, 252, 252), rgb(60, 60, 60));
-  --c_bg_elevation_4: light-dark(rgb(253, 253, 253), rgb(68, 68, 68));
-  --c_bg_elevation_5: light-dark(rgb(255, 255, 255), rgb(76, 76, 76));
-  --c_bg_elevation_6: light-dark(rgb(255, 255, 255), rgb(85, 85, 85));
-  --c_bg_elevation_7: light-dark(rgb(255, 255, 255), rgb(95, 95, 95));
-  --c_bg_elevation_8: light-dark(rgb(255, 255, 255), rgb(105, 105, 105));
-  --c_bg_elevation_9: light-dark(rgb(255, 255, 255), rgb(115, 115, 115));
-  --c_bg_elevation_10: light-dark(rgb(255, 255, 255), rgb(130, 130, 130));
-  --shadow_0__light: inset 0 2px 6px rgba(0, 0, 0, 0.18), inset 0 1px 3px rgba(0, 0, 0, 0.12);
-  --shadow_1__light: inset 0 1px 3px rgba(0, 0, 0, 0.1), inset 0 1px 2px rgba(0, 0, 0, 0.06);
-  --shadow_3__light: 0 1px 2px rgba(0, 0, 0, 0.08), 0 1px 1px rgba(0, 0, 0, 0.1);
-  --shadow_4__light: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.16);
-  --shadow_5__light: 0 2px 5px rgba(0, 0, 0, 0.11), 0 1px 3px rgba(0, 0, 0, 0.1);
-  --shadow_6__light: 0 3px 6px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.1);
-  --shadow_7__light: 0 5px 10px rgba(0, 0, 0, 0.13), 0 2px 5px rgba(0, 0, 0, 0.1);
-  --shadow_8__light: 0 8px 16px rgba(0, 0, 0, 0.14), 0 3px 6px rgba(0, 0, 0, 0.1);
-  --shadow_9__light: 0 12px 24px rgba(0, 0, 0, 0.15), 0 5px 10px rgba(0, 0, 0, 0.1);
-  --shadow_10__light: 0 16px 32px rgba(0, 0, 0, 0.16), 0 8px 16px rgba(0, 0, 0, 0.1);
-  --shadow_0__dark: inset 0 2px 8px rgba(0, 0, 0, 0.5), inset 0 1px 4px rgba(0, 0, 0, 0.4);
-  --shadow_1__dark: inset 0 1px 4px rgba(0, 0, 0, 0.35), inset 0 1px 2px rgba(0, 0, 0, 0.25);
-  --shadow_3__dark: 0 1px 3px rgba(0, 0, 0, 0.35), 0 1px 2px rgba(0, 0, 0, 0.3);
-  --shadow_4__dark: 0 2px 6px rgba(0, 0, 0, 0.4), 0 1px 3px rgba(0, 0, 0, 0.35);
-  --shadow_5__dark: 0 3px 8px rgba(0, 0, 0, 0.45), 0 1px 4px rgba(0, 0, 0, 0.35);
-  --shadow_6__dark: 0 4px 12px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.45);
-  --shadow_7__dark: 0 6px 14px rgba(0, 0, 0, 0.52), 0 3px 6px rgba(0, 0, 0, 0.45);
-  --shadow_8__dark: 0 8px 20px rgba(0, 0, 0, 0.55), 0 4px 8px rgba(0, 0, 0, 0.5);
-  --shadow_9__dark: 0 12px 28px rgba(0, 0, 0, 0.58), 0 6px 12px rgba(0, 0, 0, 0.5);
-  --shadow_10__dark: 0 16px 36px rgba(0, 0, 0, 0.6), 0 8px 16px rgba(0, 0, 0, 0.5);
-  --shadow_0: var(--shadow_0__light);
-  --shadow_1: var(--shadow_1__light);
-  --shadow_3: var(--shadow_3__light);
-  --shadow_4: var(--shadow_4__light);
-  --shadow_5: var(--shadow_5__light);
-  --shadow_6: var(--shadow_6__light);
-  --shadow_7: var(--shadow_7__light);
-  --shadow_8: var(--shadow_8__light);
-  --shadow_9: var(--shadow_9__light);
-  --shadow_10: var(--shadow_10__light);
+  --c_bg_elevation_3: light-dark(oklch(from var(--c_bg) calc(l + 0.01) c h), oklch(from var(--c_bg) calc(l + 0.03) c h));
+  --c_bg_elevation_4: light-dark(oklch(from var(--c_bg) calc(l + 0.02) c h), oklch(from var(--c_bg) calc(l + 0.06) c h));
+  --c_bg_elevation_5: light-dark(oklch(from var(--c_bg) calc(l + 0.03) c h), oklch(from var(--c_bg) calc(l + 0.09) c h));
+  --c_bg_elevation_6: light-dark(oklch(from var(--c_bg) calc(l + 0.04) c h), oklch(from var(--c_bg) calc(l + 0.13) c h));
+  --c_bg_elevation_7: light-dark(oklch(from var(--c_bg) calc(l + 0.05) c h), oklch(from var(--c_bg) calc(l + 0.17) c h));
+  --c_bg_elevation_8: light-dark(oklch(from var(--c_bg) calc(l + 0.06) c h), oklch(from var(--c_bg) calc(l + 0.21) c h));
+  --c_bg_elevation_9: light-dark(oklch(from var(--c_bg) calc(l + 0.07) c h), oklch(from var(--c_bg) calc(l + 0.25) c h));
+  --c_bg_elevation_10: light-dark(oklch(from var(--c_bg) calc(l + 0.08) c h), oklch(from var(--c_bg) calc(l + 0.31) c h));
+  /* Shadow config — override these to customize elevation shadows */
+  --shadow_color: black;
+  --shadow_size: 1px;
+  --shadow_base_opacity: 0.12;
+  --shadow_opacity_step: 0.04;
+  /* Computed shadows — derived from shadow config vars above */
+  --shadow_0: inset 0 calc(var(--shadow_size) * 2) calc(var(--shadow_size) * 6) oklch(from var(--shadow_color) l c h / calc(var(--shadow_base_opacity) * 2)), inset 0 calc(var(--shadow_size)) calc(var(--shadow_size) * 3) oklch(from var(--shadow_color) l c h / calc(var(--shadow_base_opacity) * 1.5));
+  --shadow_1: inset 0 calc(var(--shadow_size)) calc(var(--shadow_size) * 3) oklch(from var(--shadow_color) l c h / calc(var(--shadow_base_opacity) * 1.25)), inset 0 calc(var(--shadow_size)) calc(var(--shadow_size) * 2) oklch(from var(--shadow_color) l c h / calc(var(--shadow_base_opacity) * 0.75));
+  --shadow_3: 0 calc(var(--shadow_size)) calc(var(--shadow_size) * 2) oklch(from var(--shadow_color) l c h / var(--shadow_base_opacity));
+  --shadow_4: 0 calc(var(--shadow_size) * 2) calc(var(--shadow_size) * 4) oklch(from var(--shadow_color) l c h / calc(var(--shadow_base_opacity) + var(--shadow_opacity_step)));
+  --shadow_5: 0 calc(var(--shadow_size) * 3) calc(var(--shadow_size) * 6) oklch(from var(--shadow_color) l c h / calc(var(--shadow_base_opacity) + var(--shadow_opacity_step) * 2));
+  --shadow_6: var(--shadow_5);
+  --shadow_7: var(--shadow_5);
+  --shadow_8: var(--shadow_5);
+  --shadow_9: var(--shadow_5);
+  --shadow_10: var(--shadow_5);
 }
 [theme="light"] {
   color-scheme: light;
@@ -131,16 +125,8 @@
 
 [theme="dark"] {
   color-scheme: dark;
-  --shadow_0: var(--shadow_0__dark);
-  --shadow_1: var(--shadow_1__dark);
-  --shadow_3: var(--shadow_3__dark);
-  --shadow_4: var(--shadow_4__dark);
-  --shadow_5: var(--shadow_5__dark);
-  --shadow_6: var(--shadow_6__dark);
-  --shadow_7: var(--shadow_7__dark);
-  --shadow_8: var(--shadow_8__dark);
-  --shadow_9: var(--shadow_9__dark);
-  --shadow_10: var(--shadow_10__dark);
+  --shadow_base_opacity: 0.30;
+  --shadow_opacity_step: 0.025;
 }
 
 [theme="auto"] {
@@ -148,16 +134,8 @@
 }
 @media (prefers-color-scheme: dark) {
   [theme="auto"] {
-    --shadow_0: var(--shadow_0__dark);
-    --shadow_1: var(--shadow_1__dark);
-    --shadow_3: var(--shadow_3__dark);
-    --shadow_4: var(--shadow_4__dark);
-    --shadow_5: var(--shadow_5__dark);
-    --shadow_6: var(--shadow_6__dark);
-    --shadow_7: var(--shadow_7__dark);
-    --shadow_8: var(--shadow_8__dark);
-    --shadow_9: var(--shadow_9__dark);
-    --shadow_10: var(--shadow_10__dark);
+    --shadow_base_opacity: 0.30;
+    --shadow_opacity_step: 0.025;
   }
 }
 
