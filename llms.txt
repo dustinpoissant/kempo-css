@@ -1,0 +1,205 @@
+# Kempo CSS
+
+> A lightweight, modern CSS-only framework providing utility classes and semantic components for rapid web development. No JavaScript required. Supports dark mode, theming via CSS custom properties, and a comprehensive color/elevation system.
+
+## Project
+
+- [Documentation](https://dustinpoissant.github.io/kempo-css/): Full docs with live examples and an interactive theme editor
+- [GitHub Repository](https://github.com/dustinpoissant/kempo-css): Source code, issues, and releases
+- [npm Package](https://www.npmjs.com/package/kempo-css): `npm install kempo-css`
+- License: MIT
+
+## Installation
+
+```html
+<!-- From npm -->
+<link rel="stylesheet" href="node_modules/kempo-css/kempo.css">
+
+<!-- From CDN (jsDelivr) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/kempo-css/kempo.css">
+```
+
+Or import in CSS/SCSS:
+```css
+@import 'kempo-css/kempo.css';
+```
+
+## Theming
+
+All visual properties are controlled by CSS custom properties on `:root`. Override them to theme the framework. Only the base colors need to be defined — hover, text, and inverse variants are auto-calculated using `oklch` relative color syntax.
+
+Base color variables (override to theme):
+- `--c_bg` — page background; light-dark aware (default light: `rgb(249,249,249)`, dark: `rgb(51,51,51)`)
+- `--c_overscroll` — overscroll/rubber-band background
+- `--c_border` — border color; light-dark aware
+- `--c_primary` — primary brand color (default `rgb(51,102,255)`)
+- `--c_secondary` — secondary brand color (default `rgb(153,51,255)`)
+- `--c_success` — success state (default `rgb(0,136,0)`)
+- `--c_warning` — warning state (default `rgb(255,102,0)`)
+- `--c_danger` — danger/error state (default `rgb(255,0,51)`)
+- `--btn_bg` — default button background
+- `--tc` — default text color; light-dark aware
+- `--tc_dark` / `--tc_light` — always-dark / always-light text
+- `--tc_muted` — muted/secondary text; light-dark aware
+- `--c_overlay` — overlay backdrop color
+
+Layout/typography variables:
+- `--spacer` (default `1rem`) — base spacing unit; `--spacer_h` (0.5rem), `--spacer_q` (0.25rem)
+- `--fs_base` (default `16px`) — base font size; heading sizes h1–h6 are derived from this
+- `--container_width` (default `90rem`) — max-width for `main` and `.container`
+- `--radius` (default `0.25rem`) — border radius
+- `--animation_ms` (default `256ms`) — transition duration
+- `--line-height` (default `1.35em`)
+- `--ff_body`, `--ff_heading`, `--ff_mono` — font families
+
+## Dark Mode
+
+Dark mode is controlled via the `theme` attribute. Apply `theme="dark"` to force dark, `theme="light"` to force light, or `theme="auto"` to follow the system `prefers-color-scheme`.
+
+```html
+<html theme="dark">
+```
+
+## Classes
+
+### Display
+
+| Class | Effect |
+|-------|--------|
+| `.d-b` | `display: block` |
+| `.d-ib` | `display: inline-block` |
+| `.d-i` | `display: inline` |
+| `.d-f` | `display: flex; flex-wrap: wrap` |
+| `.d-if` | `display: inline-flex; flex-wrap: wrap` |
+| `.d-g` | `display: grid` |
+| `.d-n` | `display: none` |
+
+Responsive prefixes: `d-` (desktop ≥1024px), `t-` (tablet 769–1023px), `m-` (mobile ≤768px).
+Examples: `.m-d-n` hides on mobile; `.d-d-f` makes flex on desktop only.
+
+### Flex
+
+`.flex` / `.flex-1` through `.flex-10` — sets `flex: N N auto`. Same classes with `d-`, `t-`, `m-` prefixes for responsive variants (e.g. `.m-flex-2`).
+
+`.flex-0` — `flex: 0 0` (no grow/shrink).
+
+### Layout
+
+- `main`, `.container` — centered, max-width (`--container_width`), padded wrapper
+- `.fixed` — `position: fixed; top: 0; width: 100%; z-index: 99`; add `.scrolled` to show shadow
+- `.full` — `display: block; width: 100%`
+- `body.no-scroll` — prevents body scroll (use when dialogs or other overlays active)
+
+### Rows / Columns (12-column flex grid)
+
+- `.row` — `display: flex; flex-wrap: wrap`
+- `.col` — `flex: 1 1` (fills remaining space)
+- `.span-1` through `.span-12` — 12-col span widths
+- Responsive variants: `.d-span-*` (desktop), `.t-span-*` (tablet), `.m-span-*` (mobile)
+
+### CSS Grid Columns
+
+- `.cols-2` through `.cols-10` — sets `grid-template-columns: repeat(N, 1fr)`
+- Responsive variants: `.d-cols-*`, `.t-cols-*`, `.m-cols-*`
+
+### Typography
+
+- `.h1`–`.h6` — apply heading font size to any element
+- `.small` — `font-size: var(--fs_small)` (0.6× base)
+- `.large` — `font-size: var(--fs_large)` (1.5× base)
+- `.ff-mono` — monospace font
+- `.ta-left`, `.ta-center`, `.ta-right` — text alignment
+- `.td-n` — `text-decoration: none`
+- `.no-link` / `.no-link:hover` — removes link color and underline
+- `.link` — applies link styling to non-`<a>` elements
+
+Block elements (`p`, `h1`–`h6`, `blockquote`, `ul`, `ol`, `dl`, `pre`, `hr`, `dd`) all get `margin-bottom: var(--spacer)` by default.
+
+### Spacing
+
+Sizes: whole = `--spacer` (1rem), half (`h`) = `--spacer_h` (0.5rem), quarter (`q`) = `--spacer_q` (0.25rem), zero (`0`) = 0.
+
+| Side | Padding (whole) | Padding (half) | Padding (quarter) | Padding (zero) | Margin (whole) | Margin (half) | Margin (quarter) | Margin (zero) | Margin (negative) |
+|------|-----------------|----------------|-------------------|----------------|----------------|---------------|------------------|---------------|-------------------|
+| All | `.p` | `.ph` | `.pq` | `.p0` | `.m` | `.mh` | `.mq` | `.m0` | `.-m` |
+| Top | `.pt` | `.pth` | `.ptq` | `.pt0` | `.mt` | `.mth` | `.mtq` | `.mt0` | `.-mt` |
+| Bottom | `.pb` | `.pbh` | `.pbq` | `.pb0` | `.mb` | `.mbh` | `.mbq` | `.mb0` | `.-mb` |
+| Left | `.pl` | `.plh` | `.plq` | `.pl0` | `.ml` | `.mlh` | `.mlq` | `.ml0` | `.-ml` |
+| Right | `.pr` | `.prh` | `.prq` | `.pr0` | `.mr` | `.mrh` | `.mrq` | `.mr0` | `.-mr` |
+| Horizontal | `.px` | `.pxh` | `.pxq` | `.px0` | `.mx` | `.mxh` | `.mxq` | `.mx0` | `.-mx` |
+| Vertical | `.py` | `.pyh` | `.pyq` | `.py0` | `.my` | `.myh` | `.myq` | `.my0` | `.-my` |
+
+### Borders
+
+- `.b` — all sides; `.bt` / `.bb` / `.bl` / `.br` — individual sides; `.bx` — horizontal; `.by` — vertical
+- `.b0` — remove all; `.bt0` / `.bb0` / `.bl0` / `.br0` / `.bx0` / `.by0` — remove individual
+
+### Border Radius
+
+- `.r` — all corners; `.rt` / `.rb` / `.rl` / `.rr` — sides; `.rtl` / `.rtr` / `.rbl` / `.rbr` — individual corners
+- `.r0` — remove all; `.rt0` / `.rb0` / `.rl0` / `.rr0` / `.rtl0` / `.rtr0` / `.rbl0` / `.rbr0` — remove individual
+- `.round` — `border-radius: 9999rem` (pill/circle)
+
+### Buttons
+
+`button`, `.btn`, `input[type="button"]`, `input[type="submit"]`, and `input[type="reset"]` are all styled by default.
+
+Semantic color variants — add to a button element:
+- `.primary`, `.secondary`, `.success`, `.warning`, `.danger`
+
+Other button modifiers:
+- `.link` — transparent, no border, inherits text color and font size, used to make a button (or other element) look like a link
+- `.no-btn` — strips all kempo styles; renders as plain inline element inheriting color/font, no border/background/padding (retains focus ring via `--focus_shadow`)
+- `.no-style` — opts a `<button>` out of kempo styles entirely, leaving browser default button appearance
+- `.btn-grp` — wraps buttons in an inline-flex group with joined borders
+
+### Forms
+
+All standard inputs are auto-styled: `input` (except buttons/radio/checkbox), `select`, `textarea`. Custom styling is also applied to `input[type="checkbox"]`, `input[type="radio"]`, `input[type="color"]`, and date/time/search inputs.
+
+- `label` — `display: block`
+- `label.checkbox` / `label.radio` — inline-block label for use next to checkbox/radio
+
+### Tables
+
+- `table` — full-width, no border-spacing, auto-styled `th`/`td` with borders and padding
+- `.table-wrapper` — wraps a table for horizontal scroll overflow
+
+### Background Colors
+
+- `.bg-default` — `--c_bg` background with `--tc` text
+- `.bg-alt` — `--c_bg__alt` (slightly darker/lighter than bg)
+- `.bg-inv` — inverted background; also re-scopes all `--c_*` vars to their inverse variants
+- `.bg-primary`, `.bg-secondary`, `.bg-success`, `.bg-warning`, `.bg-danger` — semantic color backgrounds with appropriate text color set automatically
+
+### Text Colors
+
+- `.tc-default` — default text color
+- `.tc-inv` — inverted text color
+- `.tc-muted` — muted text
+- `.tc-primary`, `.tc-secondary`, `.tc-success`, `.tc-warning`, `.tc-danger` — semantic text colors; automatically switch to their inverse when inside `.bg-inv` or `.is-inv`
+
+### Elevation
+
+Elevation classes only set `z-index`. Combine with `.shadow` and/or `.bg-elevation` for visual depth.
+
+- `.elevation-0` through `.elevation-10` — `z-index: 0` through `z-index: 100` (increments of 10); level 2 = page default
+- `.shadow` + `.elevation-*` — adds `box-shadow`; inset shadow at levels 0–1, no shadow at level 2, outset shadow at levels 3–5
+- `.bg-elevation` + `.elevation-*` — sets `background-color` to the elevation-appropriate tint (`--c_bg_elevation_0` through `--c_bg_elevation_10`)
+- Shadows and backgrounds max out at 5, 6-10 look the same as 5 but still increase z-index.
+
+CSS variables: `--c_bg_elevation_0`–`--c_bg_elevation_10`, `--shadow_0`–`--shadow_10` (shadow vars `__light`/`__dark` variants also exist).
+
+### Components
+
+- `.card` — bordered box with `--radius`, top/left/right padding, and `margin-bottom`
+- `.icon` — `display: inline-block; width: 1.35em; vertical-align: top` for inline SVG icons
+
+## File Structure
+
+- `dist/kempo.min.css` — minified file for production
+- `dist/kempo-hljs.min.css` - minified "highlight.js" styles for production
+- `src/*` - source files for kempo-css developement
+- `test/*` - unit tests for kempo-css developmenet
+- `docs/*` - github pages docs
+

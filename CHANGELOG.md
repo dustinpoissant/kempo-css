@@ -2,7 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
-## [2.0.1] - 2026-03-21
+## [2.1.1] - 2026-03-21
+- Added LLM.txt
+
+## [2.1.0] - 2026-03-21
 
 ### Changed
 - Non-neutral colors (hover states, text colors, bg variants, border variants) are now auto-calculated from their base color using `oklch` relative color syntax — theme consumers only need to define the base colors
