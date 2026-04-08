@@ -495,34 +495,40 @@ li ul {
 /*
   Spacing, Borders and Radius
 */
-.p, .pt, .py { padding-top: var(--spacer) !important }
-.p, .pr, .px { padding-right: var(--spacer) !important }
-.p, .pb, .py { padding-bottom: var(--spacer) !important }
-.p, .pl, .px { padding-left: var(--spacer) !important }
-.ph, .pth, .pyh { padding-top: var(--spacer_h) !important }
-.ph, .prh, .pxh { padding-right: var(--spacer_h) !important }
-.ph, .pbh, .pyh { padding-bottom: var(--spacer_h) !important }
-.ph, .plh, .pxh { padding-left: var(--spacer_h) !important }
-.pq, .ptq, .pyq { padding-top: var(--spacer_q) !important }
-.pq, .prq, .pxq { padding-right: var(--spacer_q) !important }
-.pq, .pbq, .pyq { padding-bottom: var(--spacer_q) !important }
-.pq, .plq, .pxq { padding-left: var(--spacer_q) !important }
+.p { padding: var(--spacer) !important }
+.pt, .py { padding-top: var(--spacer) !important }
+.pr, .px { padding-right: var(--spacer) !important }
+.pb, .py { padding-bottom: var(--spacer) !important }
+.pl, .px { padding-left: var(--spacer) !important }
+.ph { padding: var(--spacer_h) !important }
+.pth, .pyh { padding-top: var(--spacer_h) !important }
+.prh, .pxh { padding-right: var(--spacer_h) !important }
+.pbh, .pyh { padding-bottom: var(--spacer_h) !important }
+.plh, .pxh { padding-left: var(--spacer_h) !important }
+.pq { padding: var(--spacer_q) !important }
+.ptq, .pyq { padding-top: var(--spacer_q) !important }
+.prq, .pxq { padding-right: var(--spacer_q) !important }
+.pbq, .pyq { padding-bottom: var(--spacer_q) !important }
+.plq, .pxq { padding-left: var(--spacer_q) !important }
 .p0, .pt0, .py0 { padding-top: 0.1px !important }
 .p0, .pr0, .px0 { padding-right: 0.1px !important }
 .p0, .pb0, .py0 { padding-bottom: 0.1px !important }
 .p0, .pl0, .px0 { padding-left: 0.1px !important }
-.m, .mt, .my { margin-top: var(--spacer) !important }
-.m, .mr, .mx { margin-right: var(--spacer) !important }
-.m, .mb, .my { margin-bottom: var(--spacer) !important }
-.m, .ml, .mx { margin-left: var(--spacer) !important }
-.mh, .mth, .myh { margin-top: var(--spacer_h) !important }
-.mh, .mrh, .mxh { margin-right: var(--spacer_h) !important }
-.mh, .mbh, .myh { margin-bottom: var(--spacer_h) !important }
-.mh, .mlh, .mxh { margin-left: var(--spacer_h) !important }
-.mq, .mtq, .myq { margin-top: var(--spacer_q) !important }
-.mq, .mrq, .mxq { margin-right: var(--spacer_q) !important }
-.mq, .mbq, .myq { margin-bottom: var(--spacer_q) !important }
-.mq, .mlq, .mxq { margin-left: var(--spacer_q) !important }
+.m { margin: var(--spacer) !important }
+.mt, .my { margin-top: var(--spacer) !important }
+.mr, .mx { margin-right: var(--spacer) !important }
+.mb, .my { margin-bottom: var(--spacer) !important }
+.ml, .mx { margin-left: var(--spacer) !important }
+.mh { margin: var(--spacer_h) !important }
+.mth, .myh { margin-top: var(--spacer_h) !important }
+.mrh, .mxh { margin-right: var(--spacer_h) !important }
+.mbh, .myh { margin-bottom: var(--spacer_h) !important }
+.mlh, .mxh { margin-left: var(--spacer_h) !important }
+.mq { margin: var(--spacer_q) !important }
+.mtq, .myq { margin-top: var(--spacer_q) !important }
+.mrq, .mxq { margin-right: var(--spacer_q) !important }
+.mbq, .myq { margin-bottom: var(--spacer_q) !important }
+.mlq, .mxq { margin-left: var(--spacer_q) !important }
 .m0, .mt0, .my0 { margin-top: 0 !important }
 .m0, .mr0, .mx0 { margin-right: 0 !important }
 .m0, .mb0, .my0 { margin-bottom: 0 !important }
