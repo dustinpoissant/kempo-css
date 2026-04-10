@@ -4,7 +4,7 @@
 	
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Kempo CSS</title>
+	<title>Buttons - Kempo CSS</title>
 	<link rel="icon" type="image/png" sizes="48x48" href="./media/icon48.png">
 	<link rel="manifest" href="./manifest.json" />
 	<link rel="stylesheet" href="./kempo.min.css" />
@@ -136,94 +136,117 @@
 
 	<k-main>
 		<main>
-			<h1 class="ta-center">Kempo CSS</h1>
+			<h1 class="ta-center">Buttons</h1>
 			
-		<div class="ta-center">
-			<p>
-				<a href="https://github.com/dustinpoissant/kempo-css" class="btn primary mr" target="_blank">GitHub</a>
-				<a href="https://www.npmjs.com/package/kempo-css" class="btn" target="_blank">NPM</a>
-			</p>
-			<p>A lightweight, utility-first CSS framework.</p>
-			<p>Current Version: <code id="version">unknown</code></p>
-		</div>
-		<h2>Documentation</h2>
-		<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)); grid-auto-rows: auto auto; gap: var(--spacer);" class="mb">
-			<a href="./typography.html" class="card no-link" style="display: grid; grid-template-rows: subgrid; grid-row: span 2;">
-				<h3 class="tc-primary mt0">Typography</h3>
-				<p class="tc-muted">Headings, paragraphs, text markup, and lists.</p>
-			</a>
-			<a href="./layout.html" class="card no-link" style="display: grid; grid-template-rows: subgrid; grid-row: span 2;">
-				<h3 class="tc-primary mt0">Layout</h3>
-				<p class="tc-muted">Flexbox utilities, 12-column grid, and responsive breakpoints.</p>
-			</a>
-			<a href="./borders-spacing.html" class="card no-link" style="display: grid; grid-template-rows: subgrid; grid-row: span 2;">
-				<h3 class="tc-primary mt0">Borders &amp; Spacing</h3>
-				<p class="tc-muted">Borders, border radius, padding, margins, and negative margins.</p>
-			</a>
-			<a href="./inputs.html" class="card no-link" style="display: grid; grid-template-rows: subgrid; grid-row: span 2;">
-				<h3 class="tc-primary mt0">Inputs</h3>
-				<p class="tc-muted">Text inputs, labels, checkboxes, and radio buttons.</p>
-			</a>
-			<a href="./buttons.html" class="card no-link" style="display: grid; grid-template-rows: subgrid; grid-row: span 2;">
-				<h3 class="tc-primary mt0">Buttons</h3>
-				<p class="tc-muted">Button types, colors, sizes, and groups.</p>
-			</a>
-			<a href="./tables.html" class="card no-link" style="display: grid; grid-template-rows: subgrid; grid-row: span 2;">
-				<h3 class="tc-primary mt0">Tables</h3>
-				<p class="tc-muted">Basic and responsive table styles.</p>
-			</a>
-			<a href="./colors.html" class="card no-link" style="display: grid; grid-template-rows: subgrid; grid-row: span 2;">
-				<h3 class="tc-primary mt0">Colors</h3>
-				<p class="tc-muted">Background and text color utility classes.</p>
-			</a>
-			<a href="./elevation.html" class="card no-link" style="display: grid; grid-template-rows: subgrid; grid-row: span 2;">
-				<h3 class="tc-primary mt0">Elevation</h3>
-				<p class="tc-muted">Z-index, box shadows, and elevation background colors.</p>
-			</a>
-			<a href="./utilities.html" class="card no-link" style="display: grid; grid-template-rows: subgrid; grid-row: span 2;">
-				<h3 class="tc-primary mt0">Utilities</h3>
-				<p class="tc-muted">Miscellaneous utility classes for common needs.</p>
-			</a>
-			<a href="./theme-editor.html" class="card no-link" style="display: grid; grid-template-rows: subgrid; grid-row: span 2;">
-				<h3 class="tc-primary mt0">Theme Editor</h3>
-				<p class="tc-muted">Visually customize and export your own Kempo CSS theme.</p>
-			</a>
-		</div>
-		<div class="b r mb p">
-			<h3 class="mt0">Quick Start</h3>
-			<p>Install via NPM:</p>
-			<pre><code>npm install kempo-css</code></pre>
-			<p>Or use the CDN:</p>
-			<pre><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/kempo-css@2/dist/kempo.min.css" /&gt;</code></pre>
-		</div>
-		<div class="row -mx mb">
-			<div class="col m-span-12 d-span-6 px">
-				<div class="b r p">
-					<h4 class="mt0">Features</h4>
-					<ul>
-						<li><strong>Lightweight</strong> - Small footprint, no JavaScript required</li>
-						<li><strong>Utility-First</strong> - Composable utility classes</li>
-						<li><strong>Responsive Grid</strong> - 12-column grid with breakpoints</li>
-						<li><strong>Dark Mode</strong> - Built-in light/dark theme support</li>
-						<li><strong>Elevation System</strong> - Z-index, shadows, and backgrounds</li>
-						<li><strong>Customizable</strong> - CSS variables for easy theming</li>
-					</ul>
-				</div>
-			</div>
-			<div class="col m-span-12 d-span-6 px">
-				<div class="b r p">
-					<h4 class="mt0">Includes</h4>
-					<ul>
-						<li><strong>Typography</strong> - Headings, text, lists</li>
-						<li><strong>Layout</strong> - Flexbox, grid, display utilities</li>
-						<li><strong>Spacing</strong> - Padding, margins, negative margins</li>
-						<li><strong>Forms</strong> - Inputs, labels, checkboxes, radios</li>
-						<li><strong>Buttons</strong> - Colors, sizes, groups</li>
-						<li><strong>Tables</strong> - Basic and responsive tables</li>
-					</ul>
-				</div>
-			</div>
-		</div>
+<h2 id="button-types">Button Types</h2>
+	<div class="row -mx">
+	  <div class="col m-span-12 px">
+	    <k-card label="HTML">
+	      <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>button<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"input"</span> /&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"submit input"</span> /&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn"</span>&gt;</span>a.btn<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></code></pre>
+	    </k-card>
+	  </div>
+	  <div class="col m-span-12 px">
+	    <k-card
+	      label="Output"
+	      class="pb"
+	    >
+	      <button>button</button>
+	      <input
+	        type="button"
+	        value="input"
+	      />
+	      <input
+	        type="submit"
+	        value="submit input"
+	      />
+	      <a
+	        href="#"
+	        class="btn"
+	      >a.btn</a>
+	    </k-card>
+	  </div>
+	</div>
+
+	<h2 id="button-colors">Button Colors</h2>
+	<div class="row -mx">
+	  <div class="col m-span-12 px">
+	    <k-card label="HTML">
+	      <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>Default<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"primary"</span>&gt;</span>Primary<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"secondary"</span>&gt;</span>Secondary<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"success"</span>&gt;</span>Success<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"warning"</span>&gt;</span>Warning<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"danger"</span>&gt;</span>Danger<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
+	    </k-card>
+	  </div>
+	  <div class="col m-span-12 px">
+	    <k-card
+	      label="Output"
+	      class="pb"
+	    >
+	      <button>Default</button>
+	      <button class="primary">Primary</button>
+	      <button class="secondary">Secondary</button>
+	      <button class="success">Success</button>
+	      <button class="warning">Warning</button>
+	      <button class="danger">Danger</button>
+	    </k-card>
+	  </div>
+	</div>
+
+	<h2 id="button-sizes">Button Sizes</h2>
+	<div class="row -mx">
+	  <div class="col m-span-12 px">
+	    <k-card label="HTML">
+	      <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"small"</span>&gt;</span>Small<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>Normal<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"large"</span>&gt;</span>Large<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
+	    </k-card>
+	  </div>
+	  <div class="col m-span-12 px">
+	    <k-card
+	      label="Output"
+	      class="pb"
+	    >
+	      <button class="small">Small</button>
+	      <button>Normal</button>
+	      <button class="large">Large</button>
+	    </k-card>
+	  </div>
+	</div>
+
+	<h2 id="button-groups">Button Groups</h2>
+	<div class="row -mx">
+	  <div class="col m-span-12 px">
+	    <k-card label="HTML">
+	      <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn-grp"</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>Default<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>Default<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>Default<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+	    </k-card>
+	  </div>
+	  <div class="col m-span-12 px">
+	    <k-card
+	      label="Output"
+	      class="pb"
+	    >
+	      <div class="btn-grp">
+	        <button>Default</button>
+	        <button>Default</button>
+	        <button>Default</button>
+	      </div>
+	    </k-card>
+	  </div>
+	</div>
+
+	<h2 id="no-styles">No Styles</h2>
+	<div class="row -mx">
+	  <div class="col m-span-12 px">
+	    <k-card label="HTML">
+	      <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"no-style"</span>&gt;</span>no-style<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"no-btn"</span>&gt;</span>no-btn<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
+	    </k-card>
+	  </div>
+	  <div class="col m-span-12 px">
+	    <k-card
+	      label="Output"
+	      class="pb"
+	    >
+	      <button class="no-style">no-style</button>
+	      <button class="no-btn">no-btn</button>
+	    </k-card>
+	  </div>
+	</div>
 	
 		</main>
 		<div style="height:33vh"></div>
@@ -233,10 +256,6 @@
 	<script type="module" src="https://cdn.jsdelivr.net/npm/kempo-ui@0.3/dist/components/Icon.js"></script>
 	<script type="module" src="https://cdn.jsdelivr.net/npm/kempo-ui@0.3/dist/components/ThemeSwitcher.js"></script>
 	<script type="module" src="https://cdn.jsdelivr.net/npm/kempo-ui@0.3/dist/components/Card.js"></script>
-	
-		<script type="module">
-			document.getElementById('version').innerHTML = (await (await fetch('https://raw.githubusercontent.com/dustinpoissant/kempo-css/refs/heads/main/package.json')).json()).version;
-		</script>
 	
 </body>
 </html>

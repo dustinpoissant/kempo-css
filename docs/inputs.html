@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Inputs - Kempo CSS</title>
+	<link rel="icon" type="image/png" sizes="48x48" href="./media/icon48.png">
+	<link rel="manifest" href="./manifest.json" />
+	<link rel="stylesheet" href="./kempo.min.css" />
+	<link rel="stylesheet" href="./kempo-hljs.min.css" />
+	<script>
+		window.kempo = {
+			pathToStylesheet: './kempo.min.css',
+			pathsToIcons: ['https://cdn.jsdelivr.net/npm/kempo-ui@0.3/icons']
+		};
+	</script>
+	
+
+</head>
+<body>
+	
+	<k-nav fixed class="bg-primary">
+		<button id="toggleNavSideMenu" class="link">
+			<k-icon name="menu"></k-icon>
+		</button>
+		<a href="./" class="d-if ph" style="align-items: center">
+			<img src="./media/icon32.png" alt="Kempo CSS Icon" class="pr" />
+			Kempo CSS
+		</a>
+		<a href="./theme-editor.html">Theme Editor</a>
+		<div class="flex"></div>
+		<a href="https://github.com/dustinpoissant/kempo-css?tab=License-1-ov-file#creative-commons-attribution-noncommercial-sharealike-20" target="_blank"><k-icon name="license"></k-icon></a>
+		<a href="https://www.npmjs.com/package/kempo-css" target="_blank"><k-icon name="npm"></k-icon></a>
+		<a href="https://github.com/dustinpoissant/kempo-css" target="_blank"><k-icon name="github-mark"></k-icon></a>
+		<k-theme-switcher></k-theme-switcher>
+	</k-nav>
+	<div style="width: 100%; height: 4rem;"></div>
+	<k-aside id="navSideMenu" main="overlay" state="offscreen">
+		<menu>
+			<div class="ta-center bb mb r0">
+				<h1 class="tc-primary">Kempo CSS</h1>
+				<img src="./media/icon128.png" alt="Kempo CSS Icon" />
+			</div>
+			<h5><a href="./typography.html">Typography</a></h5>
+			<div class="ml mb -mt">
+				<a href="./typography.html#paragraphs" class="d-b">Paragraphs</a>
+				<a href="./typography.html#headings" class="d-b">Headings</a>
+				<a href="./typography.html#textmarkup" class="d-b">Text Markup</a>
+				<a href="./typography.html#lists" class="d-b">Lists</a>
+			</div>
+			<h5><a href="./layout.html">Layout</a></h5>
+			<div class="ml mb -mt">
+				<a href="./layout.html#display" class="d-b">Display</a>
+				<a href="./layout.html#flexbox" class="d-b">Flexbox</a>
+				<a href="./layout.html#grid" class="d-b">Grid System</a>
+				<a href="./layout.html#responsive-grid" class="d-b">Responsive Grid</a>
+				<a href="./layout.html#min-width-grid" class="d-b">Alternative Responsive Grid</a>
+			</div>
+			<h5><a href="./borders-spacing.html">Borders &amp; Spacing</a></h5>
+			<div class="ml mb -mt">
+				<a href="./borders-spacing.html#borders" class="d-b">Borders</a>
+				<a href="./borders-spacing.html#border-radius" class="d-b">Border Radius</a>
+				<a href="./borders-spacing.html#padding" class="d-b">Padding</a>
+				<a href="./borders-spacing.html#margins" class="d-b">Margins</a>
+				<a href="./borders-spacing.html#negative-margins" class="d-b">Negative Margins</a>
+				<a href="./borders-spacing.html#cancelled-margins" class="d-b">Cancelled Margins</a>
+			</div>
+			<h5><a href="./inputs.html">Inputs</a></h5>
+			<div class="ml mb -mt">
+				<a href="./inputs.html#basic-inputs" class="d-b">Basic Inputs</a>
+				<a href="./inputs.html#labels" class="d-b">Labels</a>
+				<a href="./inputs.html#checkbox-radio" class="d-b">Checkbox / Radio</a>
+			</div>
+			<h5><a href="./buttons.html">Buttons</a></h5>
+			<div class="ml mb -mt">
+				<a href="./buttons.html#button-types" class="d-b">Button Types</a>
+				<a href="./buttons.html#button-colors" class="d-b">Button Colors</a>
+				<a href="./buttons.html#button-sizes" class="d-b">Button Sizes</a>
+				<a href="./buttons.html#button-groups" class="d-b">Button Groups</a>
+				<a href="./buttons.html#no-styles" class="d-b">No Styles</a>
+			</div>
+			<h5><a href="./tables.html">Tables</a></h5>
+			<div class="ml mb -mt">
+				<a href="./tables.html#basic-table" class="d-b">Basic Table</a>
+				<a href="./tables.html#responsive-table" class="d-b">Responsive Table</a>
+			</div>
+			<h5><a href="./colors.html">Colors</a></h5>
+			<div class="ml mb -mt">
+				<a href="./colors.html#background" class="d-b">Background</a>
+				<a href="./colors.html#text-colors" class="d-b">Text Colors</a>
+			</div>
+			<h5><a href="./elevation.html">Elevation</a></h5>
+			<div class="ml mb -mt">
+				<a href="./elevation.html#elevation-z-index" class="d-b">Z-Index</a>
+				<a href="./elevation.html#elevation-shadow" class="d-b">Shadow</a>
+				<a href="./elevation.html#elevation-bg" class="d-b">Elevation Background</a>
+				<a href="./elevation.html#elevation-combined" class="d-b">Combined Example</a>
+				<a href="./elevation.html#elevation-variables" class="d-b">CSS Variables</a>
+			</div>
+			<h5><a href="./utilities.html">Utilities</a></h5>
+			<div class="ml mb -mt">
+				<a href="./utilities.html#noScroll" class="d-b">Disable Body Scrolling</a>
+			</div>
+			<hr />
+			<a href="https://github.com/dustinpoissant/kempo-css?tab=License-1-ov-file#creative-commons-attribution-noncommercial-sharealike-20" target="_blank"><k-icon name="license"></k-icon> Read the License</a><br />
+			<a href="https://www.npmjs.com/package/kempo-css" target="_blank"><k-icon name="npm"></k-icon> View on NPM</a><br />
+			<a href="https://github.com/dustinpoissant/kempo-css" target="_blank"><k-icon name="github-mark"></k-icon> View on GitHub</a>
+			<div style="height:33vh"></div>
+		</menu>
+	</k-aside>
+	<script type="module">
+		document.getElementById('toggleNavSideMenu').addEventListener('click', async () => {
+			await window.customElements.whenDefined('k-aside');
+			document.getElementById('navSideMenu').toggle();
+		});
+		document.addEventListener('click', function(e) {
+			if (e.target.matches('a[href^="#"]')) {
+				e.preventDefault();
+				const targetId = e.target.getAttribute('href').replace('#', '');
+				const target = document.getElementById(targetId);
+				if (target) {
+					target.scrollIntoView({ behavior: 'smooth' });
+					history.replaceState(null, '', window.location.pathname + window.location.search + '#' + targetId);
+					document.getElementById('navSideMenu').hide();
+				}
+			}
+		});
+		const fixedNav = document.querySelector('k-nav[fixed]');
+		if (fixedNav) {
+			const updateNavShadow = () => fixedNav.classList.toggle('scrolled', window.scrollY > 0);
+			window.addEventListener('scroll', updateNavShadow, { passive: true });
+			updateNavShadow();
+		}
+	</script>
+
+	<k-main>
+		<main>
+			<h1 class="ta-center">Inputs</h1>
+			
+<h2 id="basic-inputs">Basic Inputs</h2>
+	<div class="row -mx">
+	  <div class="col m-span-12 px">
+	    <k-card label="HTML">
+	      <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Input"</span> /&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Textarea"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">select</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Option 1<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Option 2<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Option 3<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">multiple</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Option 1<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Option 2<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Option 3<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Option 4<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Option 5<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Option 6<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span></code></pre>
+	    </k-card>
+	  </div>
+	  <div class="col m-span-12 px">
+	    <k-card
+	      label="Output"
+	      class="pb"
+	    >
+	      <input placeholder="Input" />
+	      <textarea placeholder="Textarea"></textarea>
+	      <select>
+	        <option>Option 1</option>
+	        <option>Option 2</option>
+	        <option>Option 3</option>
+	      </select>
+	      <select multiple>
+	        <option>Option 1</option>
+	        <option>Option 2</option>
+	        <option>Option 3</option>
+	        <option>Option 4</option>
+	        <option>Option 5</option>
+	        <option>Option 6</option>
+	      </select>
+	    </k-card>
+	  </div>
+	</div>
+
+	<h2 id="labels">Labels</h2>
+	<div class="row -mx">
+	  <div class="col m-span-12 px">
+	    <k-card label="HTML">
+	      <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"input"</span>&gt;</span>Input:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"input"</span> /&gt;</span></code></pre>
+	    </k-card>
+	  </div>
+	  <div class="col m-span-12 px">
+	    <k-card
+	      label="Output"
+	      class="pb"
+	    >
+	      <label for="input">Input:</label>
+	      <input id="input" />
+	    </k-card>
+	  </div>
+	</div>
+
+	<h2 id="checkbox-radio">Checkbox / Radio</h2>
+	<div class="row -mx">
+	  <div class="col m-span-12 px">
+	    <k-card label="HTML">
+	      <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"check1"</span> /&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"check1"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"checkbox"</span>&gt;</span>Check 1<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"check2"</span> /&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"check2"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"checkbox"</span>&gt;</span>Check 2<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"radios"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"rad1"</span> /&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"rad1"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"checkbox"</span>&gt;</span>Radio 1<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"radios"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"rad2"</span> /&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"rad2"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"checkbox"</span>&gt;</span>Radio 2<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span></code></pre>
+	    </k-card>
+	  </div>
+	  <div class="col m-span-12 px">
+	    <k-card
+	      label="Output"
+	      class="pb"
+	    >
+	      <input
+	        type="checkbox"
+	        id="check1"
+	      />
+	      <label
+	        for="check1"
+	        class="checkbox"
+	      >Check 1</label>
+	      <input
+	        type="checkbox"
+	        id="check2"
+	      />
+	      <label
+	        for="check2"
+	        class="checkbox"
+	      >Check 2</label>
+	      <br /><br />
+	      <input
+	        type="radio"
+	        name="radios"
+	        id="rad1"
+	      />
+	      <label
+	        for="rad1"
+	        class="checkbox"
+	      >Radio 1</label>
+	      <input
+	        type="radio"
+	        name="radios"
+	        id="rad2"
+	      />
+	      <label
+	        for="rad2"
+	        class="checkbox"
+	      >Radio 2</label>
+	    </k-card>
+	  </div>
+	</div>
+	
+		</main>
+		<div style="height:33vh"></div>
+	</k-main>
+	<script type="module" src="https://cdn.jsdelivr.net/npm/kempo-ui@0.3/dist/components/Nav.js"></script>
+	<script type="module" src="https://cdn.jsdelivr.net/npm/kempo-ui@0.3/dist/components/Aside.js"></script>
+	<script type="module" src="https://cdn.jsdelivr.net/npm/kempo-ui@0.3/dist/components/Icon.js"></script>
+	<script type="module" src="https://cdn.jsdelivr.net/npm/kempo-ui@0.3/dist/components/ThemeSwitcher.js"></script>
+	<script type="module" src="https://cdn.jsdelivr.net/npm/kempo-ui@0.3/dist/components/Card.js"></script>
+	
+</body>
+</html>

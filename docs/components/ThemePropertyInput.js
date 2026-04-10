@@ -1,5 +1,5 @@
-import ShadowComponent from 'https://cdn.jsdelivr.net/npm/kempo-ui@0.1.6/dist/components/ShadowComponent.js';
-import { html, css } from 'https://cdn.jsdelivr.net/npm/kempo-ui@0.1.6/dist/lit-all.min.js';
+import ShadowComponent from 'https://cdn.jsdelivr.net/npm/kempo-ui@0.3/dist/components/ShadowComponent.js';
+import { html, css } from 'https://cdn.jsdelivr.net/npm/kempo-ui@0.3/dist/lit-all.min.js';
 
 export default class ThemePropertyInput extends ShadowComponent {
   static properties = {

@@ -1,0 +1,26 @@
+<page
+	pageName="Utilities"
+	title="Utilities - Kempo CSS"
+>
+	<content>
+		<div style="height:50vh"></div>
+		<p>Add the <code>no-scroll</code> class to the body to temparily disable body scrolling, this is used for things
+			like dialogs and side menus that temporarily take over the page.</p>
+		<div class="row -mx">
+			<div class="col m-span-12 px">
+				<k-card label="HTML">
+					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"document.body.classList.toggle('no-scroll')"</span>&gt;</span>Toggle Body Scrolling<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
+				</k-card>
+			</div>
+			<div class="col m-span-12 px">
+				<k-card label="Output">
+					<button
+						class="mb"
+						onclick="document.body.classList.toggle('no-scroll')"
+					>Toggle Body Scrolling</button>
+				</k-card>
+			</div>
+		</div>
+		<div style="height:50vh"></div>
+	</content>
+</page>

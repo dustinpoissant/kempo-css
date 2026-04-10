@@ -373,6 +373,13 @@ summary:focus {
 .fixed.scrolled {
   box-shadow: var(--elevation_2_shadow);
 }
+k-nav[fixed] {
+  box-shadow: none;
+  transition: box-shadow var(--animation_ms);
+}
+k-nav[fixed].scrolled {
+  box-shadow: var(--elevation_2_shadow);
+}
 
 /*
   Typography

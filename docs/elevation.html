@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Elevation - Kempo CSS</title>
+	<link rel="icon" type="image/png" sizes="48x48" href="./media/icon48.png">
+	<link rel="manifest" href="./manifest.json" />
+	<link rel="stylesheet" href="./kempo.min.css" />
+	<link rel="stylesheet" href="./kempo-hljs.min.css" />
+	<script>
+		window.kempo = {
+			pathToStylesheet: './kempo.min.css',
+			pathsToIcons: ['https://cdn.jsdelivr.net/npm/kempo-ui@0.3/icons']
+		};
+	</script>
+	
+		<style>
+			.elevation-card {
+				display: inline-flex;
+				width: 9rem;
+				align-items: center;
+				justify-content: center;
+				aspect-ratio: 1 / 1;
+				margin: var(--spacer);
+				padding: var(--spacer);
+				border-radius: var(--radius);
+				vertical-align: top;
+				text-wrap: balance;
+				text-align: center;
+			}
+		</style>
+	
+
+</head>
+<body>
+	
+	<k-nav fixed class="bg-primary">
+		<button id="toggleNavSideMenu" class="link">
+			<k-icon name="menu"></k-icon>
+		</button>
+		<a href="./" class="d-if ph" style="align-items: center">
+			<img src="./media/icon32.png" alt="Kempo CSS Icon" class="pr" />
+			Kempo CSS
+		</a>
+		<a href="./theme-editor.html">Theme Editor</a>
+		<div class="flex"></div>
+		<a href="https://github.com/dustinpoissant/kempo-css?tab=License-1-ov-file#creative-commons-attribution-noncommercial-sharealike-20" target="_blank"><k-icon name="license"></k-icon></a>
+		<a href="https://www.npmjs.com/package/kempo-css" target="_blank"><k-icon name="npm"></k-icon></a>
+		<a href="https://github.com/dustinpoissant/kempo-css" target="_blank"><k-icon name="github-mark"></k-icon></a>
+		<k-theme-switcher></k-theme-switcher>
+	</k-nav>
+	<div style="width: 100%; height: 4rem;"></div>
+	<k-aside id="navSideMenu" main="overlay" state="offscreen">
+		<menu>
+			<div class="ta-center bb mb r0">
+				<h1 class="tc-primary">Kempo CSS</h1>
+				<img src="./media/icon128.png" alt="Kempo CSS Icon" />
+			</div>
+			<h5><a href="./typography.html">Typography</a></h5>
+			<div class="ml mb -mt">
+				<a href="./typography.html#paragraphs" class="d-b">Paragraphs</a>
+				<a href="./typography.html#headings" class="d-b">Headings</a>
+				<a href="./typography.html#textmarkup" class="d-b">Text Markup</a>
+				<a href="./typography.html#lists" class="d-b">Lists</a>
+			</div>
+			<h5><a href="./layout.html">Layout</a></h5>
+			<div class="ml mb -mt">
+				<a href="./layout.html#display" class="d-b">Display</a>
+				<a href="./layout.html#flexbox" class="d-b">Flexbox</a>
+				<a href="./layout.html#grid" class="d-b">Grid System</a>
+				<a href="./layout.html#responsive-grid" class="d-b">Responsive Grid</a>
+				<a href="./layout.html#min-width-grid" class="d-b">Alternative Responsive Grid</a>
+			</div>
+			<h5><a href="./borders-spacing.html">Borders &amp; Spacing</a></h5>
+			<div class="ml mb -mt">
+				<a href="./borders-spacing.html#borders" class="d-b">Borders</a>
+				<a href="./borders-spacing.html#border-radius" class="d-b">Border Radius</a>
+				<a href="./borders-spacing.html#padding" class="d-b">Padding</a>
+				<a href="./borders-spacing.html#margins" class="d-b">Margins</a>
+				<a href="./borders-spacing.html#negative-margins" class="d-b">Negative Margins</a>
+				<a href="./borders-spacing.html#cancelled-margins" class="d-b">Cancelled Margins</a>
+			</div>
+			<h5><a href="./inputs.html">Inputs</a></h5>
+			<div class="ml mb -mt">
+				<a href="./inputs.html#basic-inputs" class="d-b">Basic Inputs</a>
+				<a href="./inputs.html#labels" class="d-b">Labels</a>
+				<a href="./inputs.html#checkbox-radio" class="d-b">Checkbox / Radio</a>
+			</div>
+			<h5><a href="./buttons.html">Buttons</a></h5>
+			<div class="ml mb -mt">
+				<a href="./buttons.html#button-types" class="d-b">Button Types</a>
+				<a href="./buttons.html#button-colors" class="d-b">Button Colors</a>
+				<a href="./buttons.html#button-sizes" class="d-b">Button Sizes</a>
+				<a href="./buttons.html#button-groups" class="d-b">Button Groups</a>
+				<a href="./buttons.html#no-styles" class="d-b">No Styles</a>
+			</div>
+			<h5><a href="./tables.html">Tables</a></h5>
+			<div class="ml mb -mt">
+				<a href="./tables.html#basic-table" class="d-b">Basic Table</a>
+				<a href="./tables.html#responsive-table" class="d-b">Responsive Table</a>
+			</div>
+			<h5><a href="./colors.html">Colors</a></h5>
+			<div class="ml mb -mt">
+				<a href="./colors.html#background" class="d-b">Background</a>
+				<a href="./colors.html#text-colors" class="d-b">Text Colors</a>
+			</div>
+			<h5><a href="./elevation.html">Elevation</a></h5>
+			<div class="ml mb -mt">
+				<a href="./elevation.html#elevation-z-index" class="d-b">Z-Index</a>
+				<a href="./elevation.html#elevation-shadow" class="d-b">Shadow</a>
+				<a href="./elevation.html#elevation-bg" class="d-b">Elevation Background</a>
+				<a href="./elevation.html#elevation-combined" class="d-b">Combined Example</a>
+				<a href="./elevation.html#elevation-variables" class="d-b">CSS Variables</a>
+			</div>
+			<h5><a href="./utilities.html">Utilities</a></h5>
+			<div class="ml mb -mt">
+				<a href="./utilities.html#noScroll" class="d-b">Disable Body Scrolling</a>
+			</div>
+			<hr />
+			<a href="https://github.com/dustinpoissant/kempo-css?tab=License-1-ov-file#creative-commons-attribution-noncommercial-sharealike-20" target="_blank"><k-icon name="license"></k-icon> Read the License</a><br />
+			<a href="https://www.npmjs.com/package/kempo-css" target="_blank"><k-icon name="npm"></k-icon> View on NPM</a><br />
+			<a href="https://github.com/dustinpoissant/kempo-css" target="_blank"><k-icon name="github-mark"></k-icon> View on GitHub</a>
+			<div style="height:33vh"></div>
+		</menu>
+	</k-aside>
+	<script type="module">
+		document.getElementById('toggleNavSideMenu').addEventListener('click', async () => {
+			await window.customElements.whenDefined('k-aside');
+			document.getElementById('navSideMenu').toggle();
+		});
+		document.addEventListener('click', function(e) {
+			if (e.target.matches('a[href^="#"]')) {
+				e.preventDefault();
+				const targetId = e.target.getAttribute('href').replace('#', '');
+				const target = document.getElementById(targetId);
+				if (target) {
+					target.scrollIntoView({ behavior: 'smooth' });
+					history.replaceState(null, '', window.location.pathname + window.location.search + '#' + targetId);
+					document.getElementById('navSideMenu').hide();
+				}
+			}
+		});
+		const fixedNav = document.querySelector('k-nav[fixed]');
+		if (fixedNav) {
+			const updateNavShadow = () => fixedNav.classList.toggle('scrolled', window.scrollY > 0);
+			window.addEventListener('scroll', updateNavShadow, { passive: true });
+			updateNavShadow();
+		}
+	</script>
+
+	<k-main>
+		<main>
+			<h1 class="ta-center">Elevation</h1>
+			
+<p>The elevation system provides three independent utilities that work together to create visual depth and control
+	  stacking order. Level 2 is the default page level (z-index 20). Levels 0–1 are below page level, and levels 3–10
+	  are
+	  above. Each level increments z-index by 10, leaving room for fine-tuning between levels.</p>
+	<h2 id="elevation-z-index">Z-Index (<code>elevation-*</code>)</h2>
+	<p>Sets <code>z-index</code> only. Use on positioned elements (navbars, dialogs, drawers) to control stacking order.
+	</p>
+	<div class="row -mx">
+	  <div class="col m-span-12 px">
+	    <k-card label="HTML">
+	      <pre
+	        style="overflow:auto;max-height:20rem"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"elevation-0 shadow elevation-card"</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Level 0<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-muted small"</span>&gt;</span>z-index: 0<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br />  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"elevation-1 shadow elevation-card"</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Level 1<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-muted small"</span>&gt;</span>z-index: 10<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br />  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"elevation-2 shadow elevation-card"</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Level 2<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-muted small"</span>&gt;</span>z-index: 20<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br />  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"elevation-3 shadow elevation-card"</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Level 3<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-muted small"</span>&gt;</span>z-index: 30<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br />  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"elevation-4 shadow elevation-card"</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Level 4<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-muted small"</span>&gt;</span>z-index: 40<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br />  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"elevation-5 shadow elevation-card"</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Level 5<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-muted small"</span>&gt;</span>z-index: 50<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-muted small"</span>&gt;</span>(6–10 same)<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br />  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+	    </k-card>
+	  </div>
+	  <div class="col m-span-12 px">
+	    <k-card label="Output">
+	      <div class="elevation-0 shadow elevation-card">
+	        <div>
+	          <strong>Level 0</strong><br>
+	          <span class="tc-muted small">z-index: 0</span>
+	        </div>
+	      </div>
+	      <div class="elevation-1 shadow elevation-card">
+	        <div>
+	          <strong>Level 1</strong><br>
+	          <span class="tc-muted small">z-index: 10</span>
+	        </div>
+	      </div>
+	      <div class="elevation-2 shadow elevation-card">
+	        <div>
+	          <strong>Level 2</strong><br>
+	          <span class="tc-muted small">z-index: 20</span>
+
+	        </div>
+	      </div>
+	      <div class="elevation-3 shadow elevation-card">
+	        <div>
+	          <strong>Level 3</strong><br>
+	          <span class="tc-muted small">z-index: 30</span>
+	        </div>
+	      </div>
+	      <div class="elevation-4 shadow elevation-card">
+	        <div>
+	          <strong>Level 4</strong><br>
+	          <span class="tc-muted small">z-index: 40</span>
+	        </div>
+	      </div>
+	      <div class="elevation-5 shadow elevation-card">
+	        <div>
+	          <strong>Level 5</strong><br>
+	          <span class="tc-muted small">z-index: 50</span><br />
+	          <span class="tc-muted small">(6–10 same)</span>
+	        </div>
+	      </div>
+	    </k-card>
+	  </div>
+	</div>
+	<div class="table-wrapper mb">
+	  <table>
+	    <thead>
+	      <tr>
+	        <th>Class</th>
+	        <th>z-index</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	      <tr>
+	        <td><code>elevation-0</code></td>
+	        <td>0</td>
+	      </tr>
+	      <tr>
+	        <td><code>elevation-1</code></td>
+	        <td>10</td>
+	      </tr>
+	      <tr>
+	        <td><code>elevation-2</code></td>
+	        <td>20 (page default)</td>
+	      </tr>
+	      <tr>
+	        <td><code>elevation-3</code></td>
+	        <td>30</td>
+	      </tr>
+	      <tr>
+	        <td><code>elevation-4</code></td>
+	        <td>40</td>
+	      </tr>
+	      <tr>
+	        <td><code>elevation-5</code></td>
+	        <td>50</td>
+	      </tr>
+	      <tr>
+	        <td><code>elevation-6</code></td>
+	        <td>60</td>
+	      </tr>
+	      <tr>
+	        <td><code>elevation-7</code></td>
+	        <td>70</td>
+	      </tr>
+	      <tr>
+	        <td><code>elevation-8</code></td>
+	        <td>80</td>
+	      </tr>
+	      <tr>
+	        <td><code>elevation-9</code></td>
+	        <td>90</td>
+	      </tr>
+	      <tr>
+	        <td><code>elevation-10</code></td>
+	        <td>100</td>
+	      </tr>
+	    </tbody>
+	  </table>
+	</div>
+	<h2 id="elevation-shadow">Shadow (<code>shadow</code>)</h2>
+	<p>Combine with an <code>elevation-*</code> class to apply a depth shadow. Levels 0–1 use inset shadows (sunk),
+	  level 2 has no shadow (page level), levels 3–5 use progressively larger outset drop shadows, and levels 6–10
+	  use the same shadow as level 5.</p>
+	<div class="row -mx">
+	  <div class="col m-span-12 px">
+	    <k-card label="HTML">
+	      <pre
+	        style="overflow:auto;max-height:20rem"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"elevation-0 shadow elevation-card"</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Level 0<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-muted small"</span>&gt;</span>Deep Inset Shadow<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br />  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"elevation-1 shadow elevation-card"</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Level 1<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-muted small"</span>&gt;</span>Shallow Inset Shadow<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br />  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"elevation-2 shadow elevation-card"</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Level 2<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-muted small"</span>&gt;</span>No Shadow<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br />  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"elevation-3 shadow elevation-card"</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Level 3<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-muted small"</span>&gt;</span>Small Drop Shadow<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br />  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"elevation-4 shadow elevation-card"</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Level 4<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-muted small"</span>&gt;</span>Medium Drop Shadow<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br />  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"elevation-5 shadow elevation-card"</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Level 5<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-muted small"</span>&gt;</span>Large Drop Shadow<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-muted small"</span>&gt;</span>Max (6–10 same)<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br />  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+	    </k-card>
+	  </div>
+	  <div class="col m-span-12 px">
+	    <k-card label="Output">
+	      <div class="elevation-0 shadow elevation-card">
+	        <div>
+	          <strong>Level 0</strong><br>
+	          <span class="tc-muted small">Deep Inset Shadow</span>
+	        </div>
+	      </div>
+	      <div class="elevation-1 shadow elevation-card">
+	        <div>
+	          <strong>Level 1</strong><br>
+	          <span class="tc-muted small">Shallow Inset Shadow</span>
+	        </div>
+	      </div>
+	      <div class="elevation-2 shadow elevation-card">
+	        <div>
+	          <strong>Level 2</strong><br>
+	          <span class="tc-muted small">No Shadow</span>
+	        </div>
+	      </div>
+	      <div class="elevation-3 shadow elevation-card">
+	        <div>
+	          <strong>Level 3</strong><br>
+	          <span class="tc-muted small">Small Drop Shadow</span>
+	        </div>
+	      </div>
+	      <div class="elevation-4 shadow elevation-card">
+	        <div>
+	          <strong>Level 4</strong><br>
+	          <span class="tc-muted small">Medium Drop Shadow</span>
+	        </div>
+	      </div>
+	      <div class="elevation-5 shadow elevation-card">
+	        <div>
+	          <strong>Level 5</strong><br>
+	          <span class="tc-muted small">Large Drop Shadow</span><br>
+	          <span class="tc-muted small">Max (6–10 same)</span>
+	        </div>
+	      </div>
+	    </k-card>
+	  </div>
+	</div>
+	<h2 id="elevation-bg">Elevation Background (<code>bg-elevation</code>)</h2>
+	<p>Combine with an <code>elevation-*</code> class to apply an elevation-appropriate background color. In dark mode,
+	  higher elevations are progressively lighter (simulating ambient light from above). Levels 6–10 use the same
+	  background as level 5.</p>
+	<div class="row -mx">
+	  <div class="col m-span-12 px">
+	    <k-card label="HTML">
+	      <pre
+	        style="overflow:auto;max-height:20rem"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"elevation-0 bg-elevation elevation-card"</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Level 0<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-muted small"</span>&gt;</span>Darkest<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br />  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"elevation-1 bg-elevation elevation-card"</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Level 1<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-muted small"</span>&gt;</span>Darker<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br />  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"elevation-2 bg-elevation elevation-card"</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Level 2<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-muted small"</span>&gt;</span>Page default<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br />  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"elevation-3 bg-elevation elevation-card"</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Level 3<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-muted small"</span>&gt;</span>A Little Lighter<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br />  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"elevation-4 bg-elevation elevation-card"</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Level 4<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-muted small"</span>&gt;</span>Lighter<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br />  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"elevation-5 bg-elevation elevation-card"</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Level 5<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-muted small"</span>&gt;</span>Lightest<span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>(6–10 same)<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br />  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+	    </k-card>
+	  </div>
+	  <div class="col m-span-12 px">
+	    <k-card label="Output">
+	      <div class="elevation-0 bg-elevation elevation-card">
+	        <div>
+	          <strong>Level 0</strong><br>
+	          <span class="tc-muted small">Darkest</span>
+	        </div>
+	      </div>
+	      <div class="elevation-1 bg-elevation elevation-card">
+	        <div>
+	          <strong>Level 1</strong><br>
+	          <span class="tc-muted small">Darker</span>
+	        </div>
+	      </div>
+	      <div class="elevation-2 bg-elevation elevation-card">
+	        <div>
+	          <strong>Level 2</strong><br>
+	          <span class="tc-muted small">Page default</span>
+	        </div>
+	      </div>
+	      <div class="elevation-3 bg-elevation elevation-card">
+	        <div>
+	          <strong>Level 3</strong><br>
+	          <span class="tc-muted small">A Little Lighter</span>
+	        </div>
+	      </div>
+	      <div class="elevation-4 bg-elevation elevation-card">
+	        <div>
+	          <strong>Level 4</strong><br>
+	          <span class="tc-muted small">Lighter</span>
+	        </div>
+	      </div>
+	      <div class="elevation-5 bg-elevation elevation-card">
+	        <div>
+	          <strong>Level 5</strong><br>
+	          <span class="tc-muted small">Lightest<br />(6–10 same)</span>
+	        </div>
+	      </div>
+	    </k-card>
+	  </div>
+	</div>
+	<h2 id="elevation-combined">Combined Example</h2>
+	<p>Use all three classes together on a positioned element to get z-index stacking, a matching shadow depth, and the
+	  correct background color for that level.</p>
+	<div class="row -mx">
+	  <div class="col m-span-12 px">
+	    <k-card label="HTML">
+	      <pre style="overflow:auto;max-height:20rem"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"elevation-0 shadow bg-elevation elevation-card"</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Level 0<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-muted small"</span>&gt;</span>z-index: 0<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-muted small"</span>&gt;</span>Deep Inset Shadow<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-muted small"</span>&gt;</span>Darkest<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br />  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"elevation-1 shadow bg-elevation elevation-card"</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Level 1<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-muted small"</span>&gt;</span>z-index: 10<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-muted small"</span>&gt;</span>Shallow Inset Shadow<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-muted small"</span>&gt;</span>Darker<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br />  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"elevation-2 shadow bg-elevation elevation-card"</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Level 2<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-muted small"</span>&gt;</span>z-index: 20<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-muted small"</span>&gt;</span>No Shadow<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-muted small"</span>&gt;</span>Page default<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br />  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"elevation-3 shadow bg-elevation elevation-card"</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Level 3<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-muted small"</span>&gt;</span>z-index: 30<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-muted small"</span>&gt;</span>Small Drop Shadow<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-muted small"</span>&gt;</span>A Little Lighter<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br />  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"elevation-4 shadow bg-elevation elevation-card"</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Level 4<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-muted small"</span>&gt;</span>z-index: 40<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-muted small"</span>&gt;</span>Medium Drop Shadow<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-muted small"</span>&gt;</span>Lighter<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><br />  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"elevation-5 shadow bg-elevation elevation-card"</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Level 5<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-muted small"</span>&gt;</span>z-index: 50<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-muted small"</span>&gt;</span>Large Drop Shadow<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-muted small"</span>&gt;</span>Lightest<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><br />    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tc-muted small"</span>&gt;</span>(6–10 same)<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br />  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+	    </k-card>
+	  </div>
+	  <div class="col m-span-12 px">
+	    <k-card label="Output">
+	      <div class="elevation-0 shadow bg-elevation elevation-card">
+	        <div><strong>Level 0</strong><br>
+	          <span class="tc-muted small">z-index: 0</span><br />
+	          <span class="tc-muted small">Deep Inset Shadow</span>
+	          <span class="tc-muted small">Darkest</span>
+	        </div>
+	      </div>
+	      <div class="elevation-1 shadow bg-elevation elevation-card">
+	        <div><strong>Level 1</strong><br>
+	          <span class="tc-muted small">z-index: 10</span><br />
+	          <span class="tc-muted small">Shallow Inset Shadow</span><br />
+	          <span class="tc-muted small">Darker</span>
+	        </div>
+	      </div>
+	      <div class="elevation-2 shadow bg-elevation elevation-card">
+	        <div><strong>Level 2</strong><br>
+	          <span class="tc-muted small">z-index: 20</span><br />
+	          <span class="tc-muted small">No Shadow</span><br />
+	          <span class="tc-muted small">Page default</span>
+	        </div>
+	      </div>
+	      <div class="elevation-3 shadow bg-elevation elevation-card">
+	        <div><strong>Level 3</strong><br>
+	          <span class="tc-muted small">z-index: 30</span><br />
+	          <span class="tc-muted small">Small Drop Shadow</span><br />
+	          <span class="tc-muted small">A Little Lighter</span>
+	        </div>
+	      </div>
+	      <div class="elevation-4 shadow bg-elevation elevation-card">
+	        <div><strong>Level 4</strong><br>
+	          <span class="tc-muted small">z-index: 40</span><br />
+	          <span class="tc-muted small">Medium Drop Shadow</span><br />
+	          <span class="tc-muted small">Lighter</span><br />
+	        </div>
+	      </div>
+	      <div class="elevation-5 shadow bg-elevation elevation-card">
+	        <div><strong>Level 5</strong><br>
+	          <span class="tc-muted small">z-index: 50</span><br />
+	          <span class="tc-muted small">Large Drop Shadow</span><br />
+	          <span class="tc-muted small">Lightest</span><br />
+	          <span class="tc-muted small">(6–10 same)</span>
+	        </div>
+	      </div>
+	    </k-card>
+	  </div>
+	</div>
+	<h2 id="elevation-variables">Elevation CSS Variables</h2>
+	<div class="table-wrapper mb">
+	  <table>
+	    <thead>
+	      <tr>
+	        <th>Variable</th>
+	        <th>Description</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	      <tr>
+	        <td><code>--c_bg_elevation_0</code></td>
+	        <td>Background for level 0 (darkest / deepest)</td>
+	      </tr>
+	      <tr>
+	        <td><code>--c_bg_elevation_1</code></td>
+	        <td>Background for level 1 (sunk below page)</td>
+	      </tr>
+	      <tr>
+	        <td><code>--c_bg_elevation_2</code></td>
+	        <td>Background for level 2 — equals <code>var(--c_bg)</code> (page default)</td>
+	      </tr>
+	      <tr>
+	        <td><code>--c_bg_elevation_3</code></td>
+	        <td>Background for level 3</td>
+	      </tr>
+	      <tr>
+	        <td><code>--c_bg_elevation_4</code></td>
+	        <td>Background for level 4</td>
+	      </tr>
+	      <tr>
+	        <td><code>--c_bg_elevation_5</code></td>
+	        <td>Background for level 5</td>
+	      </tr>
+	      <tr>
+	        <td><code>--c_bg_elevation_6</code> – <code>--c_bg_elevation_10</code></td>
+	        <td>Same as <code>--c_bg_elevation_5</code> (levels 6–10 do not get lighter)</td>
+	      </tr>
+	      <tr>
+	        <td><code>--shadow_0</code></td>
+	        <td>Shadow for level 0 (deep inset)</td>
+	      </tr>
+	      <tr>
+	        <td><code>--shadow_1</code></td>
+	        <td>Shadow for level 1 (shallow inset)</td>
+	      </tr>
+	      <tr>
+	        <td><code>--shadow_3</code></td>
+	        <td>Shadow for level 3 (very small outset)</td>
+	      </tr>
+	      <tr>
+	        <td><code>--shadow_4</code></td>
+	        <td>Shadow for level 4 (small outset)</td>
+	      </tr>
+	      <tr>
+	        <td><code>--shadow_5</code></td>
+	        <td>Shadow for level 5 (medium-small outset)</td>
+	      </tr>
+	      <tr>
+	        <td><code>--shadow_6</code> – <code>--shadow_10</code></td>
+	        <td>Same as <code>--shadow_5</code> (levels 6–10 do not get deeper)</td>
+	      </tr>
+	    </tbody>
+	  </table>
+	</div>
+	
+		</main>
+		<div style="height:33vh"></div>
+	</k-main>
+	<script type="module" src="https://cdn.jsdelivr.net/npm/kempo-ui@0.3/dist/components/Nav.js"></script>
+	<script type="module" src="https://cdn.jsdelivr.net/npm/kempo-ui@0.3/dist/components/Aside.js"></script>
+	<script type="module" src="https://cdn.jsdelivr.net/npm/kempo-ui@0.3/dist/components/Icon.js"></script>
+	<script type="module" src="https://cdn.jsdelivr.net/npm/kempo-ui@0.3/dist/components/ThemeSwitcher.js"></script>
+	<script type="module" src="https://cdn.jsdelivr.net/npm/kempo-ui@0.3/dist/components/Card.js"></script>
+	
+</body>
+</html>

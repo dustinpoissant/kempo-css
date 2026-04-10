@@ -4,6 +4,7 @@ import { execSync } from 'child_process';
 import fs from 'fs';
 import path from 'path';
 import { minify } from 'terser';
+import { renderDir } from 'kempo-server/templating';
 
 // Check for watch flag
 const isWatchMode = process.argv.includes('--watch');
@@ -107,7 +108,7 @@ async function processComponents(){
   }
 }
 
-processComponents().then(() => {
+processComponents().then(async () => {
 
 // Copy CSS to docs
 const cssFiles = ['src/kempo.css', 'src/kempo-hljs.css'];
@@ -133,6 +134,11 @@ minifiedFiles.forEach(file => {
 
   console.log('\nBuild complete!');
   console.log(`Minified files are in the ${outputDir}/ directory`);
+
+  // Render docs from docs-src
+  console.log('\nRendering docs...');
+  const docsCount = await renderDir('./docs-src', './docs');
+  console.log(`Rendered ${docsCount} doc pages`);
 }).catch(error => {
   console.error('Build error:', error);
   process.exit(1);

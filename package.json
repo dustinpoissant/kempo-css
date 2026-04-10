@@ -8,6 +8,7 @@
     "build": "node scripts/build.js",
     "build:watch": "node scripts/build.js --watch",
     "test": "npx kempo-test",
+    "dev": "npx kempo-server --root docs-src --port 4048",
     "docs": "npx kempo-server --root docs --port 4048"
   },
   "keywords": [],
@@ -15,7 +16,7 @@
   "license": "MIT",
   "devDependencies": {
     "clean-css-cli": "^5.6.3",
-    "kempo-server": "^1.9.1",
+    "kempo-server": "^3.0.3",
     "kempo-testing-framework": "^1.4.0",
     "terser": "^5.44.1"
   },

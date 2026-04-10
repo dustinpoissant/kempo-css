@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.1.3] - 2026-06-28
+- Split docs into multiple pages using kempo-server v3 templating system
+- Added `docs-src/` directory with templates, pages, and fragments
+- Updated build script to render docs from `docs-src/` to `docs/`
+- Added `dev` script for on-demand SSR with live CSS from `src/`
+- Upgraded kempo-server to v3
+
 ## [2.1.1] - 2026-03-21
 - Added LLM.txt
 

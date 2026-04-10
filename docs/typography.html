@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Typography - Kempo CSS</title>
+	<link rel="icon" type="image/png" sizes="48x48" href="./media/icon48.png">
+	<link rel="manifest" href="./manifest.json" />
+	<link rel="stylesheet" href="./kempo.min.css" />
+	<link rel="stylesheet" href="./kempo-hljs.min.css" />
+	<script>
+		window.kempo = {
+			pathToStylesheet: './kempo.min.css',
+			pathsToIcons: ['https://cdn.jsdelivr.net/npm/kempo-ui@0.3/icons']
+		};
+	</script>
+	
+
+</head>
+<body>
+	
+	<k-nav fixed class="bg-primary">
+		<button id="toggleNavSideMenu" class="link">
+			<k-icon name="menu"></k-icon>
+		</button>
+		<a href="./" class="d-if ph" style="align-items: center">
+			<img src="./media/icon32.png" alt="Kempo CSS Icon" class="pr" />
+			Kempo CSS
+		</a>
+		<a href="./theme-editor.html">Theme Editor</a>
+		<div class="flex"></div>
+		<a href="https://github.com/dustinpoissant/kempo-css?tab=License-1-ov-file#creative-commons-attribution-noncommercial-sharealike-20" target="_blank"><k-icon name="license"></k-icon></a>
+		<a href="https://www.npmjs.com/package/kempo-css" target="_blank"><k-icon name="npm"></k-icon></a>
+		<a href="https://github.com/dustinpoissant/kempo-css" target="_blank"><k-icon name="github-mark"></k-icon></a>
+		<k-theme-switcher></k-theme-switcher>
+	</k-nav>
+	<div style="width: 100%; height: 4rem;"></div>
+	<k-aside id="navSideMenu" main="overlay" state="offscreen">
+		<menu>
+			<div class="ta-center bb mb r0">
+				<h1 class="tc-primary">Kempo CSS</h1>
+				<img src="./media/icon128.png" alt="Kempo CSS Icon" />
+			</div>
+			<h5><a href="./typography.html">Typography</a></h5>
+			<div class="ml mb -mt">
+				<a href="./typography.html#paragraphs" class="d-b">Paragraphs</a>
+				<a href="./typography.html#headings" class="d-b">Headings</a>
+				<a href="./typography.html#textmarkup" class="d-b">Text Markup</a>
+				<a href="./typography.html#lists" class="d-b">Lists</a>
+			</div>
+			<h5><a href="./layout.html">Layout</a></h5>
+			<div class="ml mb -mt">
+				<a href="./layout.html#display" class="d-b">Display</a>
+				<a href="./layout.html#flexbox" class="d-b">Flexbox</a>
+				<a href="./layout.html#grid" class="d-b">Grid System</a>
+				<a href="./layout.html#responsive-grid" class="d-b">Responsive Grid</a>
+				<a href="./layout.html#min-width-grid" class="d-b">Alternative Responsive Grid</a>
+			</div>
+			<h5><a href="./borders-spacing.html">Borders &amp; Spacing</a></h5>
+			<div class="ml mb -mt">
+				<a href="./borders-spacing.html#borders" class="d-b">Borders</a>
+				<a href="./borders-spacing.html#border-radius" class="d-b">Border Radius</a>
+				<a href="./borders-spacing.html#padding" class="d-b">Padding</a>
+				<a href="./borders-spacing.html#margins" class="d-b">Margins</a>
+				<a href="./borders-spacing.html#negative-margins" class="d-b">Negative Margins</a>
+				<a href="./borders-spacing.html#cancelled-margins" class="d-b">Cancelled Margins</a>
+			</div>
+			<h5><a href="./inputs.html">Inputs</a></h5>
+			<div class="ml mb -mt">
+				<a href="./inputs.html#basic-inputs" class="d-b">Basic Inputs</a>
+				<a href="./inputs.html#labels" class="d-b">Labels</a>
+				<a href="./inputs.html#checkbox-radio" class="d-b">Checkbox / Radio</a>
+			</div>
+			<h5><a href="./buttons.html">Buttons</a></h5>
+			<div class="ml mb -mt">
+				<a href="./buttons.html#button-types" class="d-b">Button Types</a>
+				<a href="./buttons.html#button-colors" class="d-b">Button Colors</a>
+				<a href="./buttons.html#button-sizes" class="d-b">Button Sizes</a>
+				<a href="./buttons.html#button-groups" class="d-b">Button Groups</a>
+				<a href="./buttons.html#no-styles" class="d-b">No Styles</a>
+			</div>
+			<h5><a href="./tables.html">Tables</a></h5>
+			<div class="ml mb -mt">
+				<a href="./tables.html#basic-table" class="d-b">Basic Table</a>
+				<a href="./tables.html#responsive-table" class="d-b">Responsive Table</a>
+			</div>
+			<h5><a href="./colors.html">Colors</a></h5>
+			<div class="ml mb -mt">
+				<a href="./colors.html#background" class="d-b">Background</a>
+				<a href="./colors.html#text-colors" class="d-b">Text Colors</a>
+			</div>
+			<h5><a href="./elevation.html">Elevation</a></h5>
+			<div class="ml mb -mt">
+				<a href="./elevation.html#elevation-z-index" class="d-b">Z-Index</a>
+				<a href="./elevation.html#elevation-shadow" class="d-b">Shadow</a>
+				<a href="./elevation.html#elevation-bg" class="d-b">Elevation Background</a>
+				<a href="./elevation.html#elevation-combined" class="d-b">Combined Example</a>
+				<a href="./elevation.html#elevation-variables" class="d-b">CSS Variables</a>
+			</div>
+			<h5><a href="./utilities.html">Utilities</a></h5>
+			<div class="ml mb -mt">
+				<a href="./utilities.html#noScroll" class="d-b">Disable Body Scrolling</a>
+			</div>
+			<hr />
+			<a href="https://github.com/dustinpoissant/kempo-css?tab=License-1-ov-file#creative-commons-attribution-noncommercial-sharealike-20" target="_blank"><k-icon name="license"></k-icon> Read the License</a><br />
+			<a href="https://www.npmjs.com/package/kempo-css" target="_blank"><k-icon name="npm"></k-icon> View on NPM</a><br />
+			<a href="https://github.com/dustinpoissant/kempo-css" target="_blank"><k-icon name="github-mark"></k-icon> View on GitHub</a>
+			<div style="height:33vh"></div>
+		</menu>
+	</k-aside>
+	<script type="module">
+		document.getElementById('toggleNavSideMenu').addEventListener('click', async () => {
+			await window.customElements.whenDefined('k-aside');
+			document.getElementById('navSideMenu').toggle();
+		});
+		document.addEventListener('click', function(e) {
+			if (e.target.matches('a[href^="#"]')) {
+				e.preventDefault();
+				const targetId = e.target.getAttribute('href').replace('#', '');
+				const target = document.getElementById(targetId);
+				if (target) {
+					target.scrollIntoView({ behavior: 'smooth' });
+					history.replaceState(null, '', window.location.pathname + window.location.search + '#' + targetId);
+					document.getElementById('navSideMenu').hide();
+				}
+			}
+		});
+		const fixedNav = document.querySelector('k-nav[fixed]');
+		if (fixedNav) {
+			const updateNavShadow = () => fixedNav.classList.toggle('scrolled', window.scrollY > 0);
+			window.addEventListener('scroll', updateNavShadow, { passive: true });
+			updateNavShadow();
+		}
+	</script>
+
+	<k-main>
+		<main>
+			<h1 class="ta-center">Typography</h1>
+			
+<h2 id="paragraphs">Paragraphs</h2>
+	<div class="row -mx">
+	  <div class="col m-span-12 px">
+	    <k-card label="HTML">
+	      <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum non unde laborum officia doloremque, repudiandae laudantium nihil! Sed at omnis eos a obcaecati. Mollitia minus voluptatem velit, assumenda ipsa esse!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+	    </k-card>
+	  </div>
+	  <div class="col m-span-12 px">
+	    <k-card label="Output">
+	      <p>
+	        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+	        non unde laborum officia doloremque, repudiandae laudantium nihil!
+	        Sed at omnis eos a obcaecati. Mollitia minus voluptatem velit,
+	        assumenda ipsa esse!
+	      </p>
+	    </k-card>
+	  </div>
+	</div>
+
+	<h2 id="headings">Headings</h2>
+	<div class="row -mx">
+	  <div class="col m-span-12 px">
+	    <k-card label="HTML">
+	      <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Heading 1<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Heading 2<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Heading 3<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Heading 4<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h5</span>&gt;</span>Heading 5<span class="hljs-tag">&lt;/<span class="hljs-name">h5</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h6</span>&gt;</span>Heading 6<span class="hljs-tag">&lt;/<span class="hljs-name">h6</span>&gt;</span></code></pre>
+	    </k-card>
+	  </div>
+	  <div class="col m-span-12 px">
+	    <k-card label="Output">
+	      <h1>Heading 1</h1>
+	      <h2>Heading 2</h2>
+	      <h3>Heading 3</h3>
+	      <h4>Heading 4</h4>
+	      <h5>Heading 5</h5>
+	      <h6>Heading 6</h6>
+	    </k-card>
+	  </div>
+	</div>
+
+	<h2 id="textmarkup">Text Markup</h2>
+	<div class="row -mx">
+	  <div class="col m-span-12 px">
+	    <k-card label="HTML">
+	      <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>strong<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span>italics<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">del</span>&gt;</span>strike<span class="hljs-tag">&lt;/<span class="hljs-name">del</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">u</span>&gt;</span>underline<span class="hljs-tag">&lt;/<span class="hljs-name">u</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">sub</span>&gt;</span>sub<span class="hljs-tag">&lt;/<span class="hljs-name">sub</span>&gt;</span> Normal <span class="hljs-tag">&lt;<span class="hljs-name">sup</span>&gt;</span>super<span class="hljs-tag">&lt;/<span class="hljs-name">sup</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>bold<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">mark</span>&gt;</span>highlighted<span class="hljs-tag">&lt;/<span class="hljs-name">mark</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+	    </k-card>
+	  </div>
+	  <div class="col m-span-12 px">
+	    <k-card label="Output">
+	      <p>
+	        <strong>strong</strong> <i>italics</i> <del>strike</del>
+	        <u>underline</u> <sub>sub</sub> Normal <sup>super</sup>
+	        <b>bold</b> <mark>highlighted</mark>
+	      </p>
+	    </k-card>
+	  </div>
+	</div>
+
+	<h2 id="lists">Lists</h2>
+	<div class="row -mx">
+	  <div class="col m-span-12 px">
+	    <k-card label="HTML">
+	      <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">ol</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Item 1<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Item 2<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><br>    Item 3<br>    <span class="hljs-tag">&lt;<span class="hljs-name">ol</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Sub Item 1<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Sub Item 2<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Sub Item 3<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span></code></pre>
+	    </k-card>
+	  </div>
+	  <div class="col m-span-12 px">
+	    <k-card label="Output">
+	      <ol>
+	        <li>Item 1</li>
+	        <li>Item 2</li>
+	        <li>
+	          Item 3
+	          <ol>
+	            <li>Sub Item 1</li>
+	            <li>Sub Item 2</li>
+	            <li>Sub Item 3</li>
+	          </ol>
+	        </li>
+	      </ol>
+	    </k-card>
+	  </div>
+	</div>
+	<div class="row -mx">
+	  <div class="col m-span-12 px">
+	    <k-card label="HTML">
+	      <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Item 1<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Item 2<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><br>    Item 3<br>    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Sub Item 1<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Sub Item 2<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Sub Item 3<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre>
+	    </k-card>
+	  </div>
+	  <div class="col m-span-12 px">
+	    <k-card label="Output">
+	      <ul>
+	        <li>Item 1</li>
+	        <li>Item 2</li>
+	        <li>
+	          Item 3
+	          <ul>
+	            <li>Sub Item 1</li>
+	            <li>Sub Item 2</li>
+	            <li>Sub Item 3</li>
+	          </ul>
+	        </li>
+	      </ul>
+	    </k-card>
+	  </div>
+	</div>
+	
+		</main>
+		<div style="height:33vh"></div>
+	</k-main>
+	<script type="module" src="https://cdn.jsdelivr.net/npm/kempo-ui@0.3/dist/components/Nav.js"></script>
+	<script type="module" src="https://cdn.jsdelivr.net/npm/kempo-ui@0.3/dist/components/Aside.js"></script>
+	<script type="module" src="https://cdn.jsdelivr.net/npm/kempo-ui@0.3/dist/components/Icon.js"></script>
+	<script type="module" src="https://cdn.jsdelivr.net/npm/kempo-ui@0.3/dist/components/ThemeSwitcher.js"></script>
+	<script type="module" src="https://cdn.jsdelivr.net/npm/kempo-ui@0.3/dist/components/Card.js"></script>
+	
+</body>
+</html>
