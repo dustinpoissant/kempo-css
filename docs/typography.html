@@ -47,6 +47,7 @@
 				<a href="./typography.html#paragraphs" class="d-b">Paragraphs</a>
 				<a href="./typography.html#headings" class="d-b">Headings</a>
 				<a href="./typography.html#textmarkup" class="d-b">Text Markup</a>
+				<a href="./typography.html#textdecoration" class="d-b">Text Decoration</a>
 				<a href="./typography.html#lists" class="d-b">Lists</a>
 			</div>
 			<h5><a href="./layout.html">Layout</a></h5>
@@ -189,6 +190,25 @@
 	        <strong>strong</strong> <i>italics</i> <del>strike</del>
 	        <u>underline</u> <sub>sub</sub> Normal <sup>super</sup>
 	        <b>bold</b> <mark>highlighted</mark>
+	      </p>
+	    </k-card>
+	  </div>
+	</div>
+
+	<h2 id="textdecoration">Text Decoration</h2>
+	<p>Utility classes to control text decoration without relying on semantic HTML elements like <code>&lt;u&gt;</code> or <code>&lt;del&gt;</code>. Useful with rich text editors like Lexical that don't support those elements.</p>
+	<div class="row -mx">
+	  <div class="col m-span-12 px">
+	    <k-card label="HTML">
+	      <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"td-n"</span>&gt;</span>no decoration<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"td-u"</span>&gt;</span>underline<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"td-lt"</span>&gt;</span>line-through<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></code></pre>
+	    </k-card>
+	  </div>
+	  <div class="col m-span-12 px">
+	    <k-card label="Output">
+	      <p>
+	        <span class="td-n">no decoration</span><br>
+	        <span class="td-u">underline</span><br>
+	        <span class="td-lt">line-through</span>
 	      </p>
 	    </k-card>
 	  </div>

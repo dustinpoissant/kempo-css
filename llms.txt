@@ -110,6 +110,8 @@ Examples: `.m-d-n` hides on mobile; `.d-d-f` makes flex on desktop only.
 - `.ff-mono` — monospace font
 - `.ta-left`, `.ta-center`, `.ta-right` — text alignment
 - `.td-n` — `text-decoration: none`
+- `.td-u` — `text-decoration: underlined`
+- `.td-lt` — `text-decoration: line-through`
 - `.no-link` / `.no-link:hover` — removes link color and underline
 - `.link` — applies link styling to non-`<a>` elements
 

@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.1.4] - 2026-04-13
+- Added `.td-u` (underline) and `.td-lt` (line-through) text decoration utility classes
+- Added Text Decoration section to typography docs
+- Added unit tests for `.td-u` and `.td-lt`
+
 ## [2.1.3] - 2026-06-28
 - Split docs into multiple pages using kempo-server v3 templating system
 - Added `docs-src/` directory with templates, pages, and fragments

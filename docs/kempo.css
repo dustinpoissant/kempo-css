@@ -498,6 +498,12 @@ li ul {
 .td-n {
   text-decoration: none;
 }
+.td-u {
+  text-decoration: underline;
+}
+.td-lt {
+  text-decoration: line-through;
+}
 
 /*
   Spacing, Borders and Radius

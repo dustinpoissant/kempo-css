@@ -251,5 +251,31 @@ export default {
     } else {
       fail(`Expected none, got ${textDecoration}`);
     }
+  },
+
+  'should apply .td-u class': ({pass, fail}) => {
+    const el = document.createElement('span');
+    el.className = 'td-u';
+    document.body.appendChild(el);
+    const textDecoration = getStyle(el, 'textDecorationLine');
+    el.remove();
+    if(textDecoration === 'underline'){
+      pass('.td-u sets text-decoration: underline');
+    } else {
+      fail(`Expected underline, got ${textDecoration}`);
+    }
+  },
+
+  'should apply .td-lt class': ({pass, fail}) => {
+    const el = document.createElement('span');
+    el.className = 'td-lt';
+    document.body.appendChild(el);
+    const textDecoration = getStyle(el, 'textDecorationLine');
+    el.remove();
+    if(textDecoration === 'line-through'){
+      pass('.td-lt sets text-decoration: line-through');
+    } else {
+      fail(`Expected line-through, got ${textDecoration}`);
+    }
   }
 };
