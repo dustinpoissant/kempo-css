@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [2.1.4] - 2026-04-13
+## [2.1.5] - 2026-04-13
 - Added `.td-u` (underline) and `.td-lt` (line-through) text decoration utility classes
 - Added Text Decoration section to typography docs
 - Added unit tests for `.td-u` and `.td-lt`
