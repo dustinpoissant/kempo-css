@@ -705,8 +705,8 @@ input[type="reset"] {
   font-size: inherit;
   vertical-align: middle;
 }
-button:not(.no-btn):not(.no-style):not(:disabled):hover,
-.btn:not(:disabled):hover,
+button:not(.no-btn):not(.no-style):not(:disabled):not(.link):hover,
+.btn:not(:disabled):not(.link):hover,
 input[type="button"]:not(:disabled):hover,
 input[type="submit"]:not(:disabled):hover,
 input[type="reset"]:not(:disabled):hover {
@@ -714,8 +714,8 @@ input[type="reset"]:not(:disabled):hover {
   color: var(--btn_tc);
   box-shadow: var(--btn_box_shadow__hover);
 }
-button:not(.no-btn):not(.no-style):not(:disabled):focus,
-.btn:not(:disabled):focus,
+button:not(.no-btn):not(.no-style):not(:disabled):not(.link):focus,
+.btn:not(:disabled):not(.link):focus,
 input[type="button"]:not(:disabled):focus,
 input[type="submit"]:not(:disabled):focus,
 input[type="reset"]:not(:disabled):focus {
