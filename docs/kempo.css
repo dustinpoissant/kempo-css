@@ -705,20 +705,20 @@ input[type="reset"] {
   font-size: inherit;
   vertical-align: middle;
 }
-button:not(.no-btn):not(.no-style):hover,
-.btn:hover,
-input[type="button"]:hover,
-input[type="submit"]:hover,
-input[type="reset"]:hover {
+button:not(.no-btn):not(.no-style):not(:disabled):hover,
+.btn:not(:disabled):hover,
+input[type="button"]:not(:disabled):hover,
+input[type="submit"]:not(:disabled):hover,
+input[type="reset"]:not(:disabled):hover {
   background-color: var(--btn_bg__hover);
   color: var(--btn_tc);
   box-shadow: var(--btn_box_shadow__hover);
 }
-button:not(.no-btn):not(.no-style):focus,
-.btn:focus,
-input[type="button"]:focus,
-input[type="submit"]:focus,
-input[type="reset"]:focus {
+button:not(.no-btn):not(.no-style):not(:disabled):focus,
+.btn:not(:disabled):focus,
+input[type="button"]:not(:disabled):focus,
+input[type="submit"]:not(:disabled):focus,
+input[type="reset"]:not(:disabled):focus {
   box-shadow: var(--btn_box_shadow__hover), var(--focus_shadow);
   z-index: 1;
 }
@@ -737,11 +737,11 @@ input[type="reset"].primary {
   background-color: var(--c_primary) !important;
   --btn_tc: var(--tc_on_primary);
 }
-button:not(.no-btn).primary:hover,
-.btn.primary:hover,
-input[type="button"].primary:hover,
-input[type="submit"].primary:hover,
-input[type="reset"].primary:hover {
+button:not(.no-btn).primary:not(:disabled):hover,
+.btn.primary:not(:disabled):hover,
+input[type="button"].primary:not(:disabled):hover,
+input[type="submit"].primary:not(:disabled):hover,
+input[type="reset"].primary:not(:disabled):hover {
   background-color: var(--c_primary__hover) !important;
 }
 button:not(.no-btn).secondary,
@@ -752,11 +752,11 @@ input[type="reset"].secondary {
   background-color: var(--c_secondary) !important;
   --btn_tc: var(--tc_on_secondary);
 }
-button:not(.no-btn).secondary:hover,
-.btn.secondary:hover,
-input[type="button"].secondary:hover,
-input[type="submit"].secondary:hover,
-input[type="reset"].secondary:hover {
+button:not(.no-btn).secondary:not(:disabled):hover,
+.btn.secondary:not(:disabled):hover,
+input[type="button"].secondary:not(:disabled):hover,
+input[type="submit"].secondary:not(:disabled):hover,
+input[type="reset"].secondary:not(:disabled):hover {
   background-color: var(--c_secondary__hover) !important;
 }
 button:not(.no-btn).success,
@@ -767,11 +767,11 @@ input[type="reset"].success {
   background-color: var(--c_success) !important;
   --btn_tc: var(--tc_on_success);
 }
-button:not(.no-btn).success:hover,
-.btn.success:hover,
-input[type="button"].success:hover,
-input[type="submit"].success:hover,
-input[type="reset"].success:hover {
+button:not(.no-btn).success:not(:disabled):hover,
+.btn.success:not(:disabled):hover,
+input[type="button"].success:not(:disabled):hover,
+input[type="submit"].success:not(:disabled):hover,
+input[type="reset"].success:not(:disabled):hover {
   background-color: var(--c_success__hover) !important;
 }
 button:not(.no-btn).warning,
@@ -782,11 +782,11 @@ input[type="reset"].warning {
   background-color: var(--c_warning) !important;
   --btn_tc: var(--tc_on_warning);
 }
-button:not(.no-btn).warning:hover,
-.btn.warning:hover,
-input[type="button"].warning:hover,
-input[type="submit"].warning:hover,
-input[type="reset"].warning:hover {
+button:not(.no-btn).warning:not(:disabled):hover,
+.btn.warning:not(:disabled):hover,
+input[type="button"].warning:not(:disabled):hover,
+input[type="submit"].warning:not(:disabled):hover,
+input[type="reset"].warning:not(:disabled):hover {
   background-color: var(--c_warning__hover) !important;
 }
 button:not(.no-btn).danger,
@@ -797,11 +797,11 @@ input[type="reset"].danger {
   background-color: var(--c_danger) !important;
   --btn_tc: var(--tc_on_danger);
 }
-button:not(.no-btn).danger:hover,
-.btn.danger:hover,
-input[type="button"].danger:hover,
-input[type="submit"].danger:hover,
-input[type="reset"].danger:hover {
+button:not(.no-btn).danger:not(:disabled):hover,
+.btn.danger:not(:disabled):hover,
+input[type="button"].danger:not(:disabled):hover,
+input[type="submit"].danger:not(:disabled):hover,
+input[type="reset"].danger:not(:disabled):hover {
   background-color: var(--c_danger__hover) !important;
 }
 button:not(.no-btn):not(.no-style).link,
@@ -851,7 +851,7 @@ input[type="reset"].link {
   text-align: left;
   color: inherit;
 }
-.no-btn:focus {
+.no-btn:not(:disabled):focus {
   box-shadow: var(--focus_shadow);
 }
 .full {
@@ -875,11 +875,11 @@ textarea {
   outline: none;
   transition: box-shadow var(--animation_ms);
 }
-input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]):focus,
-select:focus,
-textarea:focus,
-input[type="checkbox"]:focus,
-input[type="radio"]:focus {
+input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]):not(:disabled):focus,
+select:not(:disabled):focus,
+textarea:not(:disabled):focus,
+input[type="checkbox"]:not(:disabled):focus,
+input[type="radio"]:not(:disabled):focus {
   box-shadow: var(--focus_shadow);
 }
 input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]):disabled,
