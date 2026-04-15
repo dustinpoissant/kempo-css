@@ -213,11 +213,40 @@ export default {
     document.body.appendChild(container);
     const btnWidth = parseFloat(getStyle(btn, 'width'));
     container.remove();
-    // .full should make the button take full container width
     if(btnWidth >= 490){
       pass(`.full makes button full width: ${btnWidth}px`);
     } else {
       fail(`Expected ~500px width, got ${btnWidth}px`);
+    }
+  },
+
+  'should apply focus shadow to focused enabled button': ({pass, fail}) => {
+    const btn = document.createElement('button');
+    document.body.appendChild(btn);
+    const beforeShadow = getStyle(btn, 'boxShadow');
+    btn.focus();
+    const afterShadow = getStyle(btn, 'boxShadow');
+    btn.blur();
+    btn.remove();
+    if(afterShadow !== beforeShadow){
+      pass('Enabled button gets focus shadow on focus');
+    } else {
+      fail('Enabled button should get focus shadow when focused');
+    }
+  },
+
+  'should not apply focus shadow to disabled button': ({pass, fail}) => {
+    const btn = document.createElement('button');
+    btn.disabled = true;
+    document.body.appendChild(btn);
+    const beforeShadow = getStyle(btn, 'boxShadow');
+    btn.focus();
+    const afterShadow = getStyle(btn, 'boxShadow');
+    btn.remove();
+    if(afterShadow === beforeShadow){
+      pass('Disabled button does not get focus shadow');
+    } else {
+      fail('Disabled button should not get focus shadow');
     }
   }
 };

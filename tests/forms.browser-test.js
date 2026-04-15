@@ -220,5 +220,67 @@ export default {
     } else {
       fail(`Expected inline-block, got ${display}`);
     }
+  },
+
+  'should apply focus shadow to focused enabled text input': ({pass, fail}) => {
+    const input = document.createElement('input');
+    input.type = 'text';
+    document.body.appendChild(input);
+    const beforeShadow = getStyle(input, 'boxShadow');
+    input.focus();
+    const afterShadow = getStyle(input, 'boxShadow');
+    input.blur();
+    input.remove();
+    if(afterShadow !== beforeShadow){
+      pass('Enabled text input gets focus shadow on focus');
+    } else {
+      fail('Enabled text input should get focus shadow when focused');
+    }
+  },
+
+  'should not apply focus shadow to disabled text input': ({pass, fail}) => {
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.disabled = true;
+    document.body.appendChild(input);
+    const beforeShadow = getStyle(input, 'boxShadow');
+    input.focus();
+    const afterShadow = getStyle(input, 'boxShadow');
+    input.remove();
+    if(afterShadow === beforeShadow){
+      pass('Disabled text input does not get focus shadow');
+    } else {
+      fail('Disabled text input should not get focus shadow');
+    }
+  },
+
+  'should not apply focus shadow to disabled select': ({pass, fail}) => {
+    const select = document.createElement('select');
+    select.disabled = true;
+    document.body.appendChild(select);
+    const beforeShadow = getStyle(select, 'boxShadow');
+    select.focus();
+    const afterShadow = getStyle(select, 'boxShadow');
+    select.remove();
+    if(afterShadow === beforeShadow){
+      pass('Disabled select does not get focus shadow');
+    } else {
+      fail('Disabled select should not get focus shadow');
+    }
+  },
+
+  'should not apply focus shadow to disabled textarea': ({pass, fail}) => {
+    const textarea = document.createElement('textarea');
+    textarea.disabled = true;
+    document.body.appendChild(textarea);
+    const beforeShadow = getStyle(textarea, 'boxShadow');
+    textarea.focus();
+    const afterShadow = getStyle(textarea, 'boxShadow');
+    textarea.remove();
+    if(afterShadow === beforeShadow){
+      pass('Disabled textarea does not get focus shadow');
+    } else {
+      fail('Disabled textarea should not get focus shadow');
+    }
   }
 };
