@@ -138,6 +138,7 @@ try{
   const shakeCode = fs.readFileSync('src/shake.js', 'utf-8');
   const shakeResult = await minify(shakeCode, { module: true });
   fs.writeFileSync(path.join(outputDir, 'shake.js'), shakeResult.code);
+  fs.copyFileSync('src/kempo.css', path.join(outputDir, 'kempo.css'));
   const origSize = Buffer.byteLength(shakeCode, 'utf-8');
   const minSize = Buffer.byteLength(shakeResult.code, 'utf-8');
   const savings = ((origSize - minSize) / origSize * 100).toFixed(1);

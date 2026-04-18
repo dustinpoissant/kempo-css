@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.2.2] - 2026-04-18
+
+### Fixed
+- Build now copies `src/kempo.css` to `dist/kempo.css` so `dist/shake.js` can resolve it at runtime when installed from npm
+- CLI `kempo-css-shake` now accepts `--color-mode light|dark` flag to resolve `light-dark()` functions
+
+## [2.2.1] - 2026-04-18
+
+### Changed
+- Version bump
+
 ## [2.2.0] - 2026-04-18
 
 ### Added
