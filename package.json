@@ -6,7 +6,7 @@
   "main": "scripts/build.js",
   "exports": {
     ".": "./scripts/build.js",
-    "./shake": "./src/shake.js"
+    "./shake": "./dist/shake.js"
   },
   "bin": {
     "kempo-css-shake": "bin/shake.js"

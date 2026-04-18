@@ -134,9 +134,43 @@ const inlineVars = (css, vars) => {
 };
 
 /*
+  Resolve light-dark(a, b) → a (light) or b (dark)
+  Handles nested parens inside arguments
+*/
+const resolveLightDark = (css, mode) => {
+  let result = css;
+  let searchFrom = 0;
+  while(true){
+    const idx = result.indexOf('light-dark(', searchFrom);
+    if(idx === -1) break;
+    const start = idx;
+    let i = idx + 'light-dark('.length;
+    let depth = 1;
+    let commaPos = -1;
+    while(i < result.length && depth > 0){
+      if(result[i] === '(') depth++;
+      else if(result[i] === ')') depth--;
+      else if(result[i] === ',' && depth === 1 && commaPos === -1) commaPos = i;
+      if(depth === 0) break;
+      i++;
+    }
+    if(commaPos === -1 || depth !== 0){
+      searchFrom = idx + 1;
+      continue;
+    }
+    const lightVal = result.slice(start + 'light-dark('.length, commaPos).trim();
+    const darkVal = result.slice(commaPos + 1, i).trim();
+    const replacement = mode === 'dark' ? darkVal : lightVal;
+    result = result.slice(0, start) + replacement + result.slice(i + 1);
+    searchFrom = start;
+  }
+  return result;
+};
+
+/*
   Main shake function
 */
-export default (html, { theme } = {}) => {
+export default (html, { theme, colorMode } = {}) => {
   const kempoCss = readFileSync(kempoPath, 'utf-8');
   const vars = extractRootVars(kempoCss);
   if(theme){
@@ -222,5 +256,9 @@ export default (html, { theme } = {}) => {
     }
   });
 
-  return inlineVars(csstree.generate(ast), resolved);
+  let output = inlineVars(csstree.generate(ast), resolved);
+  if(colorMode === 'light' || colorMode === 'dark'){
+    output = resolveLightDark(output, colorMode);
+  }
+  return output;
 };

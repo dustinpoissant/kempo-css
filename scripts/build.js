@@ -132,6 +132,23 @@ minifiedFiles.forEach(file => {
   console.log(`Copied ${srcPath} → ${destPath}`);
 });
 
+// Minify shake.js
+console.log('\nMinifying src/shake.js...');
+try{
+  const shakeCode = fs.readFileSync('src/shake.js', 'utf-8');
+  const shakeResult = await minify(shakeCode, { module: true });
+  fs.writeFileSync(path.join(outputDir, 'shake.js'), shakeResult.code);
+  const origSize = Buffer.byteLength(shakeCode, 'utf-8');
+  const minSize = Buffer.byteLength(shakeResult.code, 'utf-8');
+  const savings = ((origSize - minSize) / origSize * 100).toFixed(1);
+  console.log(`src/shake.js → dist/shake.js`);
+  console.log(`   Original: ${(origSize / 1024).toFixed(1)}KB`);
+  console.log(`   Minified: ${(minSize / 1024).toFixed(1)}KB`);
+  console.log(`   Savings: ${savings}%`);
+}catch(error){
+  console.error('Error minifying shake.js:', error.message);
+}
+
   console.log('\nBuild complete!');
   console.log(`Minified files are in the ${outputDir}/ directory`);
 
