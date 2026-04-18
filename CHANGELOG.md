@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.2.0] - 2026-04-18
+
+### Added
+- `shake` — new CSS tree-shaking utility that produces minimal, variable-free CSS for email or other constrained contexts
+  - Resolves all CSS custom properties to flat values (no `var()` in output)
+  - Tree-shakes unused rules by matching selectors against provided HTML
+  - Strips dark mode overrides, theme attribute selectors, and `:root` variable blocks
+  - Supports optional theme file to override default variable values
+  - Programmatic API: `import shake from 'kempo-css/shake'`
+  - CLI: `kempo-css-shake --html <file> [--theme <theme.css>]`
+- Added `css-tree` and `htmlparser2` as production dependencies
+- Added `bin` and `exports` fields to package.json
+
 ## [2.1.5] - 2026-04-13
 - Added `.td-u` (underline) and `.td-lt` (line-through) text decoration utility classes
 - Added Text Decoration section to typography docs
