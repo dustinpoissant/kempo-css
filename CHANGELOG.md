@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.2.3] - 2026-05-03
+
+### Fixed
+- `<hr>` inside flex container had collapsing width, fixed.
+
 ## [2.2.2] - 2026-04-18
 
 ### Fixed
