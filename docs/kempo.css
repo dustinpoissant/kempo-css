@@ -406,7 +406,7 @@ h1, h2, h3, h4, h5, h6,
 .h4, h4 { font-size: var(--fs_h4) }
 .h5, h5 { font-size: var(--fs_h5) }
 .h6, h6 { font-size: var(--fs_h6) }
-p, h1, h2, h3, h4, h5, h6, blockquote, ul, ol, dl, pre, hr, dd {
+p, h1, h2, h3, h4, h5, h6, blockquote, ul, ol, dl, pre, dd {
   margin-bottom: var(--spacer);
 }
 ul, ol, dl {
@@ -468,6 +468,8 @@ a:focus,
   color: inherit;
 }
 hr {
+  width: calc(100% - (2 * var(--spacer)));
+  margin: var(--spacer_h) var(--spacer);
   border: none;
   border-top: 1px solid var(--c_border);
 }

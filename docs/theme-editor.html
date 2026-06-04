@@ -12,7 +12,7 @@
 	<script>
 		window.kempo = {
 			pathToStylesheet: './kempo.min.css',
-			pathsToIcons: ['https://cdn.jsdelivr.net/npm/kempo-ui@0.3/icons']
+			pathsToIcons: ['https://cdn.jsdelivr.net/npm/kempo-ui@0.4/icons']
 		};
 	</script>
 	
@@ -54,7 +54,15 @@
 		<a href="https://github.com/dustinpoissant/kempo-css?tab=License-1-ov-file#creative-commons-attribution-noncommercial-sharealike-20" target="_blank"><k-icon name="license"></k-icon></a>
 		<a href="https://www.npmjs.com/package/kempo-css" target="_blank"><k-icon name="npm"></k-icon></a>
 		<a href="https://github.com/dustinpoissant/kempo-css" target="_blank"><k-icon name="github-mark"></k-icon></a>
-		<k-theme-switcher></k-theme-switcher>
+		<k-theme-switcher
+      class="mr"
+      style="
+        --padding: 0.5rem;
+        --c_active: var(--tc_on_primary);
+        --tc_active: var(--c_primary);
+        --c_inactive__hover: rgba(255, 255, 255, 0.1);
+      "
+    ></k-theme-switcher>
 	</k-nav>
 	<div style="width: 100%; height: 4rem;"></div>
 	<k-aside id="navSideMenu" main="overlay" state="offscreen">
@@ -201,50 +209,50 @@
 
     <script
       type="module"
-      src="https://cdn.jsdelivr.net/npm/kempo-ui@0.3/dist/components/Nav.js"
+      src="https://cdn.jsdelivr.net/npm/kempo-ui@0.4/dist/components/Nav.js"
     ></script>
     <script
       type="module"
-      src="https://cdn.jsdelivr.net/npm/kempo-ui@0.3/dist/components/Aside.js"
+      src="https://cdn.jsdelivr.net/npm/kempo-ui@0.4/dist/components/Aside.js"
     ></script>
     <script
       type="module"
-      src="https://cdn.jsdelivr.net/npm/kempo-ui@0.3/dist/components/Split.js"
+      src="https://cdn.jsdelivr.net/npm/kempo-ui@0.4/dist/components/Split.js"
     ></script>
     <script
       type="module"
-      src="https://cdn.jsdelivr.net/npm/kempo-ui@0.3/dist/components/Icon.js"
+      src="https://cdn.jsdelivr.net/npm/kempo-ui@0.4/dist/components/Icon.js"
     ></script>
     <script
       type="module"
-      src="https://cdn.jsdelivr.net/npm/kempo-ui@0.3/dist/components/ThemeSwitcher.js"
+      src="https://cdn.jsdelivr.net/npm/kempo-ui@0.4/dist/components/ThemeSwitcher.js"
     ></script>
     <script
       type="module"
-      src="https://cdn.jsdelivr.net/npm/kempo-ui@0.3/dist/components/Import.js"
+      src="https://cdn.jsdelivr.net/npm/kempo-ui@0.4/dist/components/Import.js"
     ></script>
     <script
       type="module"
-      src="https://cdn.jsdelivr.net/npm/kempo-ui@0.3/dist/components/Resize.js"
+      src="https://cdn.jsdelivr.net/npm/kempo-ui@0.4/dist/components/Resize.js"
     ></script>
     <script
       type="module"
-      src="https://cdn.jsdelivr.net/npm/kempo-ui@0.3/dist/components/Card.js"
+      src="https://cdn.jsdelivr.net/npm/kempo-ui@0.4/dist/components/Card.js"
     ></script>
     <script
       type="module"
-      src="https://cdn.jsdelivr.net/npm/kempo-ui@0.3/dist/components/ColorPicker.js"
+      src="https://cdn.jsdelivr.net/npm/kempo-ui@0.4/dist/components/ColorPicker.js"
     ></script>
     <script
       type="module"
-      src="https://cdn.jsdelivr.net/npm/kempo-ui@0.3/dist/components/Dialog.js"
+      src="https://cdn.jsdelivr.net/npm/kempo-ui@0.4/dist/components/Dialog.js"
     ></script>
     <script
       src="./components/ThemePropertyInput.js"
       type="module"
     ></script>
     <script type="module">
-      import theme from 'https://cdn.jsdelivr.net/npm/kempo-ui@0.3/dist/utils/theme.js';
+      import theme from 'https://cdn.jsdelivr.net/npm/kempo-ui@0.4/dist/utils/theme.js';
 
       /*
         Simple Context for storing theme CSS
