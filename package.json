@@ -1,6 +1,6 @@
 {
   "name": "kempo-css",
-  "version": "2.2.7",
+  "version": "2.2.8",
   "description": "",
   "type": "module",
   "main": "scripts/build.js",
