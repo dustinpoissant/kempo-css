@@ -168,6 +168,73 @@ const resolveLightDark = (css, mode) => {
 };
 
 /*
+  Custom properties set by a rule other than :root, such as `.btn.primary { --btn_tc: white }` over `.btn { color: var(--btn_tc) }`.
+  Inlining var() with the :root values alone loses those overrides (the primary button's text would stay the default black), and a
+  mail client cannot resolve them either. So for each rule that sets such a property, every rule that reads it gets a copy for the
+  elements that match both: the two compound selectors joined (`.btn.primary`, `.btn:hover.primary`) with the reading declarations
+  and the set value put in. Only a rule of a single compound selector (no descendant or child combinator) can be joined this way;
+  `.a .b { --x: 1 }` over `.b { color: var(--x) }` is left as the :root value.
+*/
+const splitCompound = selector => {
+  let depth = 0;
+  let type = '';
+  const text = selector.trim();
+  for(let i = 0; i < text.length; i++){
+    const char = text[i];
+    if(char === '(' || char === '[') depth++;
+    else if(char === ')' || char === ']') depth--;
+    else if(depth === 0 && /[\s>+~,]/.test(char)) return null;
+  }
+  const match = /^([a-zA-Z][\w-]*|\*)/.exec(text);
+  if(match) type = match[1];
+  return { type, rest: text.slice(type.length) };
+};
+
+const joinCompounds = (a, b) => {
+  const left = splitCompound(a);
+  const right = splitCompound(b);
+  if(!left || !right || left.rest.includes('::') || right.rest.includes('::')) return null;
+  if(left.type && right.type && left.type !== right.type) return null;
+  return `${left.type || right.type}${left.rest}${right.rest}`;
+};
+
+const declarationsOf = node => {
+  const found = [];
+  node.block.children.forEach(child => {
+    if(child.type === 'Declaration') found.push({ property: child.property, value: csstree.generate(child.value), important: Boolean(child.important) });
+  });
+  return found;
+};
+
+const selectorsOf = node => node.prelude.type === 'SelectorList' ? node.prelude.children.toArray().map(selector => csstree.generate(selector)) : [];
+
+const flattenScopedVars = (ast, tokens) => {
+  const rules = ast.children.toArray().filter(node => node.type === 'Rule');
+  const added = [];
+  rules.forEach(setter => {
+    const set = new Map(declarationsOf(setter).filter(declaration => declaration.property.startsWith('--')).map(declaration => [declaration.property, declaration.value]));
+    if(!set.size) return;
+    const setterSelectors = selectorsOf(setter);
+    rules.forEach(reader => {
+      if(reader === setter) return;
+      const reading = declarationsOf(reader).filter(declaration => !declaration.property.startsWith('--') && [...set.keys()].some(name => declaration.value.includes(`var(${name}`)));
+      if(!reading.length) return;
+      const body = reading.map(declaration => {
+        const value = declaration.value.replace(/var\(\s*(--[\w-]+)\s*(?:,\s*([^)]+))?\)/g, (match, name) => (set.has(name) ? set.get(name) : match));
+        return `${declaration.property}:${value}${declaration.important ? '!important' : ''}`;
+      }).join(';');
+      const joined = [];
+      selectorsOf(reader).forEach(readerSelector => setterSelectors.forEach(setterSelector => {
+        const selector = joinCompounds(readerSelector, setterSelector);
+        if(selector && selectorMatchesHTML(selector, tokens) && !joined.includes(selector)) joined.push(selector);
+      }));
+      if(joined.length) added.push(`${joined.join(',')}{${body}}`);
+    });
+  });
+  if(added.length) csstree.parse(added.join('\n')).children.forEach(node => ast.children.appendData(node));
+};
+
+/*
   Main shake function
 */
 export default (html, { theme, colorMode } = {}) => {
@@ -253,6 +320,16 @@ export default (html, { theme, colorMode } = {}) => {
       if(node.name === 'media' && node.block && node.block.children.size === 0){
         list.remove(item);
       }
+    }
+  });
+
+  flattenScopedVars(ast, tokens);
+
+  /* Every var() is inlined below, so the custom properties themselves are dead weight in an email */
+  csstree.walk(ast, {
+    visit: 'Declaration',
+    enter(node, item, list){
+      if(node.property.startsWith('--')) list.remove(item);
     }
   });
 

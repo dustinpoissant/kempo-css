@@ -41,3 +41,7 @@ End each line with a `;` when possible, even if it is optional.
 - Test components in their natural documentation environment
 - Validate both functionality and visual appearance
 - Always add to the changelog after each commit. Assume the next version incrament will be a patch version unless stated otherwise.
+
+## Emails use the shaken CSS
+
+`dist/shake.js` (exported as `kempo-css/shake`) is how kempo-css reaches emails: it returns only the rules a piece of HTML uses, with the CSS variables resolved, to be embedded in the email. Kempo's `renderEmailTemplate` calls it on every email template, and kempo-commerce's packing slip is rendered the same way. So the classes and elements here are what email templates use (no inline styles); when adding CSS, prefer plain declarations over very new features where an email would need them, and keep `shake` handling any new syntax you introduce (custom properties, `light-dark()`).

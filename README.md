@@ -59,6 +59,10 @@ Or import in your CSS/SCSS files:
 </html>
 ```
 
+## Tree shaking for emails
+
+`kempo-css/shake` (`import shake from 'kempo-css/shake'`) takes the HTML you are going to send and returns only the kempo-css rules that HTML uses, with every `var()` and `light-dark()` replaced by its value (from an optional `theme` stylesheet and a `colorMode` of `'light'` or `'dark'`). Embed the result in a `<style>` in the `<head>` and a mail client, which cannot load a stylesheet or resolve CSS variables, still gets a kempo-css styled email. Kempo (the CMS) does this for every email template, so templates are written with kempo-css elements and classes and no inline styles. Keep to what mail clients handle: tables and text, no flex or grid, no scripts.
+
 ## License
 
 This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic License](https://creativecommons.org/licenses/by-nc-sa/2.0/) - see the [LICENSE.md](LICENSE.md) file for details.

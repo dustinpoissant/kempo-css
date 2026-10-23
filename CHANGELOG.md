@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [Unreleased]
+
+### Fixed
+- `kempo-css/shake`: a custom property set by a class now reaches the rules that read it. A primary (or secondary, success, warning, danger) button in a shaken email had the default dark text instead of white, because `--btn_tc` was resolved from `:root` only. The reading rule is now also written for elements that match both selectors (`.btn.primary`), and the custom properties are removed from the output once every `var()` is inlined. A rule that sets a property on a descendant selector (`.a .b { --x }`) is still resolved from `:root`.
+
 ## [2.2.3] - 2026-05-03
 
 ### Fixed
