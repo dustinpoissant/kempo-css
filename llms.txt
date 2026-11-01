@@ -119,7 +119,7 @@ Block elements (`p`, `h1`–`h6`, `blockquote`, `ul`, `ol`, `dl`, `pre`, `hr`, `
 
 ### Spacing
 
-Sizes: whole = `--spacer` (1rem), half (`h`) = `--spacer_h` (0.5rem), quarter (`q`) = `--spacer_q` (0.25rem), zero (`0`) = 0.
+Sizes: whole = `--spacer` (1rem), half (`h`) = `--spacer_h` (0.5rem), quarter (`q`) = `--spacer_q` (0.25rem), zero (`0`) = 0. Margins also have auto (`a`): `.ma`, `.mta`, `.mra`, `.mba`, `.mla`, `.mxa`, `.mya`. `.mxa` centers a block-level element that is narrower than its container, such as an image with `.d-b`.
 
 | Side | Padding (whole) | Padding (half) | Padding (quarter) | Padding (zero) | Margin (whole) | Margin (half) | Margin (quarter) | Margin (zero) | Margin (negative) |
 |------|-----------------|----------------|-------------------|----------------|----------------|---------------|------------------|---------------|-------------------|

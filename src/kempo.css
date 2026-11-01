@@ -536,6 +536,11 @@ li ul {
 .mq { margin: var(--spacer_q) !important }
 .m0 { margin: 0 !important }
 .-m { margin: calc(-1 * var(--spacer)) !important }
+.ma { margin: auto !important }
+.mta, .mya { margin-top: auto !important }
+.mra, .mxa { margin-right: auto !important }
+.mba, .mya { margin-bottom: auto !important }
+.mla, .mxa { margin-left: auto !important }
 .mt, .my { margin-top: var(--spacer) !important }
 .mr, .mx { margin-right: var(--spacer) !important }
 .mb, .my { margin-bottom: var(--spacer) !important }

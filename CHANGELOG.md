@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Added
+- Auto margin utilities: `.ma`, `.mta`, `.mra`, `.mba`, `.mla`, `.mxa` and `.mya`. `.mxa` centers a block-level element that is narrower than its container.
+
 ### Fixed
 - `kempo-css/shake`: a custom property set by a class now reaches the rules that read it. A primary (or secondary, success, warning, danger) button in a shaken email had the default dark text instead of white, because `--btn_tc` was resolved from `:root` only. The reading rule is now also written for elements that match both selectors (`.btn.primary`), and the custom properties are removed from the output once every `var()` is inlined. A rule that sets a property on a descendant selector (`.a .b { --x }`) is still resolved from `:root`.
 
