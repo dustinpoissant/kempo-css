@@ -4,8 +4,23 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.4.0] - 2026-11-07
+
+### Added
+- `.no-headers` for a table without a `<thead>`: the first row gets the top border and rounded top corners that a header row normally provides.
+- `.left-headers` for a table whose rows start with a `<th>`: one top border, only the outer corners rounded, and no doubled borders between header cells. It also works together with a `<thead>`.
+- Tables docs: "No Headers", "Left Headers" and "Left & Top Headers" examples.
+- Tests for `.no-headers` and `.left-headers`, and a `shake` test that their rules reach emails only for a table that uses them.
+
+### Fixed
+- Docs: the pages no longer flash white on load for visitors using a dark theme. A small inline script sets the `theme` attribute from `localStorage` before the stylesheet loads, and a `color-scheme` meta lets the browser's default background follow the system.
+
+## [2.3.0] - 2026-11-01
+
 ### Added
 - Auto margin utilities: `.ma`, `.mta`, `.mra`, `.mba`, `.mla`, `.mxa` and `.mya`. `.mxa` centers a block-level element that is narrower than its container.
+
+## [2.2.9] - 2026-10-23
 
 ### Fixed
 - `kempo-css/shake`: a custom property set by a class now reaches the rules that read it. A primary (or secondary, success, warning, danger) button in a shaken email had the default dark text instead of white, because `--btn_tc` was resolved from `:root` only. The reading rule is now also written for elements that match both selectors (`.btn.primary`), and the custom properties are removed from the output once every `var()` is inlined. A rule that sets a property on a descendant selector (`.a .b { --x }`) is still resolved from `:root`.

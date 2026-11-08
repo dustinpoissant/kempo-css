@@ -1054,6 +1054,32 @@ tr:last-child td:first-child {
 tr:last-child td:last-child {
   border-bottom-right-radius: var(--radius);
 }
+.no-headers > tbody > tr:first-child > td {
+  border-top: 1px solid var(--c_border);
+}
+.no-headers > tbody > tr:first-child > td:first-child {
+  border-top-left-radius: var(--radius);
+}
+.no-headers > tbody > tr:first-child > td:last-child {
+  border-top-right-radius: var(--radius);
+}
+.left-headers > tbody > tr > th {
+  border-top: 0;
+  border-radius: 0;
+}
+.left-headers > tbody:first-child > tr:first-child > th,
+.left-headers > tbody:first-child > tr:first-child > td {
+  border-top: 1px solid var(--c_border);
+}
+.left-headers > tbody:first-child > tr:first-child > th:first-child {
+  border-top-left-radius: var(--radius);
+}
+.left-headers > tbody:first-child > tr:first-child > td:last-child {
+  border-top-right-radius: var(--radius);
+}
+.left-headers > tbody > tr:last-child > th:first-child {
+  border-bottom-left-radius: var(--radius);
+}
 
 /*
   Colors

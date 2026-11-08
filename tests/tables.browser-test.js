@@ -1,5 +1,15 @@
 const getStyle = (el, prop) => getComputedStyle(el)[prop];
 
+/* innerHTML so the parser adds the <tbody> that the .no-headers and .left-headers selectors need */
+const build = html => {
+  const host = document.createElement('div');
+  host.innerHTML = html;
+  document.body.appendChild(host);
+  return host;
+};
+
+const leftHeaders = '<table class="left-headers"><tbody><tr><th>a</th><td>b</td><td>c</td></tr><tr><th>d</th><td>e</td><td>f</td></tr><tr><th>g</th><td>h</td><td>i</td></tr></tbody></table>';
+
 export const beforeAll = async () => {
   const link = document.createElement('link');
   link.rel = 'stylesheet';
@@ -187,6 +197,92 @@ export default {
       pass('.table-wrapper has overflow-x: auto');
     } else {
       fail(`Expected auto, got ${overflow}`);
+    }
+  },
+
+  'should give the first row of a .no-headers table a top border and top corner radius': ({pass, fail}) => {
+    const host = build('<table class="no-headers"><tbody><tr><td>a</td><td>b</td></tr><tr><td>c</td><td>d</td></tr></tbody></table>');
+    const [a, b, c] = host.querySelectorAll('td');
+    const border = parseFloat(getStyle(a, 'borderTopWidth'));
+    const tl = parseFloat(getStyle(a, 'borderTopLeftRadius'));
+    const tr = parseFloat(getStyle(b, 'borderTopRightRadius'));
+    const secondRowTop = parseFloat(getStyle(c, 'borderTopWidth'));
+    host.remove();
+    if(border > 0 && tl > 0 && tr > 0 && secondRowTop === 0){
+      pass('First row has a top border and rounded top corners, second row does not have a top border');
+    } else {
+      fail(`Expected border and radius on first row only, got border: ${border}, tl: ${tl}, tr: ${tr}, second row border: ${secondRowTop}`);
+    }
+  },
+
+  'should not add a top border or top radius to a table without .no-headers': ({pass, fail}) => {
+    const host = build('<table><tbody><tr><td>a</td><td>b</td></tr></tbody></table>');
+    const [a] = host.querySelectorAll('td');
+    const border = parseFloat(getStyle(a, 'borderTopWidth'));
+    const tl = parseFloat(getStyle(a, 'borderTopLeftRadius'));
+    host.remove();
+    if(border === 0 && tl === 0){
+      pass('Plain table first row cells have no top border or radius');
+    } else {
+      fail(`Expected none, got border: ${border}, tl: ${tl}`);
+    }
+  },
+
+  'should round the outer corners of a .left-headers table': ({pass, fail}) => {
+    const host = build(leftHeaders);
+    const ths = host.querySelectorAll('th');
+    const tds = host.querySelectorAll('td');
+    const tl = parseFloat(getStyle(ths[0], 'borderTopLeftRadius'));
+    const bl = parseFloat(getStyle(ths[2], 'borderBottomLeftRadius'));
+    const tr = parseFloat(getStyle(tds[1], 'borderTopRightRadius'));
+    const br = parseFloat(getStyle(tds[tds.length - 1], 'borderBottomRightRadius'));
+    host.remove();
+    if(tl > 0 && bl > 0 && tr > 0 && br > 0){
+      pass('All four outer corners are rounded');
+    } else {
+      fail(`Expected all four corners rounded, got tl: ${tl}, bl: ${bl}, tr: ${tr}, br: ${br}`);
+    }
+  },
+
+  'should give a .left-headers table one top border and no radius on inner header cells': ({pass, fail}) => {
+    const host = build(leftHeaders);
+    const ths = host.querySelectorAll('th');
+    const firstTop = parseFloat(getStyle(ths[0], 'borderTopWidth'));
+    const middleTop = parseFloat(getStyle(ths[1], 'borderTopWidth'));
+    const middleRadius = ['borderTopLeftRadius', 'borderTopRightRadius', 'borderBottomLeftRadius', 'borderBottomRightRadius'].map(prop => parseFloat(getStyle(ths[1], prop)));
+    host.remove();
+    if(firstTop > 0 && middleTop === 0 && middleRadius.every(radius => radius === 0)){
+      pass('Only the first header cell has a top border, the middle one is square');
+    } else {
+      fail(`Expected a square middle header without a top border, got first top: ${firstTop}, middle top: ${middleTop}, middle radius: ${middleRadius}`);
+    }
+  },
+
+  'should leave the top corners to the thead in a .left-headers table with a thead': ({pass, fail}) => {
+    const host = build('<table class="left-headers"><thead><tr><th>x</th><th>y</th></tr></thead><tbody><tr><th>a</th><td>b</td></tr><tr><th>c</th><td>d</td></tr></tbody></table>');
+    const [corner, , a, c] = host.querySelectorAll('th');
+    const cornerRadius = parseFloat(getStyle(corner, 'borderTopLeftRadius'));
+    const bodyTop = parseFloat(getStyle(a, 'borderTopWidth'));
+    const bodyRadius = parseFloat(getStyle(a, 'borderTopLeftRadius'));
+    const lastRadius = parseFloat(getStyle(c, 'borderBottomLeftRadius'));
+    host.remove();
+    if(cornerRadius > 0 && bodyTop === 0 && bodyRadius === 0 && lastRadius > 0){
+      pass('Corner header is rounded, first body header is square without a top border, last is rounded at the bottom');
+    } else {
+      fail(`Unexpected corners, got corner: ${cornerRadius}, body top: ${bodyTop}, body radius: ${bodyRadius}, last: ${lastRadius}`);
+    }
+  },
+
+  'should not let .left-headers change a table nested in it': ({pass, fail}) => {
+    const host = build('<table class="left-headers"><tbody><tr><th>a</th><td><table><tbody><tr><th>x</th><td>y</td></tr><tr><th>z</th><td>w</td></tr></tbody></table></td></tr></tbody></table>');
+    const inner = host.querySelectorAll('table table th');
+    const firstRadius = parseFloat(getStyle(inner[0], 'borderTopLeftRadius'));
+    const secondTop = parseFloat(getStyle(inner[1], 'borderTopWidth'));
+    host.remove();
+    if(firstRadius > 0 && secondTop > 0){
+      pass('Nested table keeps the default th styles');
+    } else {
+      fail(`Expected default th styles in the nested table, got radius: ${firstRadius}, second top border: ${secondTop}`);
     }
   }
 };

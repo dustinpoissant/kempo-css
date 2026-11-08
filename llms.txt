@@ -166,6 +166,10 @@ All standard inputs are auto-styled: `input` (except buttons/radio/checkbox), `s
 
 - `table` — full-width, no border-spacing, auto-styled `th`/`td` with borders and padding
 - `.table-wrapper` — wraps a table for horizontal scroll overflow
+- `table.no-headers` — for a table with no `<thead>`; gives the first row a top border and rounded top corners, which `th` normally provides
+- `table.left-headers` — for a table whose rows start with a `<th>` (no `<thead>` needed); one top border, rounded outer corners only, and no doubled borders between header cells. Also works with a `<thead>` (corner header plus row headers)
+
+`.no-headers` and `.left-headers` expect an explicit `<tbody>` (browsers add it when parsing HTML) and only style the table's own rows, not nested tables.
 
 ### Background Colors
 

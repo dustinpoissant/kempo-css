@@ -4,6 +4,10 @@
 	
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="color-scheme" content="light dark" />
+	<script>
+		try { document.documentElement.setAttribute('theme', localStorage.getItem('theme') || 'auto'); } catch (e) {}
+	</script>
 	<title>Layout - Kempo CSS</title>
 	<link rel="icon" type="image/png" sizes="48x48" href="./media/icon48.png">
 	<link rel="manifest" href="./manifest.json" />
@@ -93,6 +97,9 @@
 			<div class="ml mb -mt">
 				<a href="./tables.html#basic-table" class="d-b">Basic Table</a>
 				<a href="./tables.html#responsive-table" class="d-b">Responsive Table</a>
+				<a href="./tables.html#no-headers" class="d-b">No Headers</a>
+				<a href="./tables.html#left-headers" class="d-b">Left Headers</a>
+				<a href="./tables.html#left-and-top-headers" class="d-b">Left &amp; Top Headers</a>
 			</div>
 			<h5><a href="./colors.html">Colors</a></h5>
 			<div class="ml mb -mt">

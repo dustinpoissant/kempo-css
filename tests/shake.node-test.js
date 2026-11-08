@@ -40,6 +40,20 @@ export default {
     pass('');
   },
 
+  'the rules of .no-headers and .left-headers are kept only for a table that uses them': async ({ pass, fail }) => {
+    const selectors = css => [...css.matchAll(/([^{}]+)\{/g)].map(match => match[1]).join(',');
+    const none = selectors(shake('<table><tbody><tr><th>a</th><td>b</td></tr></tbody></table>', { colorMode: 'light' }));
+    if(/no-headers|left-headers/.test(none)) return fail('a plain table kept the rules of a header class');
+    const noHeaders = shake('<table class="no-headers"><tbody><tr><td>a</td></tr></tbody></table>', { colorMode: 'light' });
+    if(!/\.no-headers>tbody>tr:first-child>td:first-child/.test(selectors(noHeaders))) return fail('.no-headers lost its first row rules');
+    if(noHeaders.includes('left-headers')) return fail('.no-headers kept the .left-headers rules');
+    const left = shake('<table class="left-headers"><tbody><tr><th>a</th><td>b</td></tr></tbody></table>', { colorMode: 'light' });
+    if(!/\.left-headers>tbody>tr:last-child>th:first-child/.test(selectors(left))) return fail('.left-headers lost its last row rule');
+    if(left.includes('no-headers')) return fail('.left-headers kept the .no-headers rules');
+    if(noHeaders.includes('var(') || left.includes('var(')) return fail('a var() was left');
+    pass('');
+  },
+
   'joined selectors never mix two element types': async ({ pass, fail }) => {
     const css = shake('<button class="primary">Go</button><input type="submit" class="primary">', { colorMode: 'light' });
     const pieces = [...css.matchAll(/([^{}]+)\{/g)].flatMap(match => match[1].split(',')).map(piece => piece.trim().replace(/\[type="button"\]/g, ''));
