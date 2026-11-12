@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.4.2] - 2026-11-12
+
+### Changed
+- A `select`, checkbox or radio gets the read only style only when it has both `disabled` and `readonly`. The `readonly` attribute alone does not restyle these controls, and they are no longer blocked with `pointer-events: none`. `disabled` stops mouse and keyboard changes. Inputs docs: "Read Only Select / Checkbox / Radio" section.
+
 ## [2.4.1] - 2026-11-12
 
 ### Added

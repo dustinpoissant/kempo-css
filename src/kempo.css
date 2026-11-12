@@ -883,27 +883,17 @@ textarea {
   transition: box-shadow var(--animation_ms);
 }
 input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]):not(:disabled):not([readonly]):focus,
-select:not(:disabled):not([readonly]):focus,
+select:not(:disabled):focus,
 textarea:not(:disabled):not([readonly]):focus,
-input[type="checkbox"]:not(:disabled):not([readonly]):focus,
-input[type="radio"]:not(:disabled):not([readonly]):focus {
+input[type="checkbox"]:not(:disabled):focus,
+input[type="radio"]:not(:disabled):focus {
   box-shadow: var(--focus_shadow);
 }
 input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"])[readonly],
-textarea[readonly],
-select[readonly],
-input[type="checkbox"][readonly],
-input[type="radio"][readonly] {
+textarea[readonly] {
   opacity: 0.75;
   cursor: default;
   caret-color: transparent;
-}
-select[readonly],
-input[type="checkbox"][readonly],
-input[type="radio"][readonly],
-input[type="checkbox"][readonly] + label,
-input[type="radio"][readonly] + label {
-  pointer-events: none;
 }
 input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]):disabled,
 select:disabled,
@@ -911,6 +901,12 @@ textarea:disabled,
 input[type="checkbox"]:disabled,
 input[type="radio"]:disabled {
   opacity: 0.6;
+}
+select[readonly]:disabled,
+input[type="checkbox"][readonly]:disabled,
+input[type="radio"][readonly]:disabled {
+  opacity: 0.75;
+  cursor: default;
 }
 textarea,
 select[multiple] {

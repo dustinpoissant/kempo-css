@@ -161,7 +161,8 @@ All standard inputs are auto-styled: `input` (except buttons/radio/checkbox), `s
 
 - `label` — `display: block`
 - `label.checkbox` / `label.radio` — inline-block label for use next to checkbox/radio
-- `[readonly]` on `input` (text, number, etc.), `textarea`, `select`, `input[type="checkbox"]` and `input[type="radio"]` — 0.75 opacity, default cursor, no focus shadow. Text fields and textareas also hide the caret and keep pointer input so their text can be selected. A readonly `select`, checkbox or radio (and the `label` directly after a checkbox/radio) ignores mouse input with `pointer-events: none`, but keyboard users can still focus and change it. Browsers do not support `readonly` on these three, so block keyboard changes in script if needed
+- `[readonly]` on `input` (text, number, etc.) and `textarea` — 0.75 opacity, default cursor, no focus shadow, and the caret is hidden. Text fields keep pointer input so their text can be selected
+- `select`, `input[type="checkbox"]` and `input[type="radio"]` do not support `readonly` in HTML. Set both `disabled` and `readonly` on them for the read only look (0.75 opacity, default cursor, no focus shadow). `disabled` stops mouse and keyboard changes. With only `readonly`, these controls stay interactive and look normal
 - `select[multiple] option:checked` — selected options are highlighted in the primary color
 
 ### Tables

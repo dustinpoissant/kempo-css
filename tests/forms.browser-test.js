@@ -328,6 +328,7 @@ export default {
   'should set opacity to 0.75 on readonly select': ({pass, fail}) => {
     const select = document.createElement('select');
     select.setAttribute('readonly', '');
+    select.disabled = true;
     document.body.appendChild(select);
     const opacity = parseFloat(getStyle(select, 'opacity'));
     select.remove();
@@ -342,6 +343,7 @@ export default {
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
     checkbox.setAttribute('readonly', '');
+    checkbox.disabled = true;
     document.body.appendChild(checkbox);
     const opacity = parseFloat(getStyle(checkbox, 'opacity'));
     checkbox.remove();
@@ -355,6 +357,7 @@ export default {
   'should not apply focus shadow to readonly select': ({pass, fail}) => {
     const select = document.createElement('select');
     select.setAttribute('readonly', '');
+    select.disabled = true;
     document.body.appendChild(select);
     const beforeShadow = getStyle(select, 'boxShadow');
     select.focus();
@@ -368,21 +371,36 @@ export default {
     }
   },
 
-  'should ignore pointer input on readonly select and checkbox': ({pass, fail}) => {
+  'should not restyle a select or checkbox with only readonly': ({pass, fail}) => {
     const select = document.createElement('select');
     select.setAttribute('readonly', '');
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
     checkbox.setAttribute('readonly', '');
     document.body.append(select, checkbox);
-    const selectEvents = getStyle(select, 'pointerEvents');
-    const checkboxEvents = getStyle(checkbox, 'pointerEvents');
+    const selectOpacity = parseFloat(getStyle(select, 'opacity'));
+    const checkboxOpacity = parseFloat(getStyle(checkbox, 'opacity'));
     select.remove();
     checkbox.remove();
-    if(selectEvents === 'none' && checkboxEvents === 'none'){
-      pass('Readonly select and checkbox ignore pointer input');
+    if(selectOpacity === 1 && checkboxOpacity === 1){
+      pass('Readonly-only select and checkbox keep full opacity');
     } else {
-      fail(`Expected none/none, got ${selectEvents}/${checkboxEvents}`);
+      fail(`Expected opacity 1/1, got ${selectOpacity}/${checkboxOpacity}`);
+    }
+  },
+
+  'should set opacity to 0.75 on readonly disabled radio': ({pass, fail}) => {
+    const radio = document.createElement('input');
+    radio.type = 'radio';
+    radio.setAttribute('readonly', '');
+    radio.disabled = true;
+    document.body.appendChild(radio);
+    const opacity = parseFloat(getStyle(radio, 'opacity'));
+    radio.remove();
+    if(opacity === 0.75){
+      pass('Readonly disabled radio has opacity 0.75');
+    } else {
+      fail(`Expected opacity 0.75, got ${opacity}`);
     }
   },
 
