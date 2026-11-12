@@ -282,5 +282,153 @@ export default {
     } else {
       fail('Disabled textarea should not get focus shadow');
     }
+  },
+
+  'should set opacity to 0.75 on readonly input': ({pass, fail}) => {
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.readOnly = true;
+    document.body.appendChild(input);
+    const opacity = parseFloat(getStyle(input, 'opacity'));
+    input.remove();
+    if(opacity === 0.75){
+      pass('Readonly input has opacity 0.75');
+    } else {
+      fail(`Expected opacity 0.75, got ${opacity}`);
+    }
+  },
+
+  'should set opacity to 0.75 on readonly textarea': ({pass, fail}) => {
+    const textarea = document.createElement('textarea');
+    textarea.readOnly = true;
+    document.body.appendChild(textarea);
+    const opacity = parseFloat(getStyle(textarea, 'opacity'));
+    textarea.remove();
+    if(opacity === 0.75){
+      pass('Readonly textarea has opacity 0.75');
+    } else {
+      fail(`Expected opacity 0.75, got ${opacity}`);
+    }
+  },
+
+  'should use default cursor on readonly input': ({pass, fail}) => {
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.readOnly = true;
+    document.body.appendChild(input);
+    const cursor = getStyle(input, 'cursor');
+    input.remove();
+    if(cursor === 'default'){
+      pass('Readonly input uses the default cursor');
+    } else {
+      fail(`Expected default cursor, got ${cursor}`);
+    }
+  },
+
+  'should set opacity to 0.75 on readonly select': ({pass, fail}) => {
+    const select = document.createElement('select');
+    select.setAttribute('readonly', '');
+    document.body.appendChild(select);
+    const opacity = parseFloat(getStyle(select, 'opacity'));
+    select.remove();
+    if(opacity === 0.75){
+      pass('Readonly select has opacity 0.75');
+    } else {
+      fail(`Expected opacity 0.75, got ${opacity}`);
+    }
+  },
+
+  'should set opacity to 0.75 on readonly checkbox': ({pass, fail}) => {
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.setAttribute('readonly', '');
+    document.body.appendChild(checkbox);
+    const opacity = parseFloat(getStyle(checkbox, 'opacity'));
+    checkbox.remove();
+    if(opacity === 0.75){
+      pass('Readonly checkbox has opacity 0.75');
+    } else {
+      fail(`Expected opacity 0.75, got ${opacity}`);
+    }
+  },
+
+  'should not apply focus shadow to readonly select': ({pass, fail}) => {
+    const select = document.createElement('select');
+    select.setAttribute('readonly', '');
+    document.body.appendChild(select);
+    const beforeShadow = getStyle(select, 'boxShadow');
+    select.focus();
+    const afterShadow = getStyle(select, 'boxShadow');
+    select.blur();
+    select.remove();
+    if(afterShadow === beforeShadow){
+      pass('Readonly select does not get focus shadow');
+    } else {
+      fail('Readonly select should not get focus shadow');
+    }
+  },
+
+  'should ignore pointer input on readonly select and checkbox': ({pass, fail}) => {
+    const select = document.createElement('select');
+    select.setAttribute('readonly', '');
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.setAttribute('readonly', '');
+    document.body.append(select, checkbox);
+    const selectEvents = getStyle(select, 'pointerEvents');
+    const checkboxEvents = getStyle(checkbox, 'pointerEvents');
+    select.remove();
+    checkbox.remove();
+    if(selectEvents === 'none' && checkboxEvents === 'none'){
+      pass('Readonly select and checkbox ignore pointer input');
+    } else {
+      fail(`Expected none/none, got ${selectEvents}/${checkboxEvents}`);
+    }
+  },
+
+  'should hide the caret on readonly textarea': ({pass, fail}) => {
+    const textarea = document.createElement('textarea');
+    textarea.readOnly = true;
+    document.body.appendChild(textarea);
+    const caretColor = getStyle(textarea, 'caretColor');
+    textarea.remove();
+    if(caretColor === 'rgba(0, 0, 0, 0)' || caretColor === 'transparent'){
+      pass('Readonly textarea hides the caret');
+    } else {
+      fail(`Expected transparent caret, got ${caretColor}`);
+    }
+  },
+
+  'should not apply focus shadow to readonly text input': ({pass, fail}) => {
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.readOnly = true;
+    document.body.appendChild(input);
+    const beforeShadow = getStyle(input, 'boxShadow');
+    input.focus();
+    const afterShadow = getStyle(input, 'boxShadow');
+    input.blur();
+    input.remove();
+    if(afterShadow === beforeShadow){
+      pass('Readonly text input does not get focus shadow');
+    } else {
+      fail('Readonly text input should not get focus shadow');
+    }
+  },
+
+  'should not apply focus shadow to readonly textarea': ({pass, fail}) => {
+    const textarea = document.createElement('textarea');
+    textarea.readOnly = true;
+    document.body.appendChild(textarea);
+    const beforeShadow = getStyle(textarea, 'boxShadow');
+    textarea.focus();
+    const afterShadow = getStyle(textarea, 'boxShadow');
+    textarea.blur();
+    textarea.remove();
+    if(afterShadow === beforeShadow){
+      pass('Readonly textarea does not get focus shadow');
+    } else {
+      fail('Readonly textarea should not get focus shadow');
+    }
   }
 };

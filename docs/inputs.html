@@ -264,6 +264,83 @@
 				</k-card>
 			</div>
 		</div>
+
+		<h2 id="read-only">Read Only</h2>
+		<div class="row -mx">
+			<div class="col m-span-12 px">
+				<k-card label="HTML">
+					<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">input</span><br />  <span class="hljs-attr">readonly</span><br />  <span class="hljs-attr">value</span>=<span class="hljs-string">"Read only input"</span><br />  <span class="hljs-attr">class</span>=<span class="hljs-string">"mb"</span><br />/&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">input</span><br />  <span class="hljs-attr">type</span>=<span class="hljs-string">"number"</span><br />  <span class="hljs-attr">readonly</span><br />  <span class="hljs-attr">value</span>=<span class="hljs-string">"42"</span><br />  <span class="hljs-attr">class</span>=<span class="hljs-string">"mb"</span><br />/&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">textarea</span><br />  <span class="hljs-attr">readonly</span><br />  <span class="hljs-attr">class</span>=<span class="hljs-string">"mb"</span><br />&gt;</span>Read only textarea<span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span><br /><br /><span class="hljs-tag">&lt;<span class="hljs-name">select</span><br />  <span class="hljs-attr">readonly</span><br />  <span class="hljs-attr">class</span>=<span class="hljs-string">"mb"</span><br />&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Read only select<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br /><br /><span class="hljs-tag">&lt;<span class="hljs-name">select</span><br />  <span class="hljs-attr">multiple</span><br />  <span class="hljs-attr">readonly</span><br />  <span class="hljs-attr">class</span>=<span class="hljs-string">"mb"</span><br />&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Read only option 1<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">selected</span>&gt;</span>Read only option 2<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br />  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Read only option 3<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br /><span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br /><br /><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">readonly</span> <span class="hljs-attr">checked</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"ro-check"</span> /&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"ro-check"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"checkbox"</span>&gt;</span>Read only checkbox<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br /><br /><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"ro-radios"</span> <span class="hljs-attr">readonly</span> <span class="hljs-attr">checked</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"ro-radio"</span> /&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"ro-radio"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"checkbox"</span>&gt;</span>Read only radio<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"ro-radios"</span> <span class="hljs-attr">readonly</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"ro-radio-2"</span> /&gt;</span><br /><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"ro-radio-2"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"checkbox"</span>&gt;</span>Read only radio 2<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span></code></pre>
+				</k-card>
+			</div>
+			<div class="col m-span-12 px">
+				<k-card label="Output">
+					<input
+						readonly
+						value="Read only input"
+						class="mb"
+					/>
+					<input
+						type="number"
+						readonly
+						value="42"
+						class="mb"
+					/>
+					<textarea
+						readonly
+						class="mb"
+					>Read only textarea</textarea>
+				</k-card>
+					<select
+						readonly
+						class="mb"
+					>
+						<option>Read only select</option>
+					</select>
+					<select
+						multiple
+						readonly
+						class="mb"
+					>
+						<option>Read only option 1</option>
+						<option selected>Read only option 2</option>
+						<option>Read only option 3</option>
+					</select>
+					<input
+						type="checkbox"
+						readonly
+						checked
+						id="ro-check"
+					/>
+					<label
+						for="ro-check"
+						class="checkbox"
+					>Read only checkbox</label>
+					<br /><br />
+					<input
+						type="radio"
+						name="ro-radios"
+						readonly
+						checked
+						id="ro-radio"
+					/>
+					<label
+						for="ro-radio"
+						class="checkbox"
+					>Read only radio</label>
+					<input
+						type="radio"
+						name="ro-radios"
+						readonly
+						id="ro-radio-2"
+					/>
+					<label
+						for="ro-radio-2"
+						class="checkbox"
+					>Read only radio 2</label>
+				</k-card>
+			</div>
+		</div>
+		<p>Browsers do not support <code>readonly</code> on a select, checkbox or radio. kempo-css blocks mouse input on them with <code>pointer-events: none</code>, but keyboard users can still focus and change them. To block that too, prevent changes in script.</p>
 	
 		</main>
 		<div style="height:33vh"></div>

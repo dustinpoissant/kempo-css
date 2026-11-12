@@ -1,0 +1,10 @@
+.github/
+.vscode/
+.gitattributes
+AGENTS.md
+CONTRIBUTING.md
+docs/
+docs-src/
+src/kempo-hljs.css
+tasks/
+tests/

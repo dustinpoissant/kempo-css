@@ -882,12 +882,28 @@ textarea {
   outline: none;
   transition: box-shadow var(--animation_ms);
 }
-input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]):not(:disabled):focus,
-select:not(:disabled):focus,
-textarea:not(:disabled):focus,
-input[type="checkbox"]:not(:disabled):focus,
-input[type="radio"]:not(:disabled):focus {
+input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]):not(:disabled):not([readonly]):focus,
+select:not(:disabled):not([readonly]):focus,
+textarea:not(:disabled):not([readonly]):focus,
+input[type="checkbox"]:not(:disabled):not([readonly]):focus,
+input[type="radio"]:not(:disabled):not([readonly]):focus {
   box-shadow: var(--focus_shadow);
+}
+input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"])[readonly],
+textarea[readonly],
+select[readonly],
+input[type="checkbox"][readonly],
+input[type="radio"][readonly] {
+  opacity: 0.75;
+  cursor: default;
+  caret-color: transparent;
+}
+select[readonly],
+input[type="checkbox"][readonly],
+input[type="radio"][readonly],
+input[type="checkbox"][readonly] + label,
+input[type="radio"][readonly] + label {
+  pointer-events: none;
 }
 input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="radio"]):not([type="checkbox"]):disabled,
 select:disabled,
@@ -997,6 +1013,10 @@ select[multiple] {
 }
 select[multiple] option {
   padding: var(--spacer_h) var(--spacer);
+}
+select[multiple] option:checked {
+  background-color: var(--c_primary);
+  color: var(--tc_on_primary);
 }
 input[type="color"] {
   padding: 0 !important;

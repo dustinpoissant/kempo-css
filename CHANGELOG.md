@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.4.1] - 2026-11-12
+
+### Added
+- Read only inputs: a text input, number input, textarea, select, checkbox or radio with the `readonly` attribute is slightly transparent (0.75 opacity) and keeps the default cursor. It does not get the focus shadow, and the caret is hidden. A readonly select, checkbox or radio (and its label) ignores the mouse. Inputs docs: "Read Only" examples.
+- Selected options in a `select[multiple]` are highlighted in the primary color. The `select option` background hid the browser's selected state.
+
+### Changed
+- The npm package no longer includes the docs, docs source, tests, task notes, CI and editor config. It ships `dist/`, `src/`, `bin/`, `scripts/` and the README, license, changelog and `llms.txt`.
+
 ## [2.4.0] - 2026-11-07
 
 ### Added
